@@ -13,4 +13,10 @@
       <ion-title size="large">usuario</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-label>usuario</ion-label><input type="text" [(ngModel)]="usuario">
+  <ion-label>clave</ion-label><input type="password" [(ngModel)]="clave">
+
+  <ion-button (click)="ingresar()" expand="block" fill="clear" shape="round">
+    Click me
+  </ion-button>
 </ion-content>
