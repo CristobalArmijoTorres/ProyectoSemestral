@@ -1,12 +1,48 @@
 import { Component } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage{
+  mostrar = false;
+  usuarioIngresado = ''; 
+  usuario = 'Usuario1';
+  claveIngresada = '';
+  clave = 'MiClav3';
+  constructor(private toastController:ToastController) {}
+  ngOnInit() {
+  }
+  async ingresar()
+  {
+    this.usuarioIngresado = this.usuarioIngresado;
+    this.claveIngresada = this.claveIngresada;
 
-  constructor() {}
+    if(this.usuarioIngresado !== this.usuario ||  this.claveIngresada !== this.clave)
+      {
+          const toast = await this.toastController.create({
+        message:'El usuario o la contraseña ingresada no es correcta, Intentalo nuevamente' ,
+        duration: 3000,
+        position:"middle", // top, middle
+        color : "danger",
+      });
+      await toast.present();
+    }
+    else
+    {
+      const toast = await this.toastController.create({
+        message:'Ingresando......' ,
+        duration: 3000,
+        position:"middle", // top, middle
+        color : "success",
+      });
+      await toast.present();
+    }
+  }
 
 }
+
+
+

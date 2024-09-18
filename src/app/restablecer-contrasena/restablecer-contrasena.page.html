@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>restablecerContrasena</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!--USUARIO-->  
+  <label>Email: </label>
+  <ion-input type="Email" placeholder="Ingrese su Email" [(ngModel)] = 'email1' ></ion-input>
+  <!--CONTRASEÑA-->
+  <label>Nueva clave: </label>
+  <ion-input type="password" placeholder="Ingrese la clave" [(ngModel)] = 'claveIngresada1' ></ion-input>
+  
+  <label>Repite clave: </label>
+  <ion-input type="password" placeholder="Ingrese la clave" [(ngModel)] = 'claveIngresada2' ></ion-input>
+  
+  <!--BOTON-->
+  <ion-button shape="round" fill="outline" (click) = "ingresar()">Aceptar</ion-button>
+  <br>
+</ion-content>
