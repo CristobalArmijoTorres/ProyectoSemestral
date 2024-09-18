@@ -1,27 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>restablecerContrasena</ion-title>
+    <ion-title>DuocUC</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-      <ion-card-title>Awesome Title</ion-card-title>
+      <h1>Restablecer Contraseña</h1>
     </ion-card-header>
+    <ion-card-content>
+      <!--USUARIO-->  
+      <label>Email: </label>
+      <ion-input type="Email" placeholder="Ingrese su Email" [(ngModel)] = 'email1' ></ion-input>
+      <!--CONTRASEÑA-->
+      <label>Nueva clave: </label>
+      <ion-input type="password" placeholder="Ingrese la clave" [(ngModel)] = 'claveIngresada1' ></ion-input>
+      
+      <label>Repite clave: </label>
+      <ion-input type="password" placeholder="Ingrese la clave" [(ngModel)] = 'claveIngresada2' ></ion-input>
+      
+      <!--BOTON-->
+      <ion-button shape="round" fill="outline" (click) = "ingresar()">Aceptar</ion-button>
+      <br>
+    </ion-card-content>
   </ion-card>
-  <!--USUARIO-->  
-  <label>Email: </label>
-  <ion-input type="Email" placeholder="Ingrese su Email" [(ngModel)] = 'email1' ></ion-input>
-  <!--CONTRASEÑA-->
-  <label>Nueva clave: </label>
-  <ion-input type="password" placeholder="Ingrese la clave" [(ngModel)] = 'claveIngresada1' ></ion-input>
-  
-  <label>Repite clave: </label>
-  <ion-input type="password" placeholder="Ingrese la clave" [(ngModel)] = 'claveIngresada2' ></ion-input>
-  
-  <!--BOTON-->
-  <ion-button shape="round" fill="outline" (click) = "ingresar()">Aceptar</ion-button>
-  <br>
+
 </ion-content>
