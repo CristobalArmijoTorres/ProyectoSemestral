@@ -13,10 +13,14 @@
       <ion-title size="large">usuario</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-label>usuario</ion-label><input type="text" [(ngModel)]="usuario">
-  <ion-label>clave</ion-label><input type="password" [(ngModel)]="clave">
+<!--USUARIO-->  
+<label>Usuario: </label>
+<ion-input type="text" placeholder="Ingrese su Usuario" [(ngModel)] = "usuario"></ion-input>
+<!--CONTRASEÑA-->
+<label>Clave: </label>
+<ion-input type="password" placeholder="Ingrese la clave" [(ngModel)] = "clave"></ion-input>
 
-  <ion-button (click)="ingresar()" expand="block" fill="clear" shape="round">
-    Click me
-  </ion-button>
+<!--BOTON-->
+<ion-button shape="round" fill="outline" (click) = "ingresar()">Aceptar</ion-button>
+
 </ion-content>

@@ -22,9 +22,9 @@ export class UsuarioPage implements OnInit {
     this.usuarioIngresado = this.usuario;
     this.claveIngresada = this.clave;
 
-    if(this.usuarioIngresado !== 'Usuario1' && this.claveIngresada !== 'Usuario1')
-    {
-        const toast = await this.toastController.create({
+    if(this.usuarioIngresado !== 'Usuario1' || this.claveIngresada !== 'MiClav3')
+      {
+          const toast = await this.toastController.create({
         message:'El usuario o la contraseña ingresada no es correcta, Intentalo nuevamente' ,
         duration: 3000,
         position:"middle", // top, middle
