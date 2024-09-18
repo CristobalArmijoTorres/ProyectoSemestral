@@ -24,7 +24,7 @@ export class RestablecerContrasenaPage implements OnInit {
     this.emailIngresado = this.email1;
     this.clave1 = this.claveIngresada1;
     this.clave2 = this.claveIngresada2;
-
+    //Cesar lo siguiente quiere decir que si no existe almenos una de las claves entrega el siguiente mensaje
     if (!this.clave1 || !this.clave2) {
       const toast = await this.toastController.create({
         message: 'Por favor, ingrese ambas claves',
@@ -33,7 +33,7 @@ export class RestablecerContrasenaPage implements OnInit {
         color: "danger",
       });
       await toast.present();
-    }
+    }//Si es distinto al email que deje por defecto para validación te da un mensaje
     else if (this.emailIngresado !== this.email) {
       const toast = await this.toastController.create({
         message: 'El email no es correcto, Inténtalo nuevamente',
@@ -42,7 +42,7 @@ export class RestablecerContrasenaPage implements OnInit {
         color: "danger",
       });
       await toast.present();
-    }
+    }//Si la clave 1 ingresada es distinta a la 2 te da un mensaje 
     else if (this.clave1 !== this.clave2) {
       const toast = await this.toastController.create({
         message: 'Las claves no coinciden, Inténtalo nuevamente',
