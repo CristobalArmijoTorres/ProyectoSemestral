@@ -8,9 +8,9 @@ import { ToastController } from '@ionic/angular';
 export class UsuarioPage implements OnInit {
   mostrar = false;
   usuarioIngresado = ''; 
-  usuario = '';
+  usuario = 'Usuario1';
   claveIngresada = '';
-  clave = '';
+  clave = 'MiClav3';
 
 
   constructor(private toastController:ToastController) { }
@@ -19,10 +19,10 @@ export class UsuarioPage implements OnInit {
   }
   async ingresar()
   {
-    this.usuarioIngresado = this.usuario;
-    this.claveIngresada = this.clave;
+    this.usuarioIngresado = this.usuarioIngresado;
+    this.claveIngresada = this.claveIngresada;
 
-    if(this.usuarioIngresado !== 'Usuario1' || this.claveIngresada !== 'MiClav3')
+    if(this.usuarioIngresado !== this.usuario ||  this.claveIngresada !== this.clave)
       {
           const toast = await this.toastController.create({
         message:'El usuario o la contraseña ingresada no es correcta, Intentalo nuevamente' ,
