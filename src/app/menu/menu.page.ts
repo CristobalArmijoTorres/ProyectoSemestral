@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
-
+  usuario = 'Usuario1';
   constructor() { }
 
   ngOnInit() {
