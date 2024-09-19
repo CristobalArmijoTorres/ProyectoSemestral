@@ -7,7 +7,6 @@ import { ToastController, NavController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage{
-  mostrar = false;
   usuarioIngresado = ''; 
   usuario = 'Usuario1';
   claveIngresada = '';

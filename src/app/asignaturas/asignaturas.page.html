@@ -1,13 +1,210 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>asignaturas</ion-title>
+    <ion-title>Asignaturas</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="menu"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">asignaturas</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!--FORMA CON MODAL-->
+  <ion-list>
+    <h1>MODAL</h1>
+    <ion-item>
+      <ion-label>Arquitectura</ion-label>
+      <ion-button fill="clear" (click)="verModal1()">
+        <ion-icon slot="end" name="chevron-down-outline" color="primary"></ion-icon>
+      </ion-button>
+      <ion-modal [isOpen]="mostrar">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Arquitectura</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="verModal1()" color="primary">Cerrar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content>
+            <p>Ejemplo de una ventana modal</p>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+    <ion-item>      
+      <ion-label>Calida De Software</ion-label>
+      <ion-button fill="clear" (click)="verModal2()">
+        <ion-icon slot="end" name="chevron-down-outline" color="primary"></ion-icon>
+      </ion-button>
+      <ion-modal [isOpen]="mostrar">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Calidad De Software</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="verModal2()" color="primary">Cerrar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content>
+            <p>Ejemplo de una ventana modal</p>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Estadistica Descriptiva</ion-label>
+      <ion-button fill="clear" (click)="verModal3()">
+        <ion-icon slot="end" name="chevron-down-outline" color="primary"></ion-icon>
+      </ion-button>
+      <ion-modal [isOpen]="mostrar">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Estadistica Descriptiva</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="verModal3()" color="primary">Cerrar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content>
+            <p>Ejemplo de una ventana modal</p>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Etica Para El Trabajo</ion-label>
+      <ion-button fill="clear" (click)="verModal4()">
+        <ion-icon slot="end" name="chevron-down-outline" color="primary"></ion-icon>
+      </ion-button>
+      <ion-modal [isOpen]="mostrar">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Etica Para El Trabajo</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="verModal4()" color="primary">Cerrar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content>
+            <p>Ejemplo de una ventana modal</p>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Ingles Intermedio</ion-label>
+      <ion-button fill="clear" (click)="verModal5()">
+        <ion-icon slot="end" name="chevron-down-outline" color="primary"></ion-icon>
+      </ion-button>
+      <ion-modal [isOpen]="mostrar">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Ingles Intermedio</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="verModal5()" color="primary">Cerrar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content>
+            <p>Ejemplo de una ventana modal</p>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+
+    </ion-item>
+    <ion-item>
+      <ion-label>Proceso De Portafolio</ion-label>
+      <ion-button fill="clear" (click)="verModal6()">
+        <ion-icon slot="end" name="chevron-down-outline" color="primary"></ion-icon>
+      </ion-button>
+      <ion-modal [isOpen]="mostrar">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Proceso De Portafolio</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="verModal6()" color="primary">Cerrar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content>
+            <p>Ejemplo de una ventana modal</p>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+  </ion-list>
+  <!--FORMA CON ATRIBUTOS-->
+  <ion-list>
+    <h1>FORMA2 EL PRIMERO TIENE EL EJEMPLO CESAR ☺☻</h1>
+    <ion-item>
+      <ion-label>Arquitectura</ion-label>
+      <ion-button fill="clear" (click)="mostrar1()" >
+        <ion-icon slot="end" name="chevron-down-outline" color="primary" *ngIf="!permitir"></ion-icon>
+        <ion-icon slot="end" name="chevron-up-outline" color="primary" *ngIf="permitir"></ion-icon>
+      </ion-button>
+      <ion-text color="primary" *ngIf="permitir">
+        <h1>Mis Promedios de Notas</h1>
+        <ion-list>
+          <!--EJEMPLO-->
+          <ion-item *ngFor="let asignatura of asignaturas">
+            <ion-label>{{asignatura.nombre | uppercase  }}</ion-label> <!-- lowercase -->
+            <ion-label>{{asignatura.nombre | uppercase | slice: 0:3 }}</ion-label>
+            <ion-label>{{asignatura.nombre.substring(0,3) | uppercase }}</ion-label> 
+            <ion-label>{{asignatura.nota | number:'1.0-0' }}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-text>
+    </ion-item>
+
+    <ion-item>      
+      <ion-label>Calida De Software</ion-label>
+      <ion-button fill="clear">
+        <ion-icon slot="end" name="chevron-down-outline" color="primary"></ion-icon>
+      </ion-button>
+      
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Estadistica Descriptiva</ion-label>
+      <ion-button fill="clear">
+        <ion-icon slot="end" name="chevron-down-outline" color="primary"></ion-icon>
+      </ion-button>
+      
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Etica Para El Trabajo</ion-label>
+      <ion-button fill="clear">
+        <ion-icon slot="end" name="chevron-down-outline" color="primary"></ion-icon>
+      </ion-button>
+      
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Ingles Intermedio</ion-label>
+      <ion-button fill="clear">
+        <ion-icon slot="end" name="chevron-down-outline" color="primary"></ion-icon>
+      </ion-button>
+      
+
+    </ion-item>
+    <ion-item>
+      <ion-label>Proceso De Portafolio</ion-label>
+      <ion-button fill="clear">
+        <ion-icon slot="end" name="chevron-down-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>
