@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ToastController, NavController } from '@ionic/angular';
+import { ToastController, NavController, AlertController } from '@ionic/angular';
 //el NavController sirve para redirigirte a la pagina siempre y cuando los datos sean correctos
 @Component({
   selector: 'app-home',
@@ -11,9 +11,22 @@ export class HomePage{
   usuario = 'Usuario1';
   claveIngresada = '';
   clave = 'MiClav3';
-  constructor(private toastController:ToastController, private navCtrol:NavController) {}
+  constructor(private toastController:ToastController, private navCtrol:NavController, private alertController : AlertController) {}
   ngOnInit() {
+
   }
+
+  async funcionAlerta()
+  {
+    const alert = await this.alertController.create({
+      header: "Olvidaste tu contraseña",
+      subHeader: "Tranquilo, se enviara un mensaje a tu correo para recuperarla",
+      message: "El mensaje se envio correctamente, ahora podras recuperar tu contraseña",
+      buttons: ['Ok']
+    });
+    await alert.present();
+  }
+
   async ingresar()
   {
     this.usuarioIngresado = this.usuarioIngresado;
