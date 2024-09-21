@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reg-asistencia.page.scss'],
 })
 export class RegAsistenciaPage implements OnInit {
-
+  mostrar = false;
   constructor() { }
-
+  
   ngOnInit() {
+  }
+  
+  verModal()
+  {
+    this.mostrar = !this.mostrar;
   }
 
 }

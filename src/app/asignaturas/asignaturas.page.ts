@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsignaturasPage implements OnInit {
   mostrar=false;
+  mostrar2=false;
+  mostrar3=false;
+  mostrar4=false;
+  mostrar5=false;
+  mostrar6=false;
   permitir: Boolean = false;
   asignaturas = [
     { nombre: "PGY4121", nota: 39.55},
@@ -24,23 +29,23 @@ export class AsignaturasPage implements OnInit {
   }
   verModal2()
   {
-    this.mostrar = !this.mostrar;
+    this.mostrar2 = !this.mostrar2;
   }
   verModal3()
   {
-    this.mostrar = !this.mostrar;
+    this.mostrar3 = !this.mostrar3;
   }
   verModal4()
   {
-    this.mostrar = !this.mostrar;
+    this.mostrar4 = !this.mostrar4;
   }
   verModal5()
   {
-    this.mostrar = !this.mostrar;
+    this.mostrar5 = !this.mostrar5;
   }
   verModal6()
   {
-    this.mostrar = !this.mostrar;
+    this.mostrar6 = !this.mostrar6;
   }
   //forma 2
   mostrar1()
