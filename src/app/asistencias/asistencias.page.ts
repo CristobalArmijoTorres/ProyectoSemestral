@@ -58,9 +58,41 @@ export class AsistenciasPage implements OnInit {
   permitir5: Boolean = false;
   permitir6: Boolean = false;
 
+  modal1=false;
+  modal2=false;
+  modal3=false;
+  modal4=false;
+  modal5=false;
+  modal6=false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  verModal1()
+  {
+    this.modal1 = !this.modal1;
+  }
+  verModal2()
+  {
+    this.modal2 = !this.modal2;
+  }
+  verModal3()
+  {
+    this.modal3 = !this.modal3;
+  }
+  verModal4()
+  {
+    this.modal4 = !this.modal4;
+  }
+  verModal5()
+  {
+    this.modal5 = !this.modal5;
+  }
+  verModal6()
+  {
+    this.modal6 = !this.modal6;
   }
 
   mostrar1()
