@@ -1,0 +1,32 @@
+.credencial-container {
+    text-align: center;
+    margin-top: 20px;
+  
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+  
+    .rut {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+  
+    ion-item-divider {
+      margin: 20px 0;
+    }
+  
+    .school {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 5px;
+    }
+  
+    .career {
+      font-size: 1.1rem;
+      color: #666;
+    }
+  }
+  

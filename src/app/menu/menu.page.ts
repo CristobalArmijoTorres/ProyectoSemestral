@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, AlertController } from '@ionic/angular'; 
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.page.html',
@@ -7,9 +8,31 @@ import { NavController } from '@ionic/angular';
 })
 export class MenuPage implements OnInit {
   usuario = 'Usuario1';
-  constructor(private navCtrol:NavController) { }
 
-  ngOnInit() {
+  constructor(private navController: NavController,  
+              private alertController: AlertController) { }  
+
+  ngOnInit() {}
+
+  // Función para mostrar la alerta
+  async confirmLogout() {
+    const alert = await this.alertController.create({
+      header: 'Confirmación',  
+      message: '¿Está seguro que desea salir?', 
+      buttons: [
+        {
+          text: 'Cancelar', 
+          role: 'cancel'
+        },
+        {
+          text: 'Aceptar',  
+          handler: () => {
+            this.navController.navigateRoot(['/home']);  // Redirigir a Home y root para que no pueda devolverse, en teoria
+          }
+        }
+      ]
+    });
+
+    await alert.present();  
   }
-
 }
