@@ -1,8 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>DuocUC</ion-title>
-    <ion-buttons slot="end">
-      <ion-back-button defaultHref="home"></ion-back-button>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="menu"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -10,17 +10,17 @@
 <ion-content [fullscreen]="true">
   <ion-card>
     <ion-card-header>
-      <h1>Restablecer Contraseña</h1>
+      <h1>Cambiar Contraseña</h1>
     </ion-card-header>
     <ion-card-content>
       <!--USUARIO-->  
       <label>Email: </label>
       <ion-input type="Email" placeholder="Ingrese su Email" [(ngModel)] = 'email1' ></ion-input>
       <!--CONTRASEÑA-->
-      <label>Nueva clave: </label>
+      <label>Nueva Contraseña: </label>
       <ion-input type="password" placeholder="Ingrese la clave" [(ngModel)] = 'claveIngresada1' ></ion-input>
       
-      <label>Repite clave: </label>
+      <label>Repita la Contraseña: </label>
       <ion-input type="password" placeholder="Ingrese la clave" [(ngModel)] = 'claveIngresada2' ></ion-input>
       
       <!--BOTON-->

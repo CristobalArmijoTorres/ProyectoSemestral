@@ -8,9 +8,156 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">asistencias</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!--ARQUITECTURA-->
+  <ion-item>
+    <ion-label>
+      <h2>Arquitectura</h2>
+    </ion-label>  
+    <ion-button fill="clear" (click)="mostrar1()" slot="end">
+      <ion-icon slot="end" name="chevron-down-outline" color="primary" *ngIf="!permitir1"></ion-icon>
+      <ion-icon slot="end" name="chevron-up-outline" color="primary" *ngIf="permitir1"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <ion-text color="primary" *ngIf="permitir1">
+    <h1>Mi Asistencia</h1>
+    <ion-list>
+      <ion-item *ngFor="let asistencia of asistenciaArq  | slice:0:2"><!--El slice permite mostrar en este caso desde el primer dato al segundo, si utilizas el mismo numero en ambos lados no muestra ningun dato-->
+        <ion-label>
+          <h2>{{ asistencia.asignatura }}</h2>
+          <p>Fecha: {{ asistencia.fecha }}</p>
+          <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
+        </ion-label>
+      </ion-item>
+      <ion-button class="verMas" fill="outline" shape="round" color="success">
+        ver mas
+      </ion-button>      
+    </ion-list>
+  </ion-text>
+  <!--CALIDAD DE SOFTWARE-->
+  <ion-item>
+    <ion-label>
+      <h2>Calidad De Software</h2>
+    </ion-label>  
+    <ion-button fill="clear" (click)="mostrar2()" slot="end">
+      <ion-icon slot="end" name="chevron-down-outline" color="primary" *ngIf="!permitir2"></ion-icon>
+      <ion-icon slot="end" name="chevron-up-outline" color="primary" *ngIf="permitir2"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <ion-text color="primary" *ngIf="permitir2">
+    <h1>Mi Asistencia</h1>
+    <ion-list>
+      <ion-item *ngFor="let asistencia of asistenciaCDS | slice:0:2">
+        <ion-label>
+          <h2>{{ asistencia.asignatura }}</h2>
+          <p>Fecha: {{ asistencia.fecha }}</p>
+          <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
+        </ion-label>
+      </ion-item>    
+      <ion-button class="verMas" fill="outline" shape="round" color="success">
+        ver mas
+      </ion-button>     
+    </ion-list>
+  </ion-text>
+  <!--ESTADÍSTICA DESCRIPTIVA-->
+  <ion-item>
+    <ion-label>
+      <h2>Estadística Descriptiva</h2>
+    </ion-label>  
+    <ion-button fill="clear" (click)="mostrar3()" slot="end">
+      <ion-icon slot="end" name="chevron-down-outline" color="primary" *ngIf="!permitir3"></ion-icon>
+      <ion-icon slot="end" name="chevron-up-outline" color="primary" *ngIf="permitir3"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <ion-text color="primary" *ngIf="permitir3">
+    <h1>Mi Asistencia</h1>
+    <ion-list>
+      <ion-item *ngFor="let asistencia of asistenciaED | slice:0:2">
+        <ion-label>
+          <h2>{{ asistencia.asignatura }}</h2>
+          <p>Fecha: {{ asistencia.fecha }}</p>
+          <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
+        </ion-label>
+      </ion-item>    
+      <ion-button class="verMas" fill="outline" shape="round" color="success">
+        ver mas
+      </ion-button>     
+    </ion-list>
+  </ion-text>
+  <!--ETICA PARA EL TRABAJO-->
+  <ion-item>
+    <ion-label>
+      <h2>Ética Para El Trabajo</h2>
+    </ion-label>  
+    <ion-button fill="clear" (click)="mostrar4()" slot="end">
+      <ion-icon slot="end" name="chevron-down-outline" color="primary" *ngIf="!permitir4"></ion-icon>
+      <ion-icon slot="end" name="chevron-up-outline" color="primary" *ngIf="permitir4"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <ion-text color="primary" *ngIf="permitir4">
+    <h1>Mi Asistencia</h1>
+    <ion-list>
+      <ion-item *ngFor="let asistencia of asistenciaEPET | slice:0:2">
+        <ion-label>
+          <h2>{{ asistencia.asignatura }}</h2>
+          <p>Fecha: {{ asistencia.fecha }}</p>
+          <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
+        </ion-label>
+      </ion-item>    
+      <ion-button class="verMas" fill="outline" shape="round" color="success">
+        ver mas
+      </ion-button>     
+    </ion-list>
+  </ion-text>
+  <!--INGLES INTERMEDIO-->
+  <ion-item>
+    <ion-label>
+      <h2>Ingles Intermedio</h2>
+    </ion-label>  
+    <ion-button fill="clear" (click)="mostrar5()" slot="end">
+      <ion-icon slot="end" name="chevron-down-outline" color="primary" *ngIf="!permitir5"></ion-icon>
+      <ion-icon slot="end" name="chevron-up-outline" color="primary" *ngIf="permitir5"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <ion-text color="primary" *ngIf="permitir5">
+    <h1>Mi Asistencia</h1>
+    <ion-list>
+      <ion-item *ngFor="let asistencia of asistenciaII | slice:0:2">
+        <ion-label>
+          <h2>{{ asistencia.asignatura }}</h2>
+          <p>Fecha: {{ asistencia.fecha }}</p>
+          <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
+        </ion-label>
+      </ion-item>      
+    </ion-list>
+    <ion-button class="verMas" fill="outline" shape="round" color="success">
+      ver mas
+    </ion-button>   
+  </ion-text>
+  <!--PROCESO DE PORTAFOLIO-->
+  <ion-item>
+    <ion-label>
+      <h2>Proceso De Portafolio</h2>
+    </ion-label>  
+    <ion-button fill="clear" (click)="mostrar6()" slot="end">
+      <ion-icon slot="end" name="chevron-down-outline" color="primary" *ngIf="!permitir6"></ion-icon>
+      <ion-icon slot="end" name="chevron-up-outline" color="primary" *ngIf="permitir6"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <ion-text color="primary" *ngIf="permitir6">
+    <h1>Proceso De Portafolio</h1>
+    <ion-list>
+      <ion-item *ngFor="let asistencia of asistenciaPDP | slice:0:2">
+        <ion-label>
+          <h2>{{ asistencia.asignatura }}</h2>
+          <p>Fecha: {{ asistencia.fecha }}</p>
+          <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
+        </ion-label>
+      </ion-item>    
+      <ion-button class="verMas" fill="outline" shape="round" color="success">
+        ver mas
+      </ion-button>     
+    </ion-list>
+  </ion-text>
+  
+
 </ion-content>

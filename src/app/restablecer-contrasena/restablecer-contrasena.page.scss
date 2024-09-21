@@ -7,6 +7,14 @@ ion-card {
             text-align: center;
         }
     }
+    ion-card-content{
+        ion-button{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+        }
+    }
     
 }
   
