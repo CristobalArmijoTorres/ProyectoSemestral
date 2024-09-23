@@ -1,19 +1,25 @@
-ion-content{
-    ion-button{
+ion-content {
+    --background: white; /* Establecer fondo blanco */
+
+    ion-button {
         display: grid;
         justify-content: center;
         align-items: center;
     }
 }
 
-ion-card{
-    ion-card-header{
-        ion-card-title{
+.black-text {
+    color: black; /* Establecer texto en negro */
+}
+
+ion-card {
+    ion-card-header {
+        ion-card-title {
             text-align: center;
         }
     }
-    ion-card-content{
-        img{
+    ion-card-content {
+        img {
             width: 70%;
             height: 70%;
             display: block;

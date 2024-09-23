@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Asistencias</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="menu"></ion-back-button>
@@ -7,7 +7,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="white-background">
+
   <!--ARQUITECTURA-->
   <ion-item>
     <ion-label>
@@ -18,42 +19,44 @@
       <ion-icon slot="end" name="chevron-up-outline" color="primary" *ngIf="permitir1"></ion-icon>
     </ion-button>
   </ion-item>
-  <ion-text color="primary" *ngIf="permitir1">
-    <h1>Mi Asistencia</h1>
-    <ion-list>
-      <ion-item *ngFor="let asistencia of asistenciaArq  | slice:0:2"><!--El slice permite mostrar en este caso desde el primer dato al segundo, si utilizas el mismo numero en ambos lados no muestra ningun dato-->
-        <ion-label>
-          <h2>{{ asistencia.asignatura }}</h2>
-          <p>Fecha: {{ asistencia.fecha }}</p>
-          <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
-        </ion-label>
-      </ion-item>
-      <ion-button class="verMas" fill="outline" shape="round" color="success" (click)="verModal1()">
-        ver mas
-      </ion-button>
-      <ion-modal [isOpen]="modal1">
-        <ng-template>
-          <ion-header>
-            <ion-toolbar>
-              <ion-title>Arquitectura</ion-title>
-              <ion-buttons slot="end">
-                <ion-button (click)="verModal1()" color="primary">Cerrar</ion-button>
-              </ion-buttons>
-            </ion-toolbar>
-          </ion-header>
-          <ion-content>
-            <ion-item *ngFor="let asistencia of asistenciaArq ">
+  
+  <ion-list *ngIf="permitir1">
+    <h1 class="ion-text-center">Mi Asistencia</h1>
+    <ion-item *ngFor="let asistencia of asistenciaArq | slice:0:2">
+      <ion-label>
+        <h2>{{ asistencia.asignatura }}</h2>
+        <p>Fecha: {{ asistencia.fecha }}</p>
+        <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
+      </ion-label>
+    </ion-item>
+    <ion-button class="verMas" fill="outline" shape="round" color="warning" (click)="verModal1()">
+      ver mas
+    </ion-button>
+    <ion-modal [isOpen]="modal1">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar color="primary">
+            <ion-title>Arquitectura</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="verModal1()">Cerrar</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="white-background">
+          <ion-list>
+            <ion-item *ngFor="let asistencia of asistenciaArq">
               <ion-label>
                 <h2>{{ asistencia.asignatura }}</h2>
                 <p>Fecha: {{ asistencia.fecha }}</p>
                 <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
               </ion-label>
             </ion-item>
-          </ion-content>
-        </ng-template>
-      </ion-modal>      
-    </ion-list>
-  </ion-text>
+          </ion-list>
+        </ion-content>
+      </ng-template>
+    </ion-modal>      
+  </ion-list>
+
   <!--CALIDAD DE SOFTWARE-->
   <ion-item>
     <ion-label>
@@ -64,42 +67,44 @@
       <ion-icon slot="end" name="chevron-up-outline" color="primary" *ngIf="permitir2"></ion-icon>
     </ion-button>
   </ion-item>
-  <ion-text color="primary" *ngIf="permitir2">
-    <h1>Mi Asistencia</h1>
-    <ion-list>
-      <ion-item *ngFor="let asistencia of asistenciaCDS | slice:0:2">
-        <ion-label>
-          <h2>{{ asistencia.asignatura }}</h2>
-          <p>Fecha: {{ asistencia.fecha }}</p>
-          <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
-        </ion-label>
-      </ion-item>    
-      <ion-button class="verMas" fill="outline" shape="round" color="success" (click)="verModal2()">
-        ver mas
-      </ion-button> 
-      <ion-modal [isOpen]="modal2">
-        <ng-template>
-          <ion-header>
-            <ion-toolbar>
-              <ion-title>Calidad De Software</ion-title>
-              <ion-buttons slot="end">
-                <ion-button (click)="verModal2()" color="primary">Cerrar</ion-button>
-              </ion-buttons>
-            </ion-toolbar>
-          </ion-header>
-          <ion-content>
-            <ion-item *ngFor="let asistencia of asistenciaCDS ">
+  
+  <ion-list *ngIf="permitir2">
+    <h1 class="ion-text-center">Mi Asistencia</h1>
+    <ion-item *ngFor="let asistencia of asistenciaCDS | slice:0:2">
+      <ion-label>
+        <h2>{{ asistencia.asignatura }}</h2>
+        <p>Fecha: {{ asistencia.fecha }}</p>
+        <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
+      </ion-label>
+    </ion-item>    
+    <ion-button class="verMas" fill="outline" shape="round" color="warning" (click)="verModal2()">
+      ver mas
+    </ion-button>
+    <ion-modal [isOpen]="modal2">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar color="primary">
+            <ion-title>Calidad De Software</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="verModal2()">Cerrar</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="white-background">
+          <ion-list>
+            <ion-item *ngFor="let asistencia of asistenciaCDS">
               <ion-label>
                 <h2>{{ asistencia.asignatura }}</h2>
                 <p>Fecha: {{ asistencia.fecha }}</p>
                 <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
               </ion-label>
             </ion-item>
-          </ion-content>
-        </ng-template>
-      </ion-modal>      
-    </ion-list>
-  </ion-text>
+          </ion-list>
+        </ion-content>
+      </ng-template>
+    </ion-modal>      
+  </ion-list>
+
   <!--ESTADÍSTICA DESCRIPTIVA-->
   <ion-item>
     <ion-label>
@@ -110,43 +115,45 @@
       <ion-icon slot="end" name="chevron-up-outline" color="primary" *ngIf="permitir3"></ion-icon>
     </ion-button>
   </ion-item>
-  <ion-text color="primary" *ngIf="permitir3">
-    <h1>Mi Asistencia</h1>
-    <ion-list>
-      <ion-item *ngFor="let asistencia of asistenciaED | slice:0:2">
-        <ion-label>
-          <h2>{{ asistencia.asignatura }}</h2>
-          <p>Fecha: {{ asistencia.fecha }}</p>
-          <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
-        </ion-label>
-      </ion-item>    
-      <ion-button class="verMas" fill="outline" shape="round" color="success" (click)="verModal3()">
-        ver mas
-      </ion-button>
-      <ion-modal [isOpen]="modal3">
-        <ng-template>
-          <ion-header>
-            <ion-toolbar>
-              <ion-title>Estadística Descriptiva</ion-title>
-              <ion-buttons slot="end">
-                <ion-button (click)="verModal3()" color="primary">Cerrar</ion-button>
-              </ion-buttons>
-            </ion-toolbar>
-          </ion-header>
-          <ion-content>
-            <ion-item *ngFor="let asistencia of asistenciaED ">
+  
+  <ion-list *ngIf="permitir3">
+    <h1 class="ion-text-center">Mi Asistencia</h1>
+    <ion-item *ngFor="let asistencia of asistenciaED | slice:0:2">
+      <ion-label>
+        <h2>{{ asistencia.asignatura }}</h2>
+        <p>Fecha: {{ asistencia.fecha }}</p>
+        <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
+      </ion-label>
+    </ion-item>    
+    <ion-button class="verMas" fill="outline" shape="round" color="warning" (click)="verModal3()">
+      ver mas
+    </ion-button>
+    <ion-modal [isOpen]="modal3">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar color="primary">
+            <ion-title>Estadística Descriptiva</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="verModal3()">Cerrar</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="white-background">
+          <ion-list>
+            <ion-item *ngFor="let asistencia of asistenciaED">
               <ion-label>
                 <h2>{{ asistencia.asignatura }}</h2>
                 <p>Fecha: {{ asistencia.fecha }}</p>
                 <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
               </ion-label>
             </ion-item>
-          </ion-content>
-        </ng-template>
-      </ion-modal>       
-    </ion-list>
-  </ion-text>
-  <!--ETICA PARA EL TRABAJO-->
+          </ion-list>
+        </ion-content>
+      </ng-template>
+    </ion-modal>       
+  </ion-list>
+
+  <!--ÉTICA PARA EL TRABAJO-->
   <ion-item>
     <ion-label>
       <h2>Ética Para El Trabajo</h2>
@@ -156,135 +163,137 @@
       <ion-icon slot="end" name="chevron-up-outline" color="primary" *ngIf="permitir4"></ion-icon>
     </ion-button>
   </ion-item>
-  <ion-text color="primary" *ngIf="permitir4">
-    <h1>Mi Asistencia</h1>
-    <ion-list>
-      <ion-item *ngFor="let asistencia of asistenciaEPET | slice:0:2">
-        <ion-label>
-          <h2>{{ asistencia.asignatura }}</h2>
-          <p>Fecha: {{ asistencia.fecha }}</p>
-          <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
-        </ion-label>
-      </ion-item>    
-      <ion-button class="verMas" fill="outline" shape="round" color="success" (click)="verModal4()">
-        ver mas
-      </ion-button>     
-      <ion-modal [isOpen]="modal4">
-        <ng-template>
-          <ion-header>
-            <ion-toolbar>
-              <ion-title>Ética Para El Trabajo</ion-title>
-              <ion-buttons slot="end">
-                <ion-button (click)="verModal4()" color="primary">Cerrar</ion-button>
-              </ion-buttons>
-            </ion-toolbar>
-          </ion-header>
-          <ion-content>
-            <ion-item *ngFor="let asistencia of asistenciaEPET ">
+  
+  <ion-list *ngIf="permitir4">
+    <h1 class="ion-text-center">Mi Asistencia</h1>
+    <ion-item *ngFor="let asistencia of asistenciaEPET | slice:0:2">
+      <ion-label>
+        <h2>{{ asistencia.asignatura }}</h2>
+        <p>Fecha: {{ asistencia.fecha }}</p>
+        <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
+      </ion-label>
+    </ion-item>    
+    <ion-button class="verMas" fill="outline" shape="round" color="warning" (click)="verModal4()">
+      ver mas
+    </ion-button>
+    <ion-modal [isOpen]="modal4">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar color="primary">
+            <ion-title>Ética Para El Trabajo</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="verModal4()">Cerrar</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="white-background">
+          <ion-list>
+            <ion-item *ngFor="let asistencia of asistenciaEPET">
               <ion-label>
                 <h2>{{ asistencia.asignatura }}</h2>
                 <p>Fecha: {{ asistencia.fecha }}</p>
                 <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
               </ion-label>
             </ion-item>
-          </ion-content>
-        </ng-template>
-      </ion-modal>  
-    </ion-list>
-  </ion-text>
-  <!--INGLES INTERMEDIO-->
+          </ion-list>
+        </ion-content>
+      </ng-template>
+    </ion-modal>  
+  </ion-list>
+
+  <!--INGLÉS INTERMEDIO-->
   <ion-item>
     <ion-label>
-      <h2>Ingles Intermedio</h2>
+      <h2>Inglés Intermedio</h2>
     </ion-label>  
     <ion-button fill="clear" (click)="mostrar5()" slot="end">
       <ion-icon slot="end" name="chevron-down-outline" color="primary" *ngIf="!permitir5"></ion-icon>
       <ion-icon slot="end" name="chevron-up-outline" color="primary" *ngIf="permitir5"></ion-icon>
     </ion-button>
   </ion-item>
-  <ion-text color="primary" *ngIf="permitir5">
-    <h1>Mi Asistencia</h1>
-    <ion-list>
-      <ion-item *ngFor="let asistencia of asistenciaII | slice:0:2">
-        <ion-label>
-          <h2>{{ asistencia.asignatura }}</h2>
-          <p>Fecha: {{ asistencia.fecha }}</p>
-          <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
-        </ion-label>
-      </ion-item>      
-    </ion-list>
-    <ion-button class="verMas" fill="outline" shape="round" color="success" (click)="verModal5()">
+  
+  <ion-list *ngIf="permitir5">
+    <h1 class="ion-text-center">Mi Asistencia</h1>
+    <ion-item *ngFor="let asistencia of asistenciaII | slice:0:2">
+      <ion-label>
+        <h2>{{ asistencia.asignatura }}</h2>
+        <p>Fecha: {{ asistencia.fecha }}</p>
+        <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
+      </ion-label>
+    </ion-item>    
+    <ion-button class="verMas" fill="outline" shape="round" color="warning" (click)="verModal5()">
       ver mas
-    </ion-button>   
+    </ion-button>
     <ion-modal [isOpen]="modal5">
       <ng-template>
         <ion-header>
-          <ion-toolbar>
-            <ion-title>Ingles Intermedio</ion-title>
+          <ion-toolbar color="primary">
+            <ion-title>Inglés Intermedio</ion-title>
             <ion-buttons slot="end">
-              <ion-button (click)="verModal5()" color="primary">Cerrar</ion-button>
+              <ion-button (click)="verModal5()">Cerrar</ion-button>
             </ion-buttons>
           </ion-toolbar>
         </ion-header>
-        <ion-content>
-          <ion-item *ngFor="let asistencia of asistenciaII">
-            <ion-label>
-              <h2>{{ asistencia.asignatura }}</h2>
-              <p>Fecha: {{ asistencia.fecha }}</p>
-              <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
-            </ion-label>
-          </ion-item>
-        </ion-content>
-      </ng-template>
-    </ion-modal>  
-  </ion-text>
-  <!--PROCESO DE PORTAFOLIO-->
-  <ion-item>
-    <ion-label>
-      <h2>Proceso De Portafolio</h2>
-    </ion-label>  
-    <ion-button fill="clear" (click)="mostrar6()" slot="end">
-      <ion-icon slot="end" name="chevron-down-outline" color="primary" *ngIf="!permitir6"></ion-icon>
-      <ion-icon slot="end" name="chevron-up-outline" color="primary" *ngIf="permitir6"></ion-icon>
-    </ion-button>
-  </ion-item>
-  <ion-text color="primary" *ngIf="permitir6">
-    <h1>Proceso De Portafolio</h1>
-    <ion-list>
-      <ion-item *ngFor="let asistencia of asistenciaPDP | slice:0:2">
-        <ion-label>
-          <h2>{{ asistencia.asignatura }}</h2>
-          <p>Fecha: {{ asistencia.fecha }}</p>
-          <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
-        </ion-label>
-      </ion-item>    
-      <ion-button class="verMas" fill="outline" shape="round" color="success" (click)="verModal6()">
-        ver mas
-      </ion-button>
-      <ion-modal [isOpen]="modal6">
-        <ng-template>
-          <ion-header>
-            <ion-toolbar>
-              <ion-title>Proceso De Portafolio</ion-title>
-              <ion-buttons slot="end">
-                <ion-button (click)="verModal6()" color="primary">Cerrar</ion-button>
-              </ion-buttons>
-            </ion-toolbar>
-          </ion-header>
-          <ion-content>
-            <ion-item *ngFor="let asistencia of asistenciaPDP ">
+        <ion-content class="white-background">
+          <ion-list>
+            <ion-item *ngFor="let asistencia of asistenciaII">
               <ion-label>
                 <h2>{{ asistencia.asignatura }}</h2>
                 <p>Fecha: {{ asistencia.fecha }}</p>
                 <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
               </ion-label>
             </ion-item>
-          </ion-content>
-        </ng-template>
-      </ion-modal>  
-      
-    </ion-list>
-  </ion-text>
-  
+          </ion-list>
+        </ion-content>
+      </ng-template>
+    </ion-modal>  
+  </ion-list>
+<!--PROCESO DE PORTAFOLIO-->
+<ion-item>
+  <ion-label>
+    <h2>Proceso De Portafolio</h2>
+  </ion-label>  
+  <ion-button fill="clear" (click)="mostrar6()" slot="end">
+    <ion-icon slot="end" name="chevron-down-outline" color="primary" *ngIf="!permitir6"></ion-icon>
+    <ion-icon slot="end" name="chevron-up-outline" color="primary" *ngIf="permitir6"></ion-icon>
+  </ion-button>
+</ion-item>
 
-</ion-content>
+<ion-list *ngIf="permitir6">
+  <h1 class="ion-text-center">Mi Asistencia</h1>
+  <ion-item *ngFor="let asistencia of asistenciaPDP | slice:0:2">
+    <ion-label>
+      <h2>{{ asistencia.asignatura }}</h2>
+      <p>Fecha: {{ asistencia.fecha }}</p>
+      <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
+    </ion-label>
+  </ion-item>    
+  <ion-button class="verMas" fill="outline" shape="round" color="warning" (click)="verModal6()">
+    ver más
+  </ion-button>
+</ion-list>
+
+<ion-modal [isOpen]="modal6">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Proceso De Portafolio</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="verModal6()">Cerrar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="white-background">
+      <ion-list>
+        <ion-item *ngFor="let asistencia of asistenciaPDP">
+          <ion-label>
+            <h2>{{ asistencia.asignatura }}</h2>
+            <p>Fecha: {{ asistencia.fecha }}</p>
+            <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+

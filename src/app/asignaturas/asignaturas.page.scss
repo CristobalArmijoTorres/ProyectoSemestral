@@ -1,0 +1,50 @@
+.background-white {
+  --background: #ffffff;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: black; /* Cambia el color del encabezado a negro */
+}
+
+.modal-content {
+  color: black; /* Cambia el color del texto en todo el contenido del modal a negro */
+}
+
+/* Establecer un tamaño fijo para los cuadros de la grilla */
+.asignatura-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.asignatura-box {
+  width: 100%;
+  height: 100%;
+  background-color: #f4f80c; 
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.asignatura-box:hover {
+  transform: scale(1.05);
+}
+
+.asignatura-nombre {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.detalles-button {
+  font-size: 14px;
+  color: var(--ion-color-primary);
+}

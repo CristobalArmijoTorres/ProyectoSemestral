@@ -6,50 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./asignaturas.page.scss'],
 })
 export class AsignaturasPage implements OnInit {
-  mostrar=false;
-  mostrar2=false;
-  mostrar3=false;
-  mostrar4=false;
-  mostrar5=false;
-  mostrar6=false;
-  permitir: Boolean = false;
   asignaturas = [
-    { nombre: "PGY4121", nota: 39.55},
-    { nombre: "mdy5001", nota: 45 },
-    { nombre: "BDY5001", nota: 55 },
-  ]
+    { nombre: "Arquitectura", codigo: "PGY4121", profesor: "Dr. Juan Pérez", contenido: "Ejemplo de una ventana modal para Arquitectura", mostrarModal: false },
+    { nombre: "Calidad De Software", codigo: "MDY5001", profesor: "Ana Gómez", contenido: "Ejemplo de una ventana modal para Calidad De Software", mostrarModal: false },
+    { nombre: "Estadística Descriptiva", codigo: "EDY5001", profesor: "Carlos López", contenido: "Ejemplo de una ventana modal para Estadística Descriptiva", mostrarModal: false },
+    { nombre: "Ética Para El Trabajo", codigo: "ETI4001", profesor: "Sofía Torres", contenido: "Ejemplo de una ventana modal para Ética Para El Trabajo", mostrarModal: false },
+    { nombre: "Inglés Intermedio", codigo: "ING3001", profesor: "Laura Martínez", contenido: "Ejemplo de una ventana modal para Inglés Intermedio", mostrarModal: false },
+    { nombre: "Proceso De Portafolio", codigo: "PDP6001", profesor: "Marco Díaz", contenido: "Ejemplo de una ventana modal para Proceso De Portafolio", mostrarModal: false },
+  ];
+
   constructor() { }
 
-  ngOnInit() {
-  }
-  //forma modal
-  verModal1()
-  {
-    this.mostrar = !this.mostrar;
-  }
-  verModal2()
-  {
-    this.mostrar2 = !this.mostrar2;
-  }
-  verModal3()
-  {
-    this.mostrar3 = !this.mostrar3;
-  }
-  verModal4()
-  {
-    this.mostrar4 = !this.mostrar4;
-  }
-  verModal5()
-  {
-    this.mostrar5 = !this.mostrar5;
-  }
-  verModal6()
-  {
-    this.mostrar6 = !this.mostrar6;
-  }
-  //forma 2
-  mostrar1()
-  {
-    this.permitir = !this.permitir;
+  ngOnInit() { }
+
+  verModal(asignatura: any) {
+    asignatura.mostrarModal = !asignatura.mostrarModal;
   }
 }

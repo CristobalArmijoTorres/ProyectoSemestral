@@ -1,29 +1,30 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>DuocUC</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-
+<ion-content [fullscreen]="true" class="background-white">
   <ion-card>
     <ion-card-header>
       <h1>Iniciar Sesión</h1>
     </ion-card-header>
     <ion-card-content>
-        <!--USUARIO-->  
-        <label>Usuario: </label>
-        <ion-input type="text" placeholder="Ingrese su Usuario" [(ngModel)] = "usuarioIngresado"></ion-input>
-        <!--CONTRASEÑA-->
-        <label>Clave: </label>
-        <ion-input type="password" placeholder="Ingrese la clave" [(ngModel)] = "claveIngresada"></ion-input>
-        <!--BOTON-->
-        <ion-button shape="round" fill="outline" (click) = "ingresar()">Aceptar</ion-button>
-        <br>
-        <ion-button fill="clear"  (click)="funcionAlerta()">
-          Olvidé mi contraseña
-        </ion-button>
+      <!--USUARIO-->  
+      <label>Usuario: </label>
+      <ion-input type="text" placeholder="Ingrese su Usuario" [(ngModel)]="usuarioIngresado"></ion-input>
+
+      <!--CONTRASEÑA-->
+      <label>Clave: </label>
+      <ion-input type="password" placeholder="Ingrese la clave" [(ngModel)]="claveIngresada"></ion-input>
+
+      <!--BOTON Olvidé mi contraseña-->
+      <ion-button fill="clear" (click)="funcionAlerta()">
+        Olvidé mi contraseña
+      </ion-button>
+
+      <!--BOTON Aceptar-->
+      <ion-button shape="round" fill="outline" (click)="ingresar()">Aceptar</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
-

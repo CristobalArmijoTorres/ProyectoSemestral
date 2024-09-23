@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Registrar Asistencia</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="menu"></ion-back-button>
@@ -7,37 +7,35 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-    <h1>Registrar Asistencia</h1>
-    <h6>Al seleccionar el botón de generar QR podras registrar tu asistencia</h6>
-    <ion-button shape="round" size="large" color="success" (click)="verModal()">Generar QR 
-        <ion-icon slot="end" name="qr-code-outline" color="light"></ion-icon>
-    </ion-button>
-    <ion-modal [isOpen]="mostrar">
-      <ng-template>
-        <ion-header>
-          <ion-toolbar>
-            <ion-title>Código QR</ion-title>
-            <ion-buttons slot="end">
-              <ion-button (click)="verModal()" color="primary">Cerrar</ion-button>
-            </ion-buttons>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content class="ion-padding">
-          <p>Escanear el siguiente QR para registrar su asistencia su asistencia </p>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>Código QR</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              <img src="assets/CodigoQR.png" alt="QR para registrar asistencia">
-            </ion-card-content>
-          </ion-card>
-          
-          
-          
-        </ion-content>
-      </ng-template>
-    </ion-modal>
-
+<ion-content class="ion-padding white-background">
+  <h1 class="black-text">Registrar Asistencia</h1>
+  <h6 class="black-text">Al seleccionar el botón de generar QR podrás registrar tu asistencia</h6>
+  <ion-button shape="round" size="large" color="success" (click)="verModal()">
+    Generar QR 
+    <ion-icon slot="end" name="qr-code-outline" color="light"></ion-icon>
+  </ion-button>
+  
+  <ion-modal [isOpen]="mostrar">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Código QR</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="verModal()">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p class="black-text">Escanear el siguiente QR para registrar su asistencia</p>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Código QR</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <img src="assets/CodigoQR.png" alt="QR para registrar asistencia">
+          </ion-card-content>
+        </ion-card>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>

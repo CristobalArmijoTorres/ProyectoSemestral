@@ -9,12 +9,11 @@ import { NavController, AlertController } from '@ionic/angular';
 export class MenuPage implements OnInit {
   usuario = 'Usuario1';
 
-  constructor(private navController: NavController,  
-              private alertController: AlertController) { }  
+  constructor(private navController: NavController,private alertController: AlertController) { }  
 
   ngOnInit() {}
 
-  // Función para mostrar la alerta
+  // Aqui se muestra la alerta de cerrar sesion
   async confirmLogout() {
     const alert = await this.alertController.create({
       header: 'Confirmación',  
@@ -32,7 +31,10 @@ export class MenuPage implements OnInit {
         }
       ]
     });
-
     await alert.present();  
+
+
+
+    
   }
 }
