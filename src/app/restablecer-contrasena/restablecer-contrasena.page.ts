@@ -54,7 +54,7 @@ export class RestablecerContrasenaPage implements OnInit {
     }
     else {
       const toast = await this.toastController.create({
-        message: 'Ingresando......',
+        message: 'Cambiando contraseña......',
         duration: 3000,
         position: "middle",
         color: "success",
