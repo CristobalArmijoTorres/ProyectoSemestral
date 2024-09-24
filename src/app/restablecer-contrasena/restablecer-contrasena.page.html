@@ -15,19 +15,17 @@
     <ion-card-content>
       <!--USUARIO-->  
       <label>Email: </label>
-      <ion-input type="Email" placeholder="Ingrese su Email" [(ngModel)] = 'email1' ></ion-input>
+      <ion-input type="Email" placeholder="Ingrese su Email" [(ngModel)]="email1"></ion-input>
       <!--CONTRASEÑA-->
       <label>Nueva Contraseña: </label>
-      <ion-input type="password" placeholder="Ingrese la clave" [(ngModel)] = 'claveIngresada1' ></ion-input>
+      <ion-input type="password" placeholder="Ingrese la clave" [(ngModel)]="claveIngresada1"></ion-input>
       
       <label>Repita la Contraseña: </label>
-      <ion-input type="password" placeholder="Ingrese la clave" [(ngModel)] = 'claveIngresada2' ></ion-input>
+      <ion-input type="password" placeholder="Ingrese la clave" [(ngModel)]="claveIngresada2"></ion-input>
       
       <!--BOTON-->
-      <ion-button shape="round" fill="outline" (click) = "ingresar()">Aceptar</ion-button>
+      <ion-button shape="round" fill="outline" (click)="ingresar()">Aceptar</ion-button>
       <br>
     </ion-card-content>
   </ion-card>
-
 </ion-content>
-

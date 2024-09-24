@@ -47,7 +47,7 @@ export class HomePage{
     {
       const toast = await this.toastController.create({
         message:'Ingresando......' ,
-        duration: 3000,
+        duration: 1000,
         position:"middle", 
         color : "success",
       });

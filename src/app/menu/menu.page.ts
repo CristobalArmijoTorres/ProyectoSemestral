@@ -9,32 +9,31 @@ import { NavController, AlertController } from '@ionic/angular';
 export class MenuPage implements OnInit {
   usuario = 'Usuario1';
 
-  constructor(private navController: NavController,private alertController: AlertController) { }  
+  // Imagen única
+  image: string = 'assets/slide1.png'; // Cambia esto por la imagen que desees mostrar
+
+  constructor(private navController: NavController, private alertController: AlertController) { }
 
   ngOnInit() {}
 
-  // Aqui se muestra la alerta de cerrar sesion
+  // Método para confirmar el cierre de sesión
   async confirmLogout() {
     const alert = await this.alertController.create({
-      header: 'Confirmación',  
-      message: '¿Está seguro que desea salir?', 
+      header: 'Confirmación',
+      message: '¿Está seguro que desea salir?',
       buttons: [
         {
-          text: 'Cancelar', 
+          text: 'Cancelar',
           role: 'cancel'
         },
         {
-          text: 'Aceptar',  
+          text: 'Aceptar',
           handler: () => {
-            this.navController.navigateRoot(['/home']);  // Redirigir a Home y root para que no pueda devolverse, en teoria
+            this.navController.navigateRoot(['/home']); // Redirigir a Home
           }
         }
       ]
     });
-    await alert.present();  
-
-
-
-    
+    await alert.present();
   }
 }

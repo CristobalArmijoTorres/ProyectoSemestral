@@ -5,8 +5,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content class=" menu-content white-background">
-
+  <ion-content class="menu-content white-background">
     <ion-list>
       <!-- Mis asignaturas -->
       <ion-item routerLink="/credencial">
@@ -58,7 +57,7 @@
 </ion-menu>
 
 <!-- Main Content -->
-<div class="ion-page" id="main-content">
+<div class="ion-page white-background" id="main-content">
   <ion-header>
     <ion-toolbar color="primary">
       <ion-buttons slot="start">
@@ -68,12 +67,32 @@
     </ion-toolbar>
   </ion-header>
   
-  
-
   <ion-content class="ion-padding background-white">
     <ion-text color="primary">    
       <h1>Bienvenido, {{ usuario }}!</h1>
+      <p>Estás accediendo a tu portal personal de DuocUC. Aquí podrás gestionar tus asignaturas, registrar tu asistencia y más.</p>
     </ion-text>
+
+    <!-- Imagen única -->
+    <div class="bienvenida">
+      <img [src]="image" class="carousel-image" alt="Imagen de bienvenida">
+    </div>
+
+    <!-- Sección de enlaces externos -->
+    <div class="external-links">
+      <ion-item lines="none">
+        <ion-icon slot="start" name="logo-instagram" color="primary"></ion-icon>
+        <ion-label>
+          <a href="https://www.instagram.com/duocplazaoeste/" target="_blank">Instagram Duoc Plaza Oeste</a>
+        </ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="globe-outline" color="primary"></ion-icon>
+        <ion-label>
+          <a href="https://www.duoc.cl/" target="_blank">Sitio Web Duoc</a>
+        </ion-label>
+      </ion-item>
+    </div>
   </ion-content>
 </div>
-

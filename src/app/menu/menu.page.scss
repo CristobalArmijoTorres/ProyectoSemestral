@@ -1,37 +1,30 @@
 .menu-content {
-    --background: linear-gradient(to bottom, #ffffff, #f3f3f3);
-  }
-  
-  .user-info {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .user-info ion-avatar {
-    width: 80px;
-    height: 80px;
-    margin: auto;
-  }
-  
-  ion-avatar img {
-    border-radius: 50%;
-  }
-  
-  ion-title {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-  }
+  --background: linear-gradient(to bottom, #ffffff, #f3f3f3);
+}
+
+.bienvenida {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* Altura de la imagen */
+  margin: 10px 0; /* Espaciado */
+}
+
+.carousel-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.external-links {
+  margin-top: 20px;
+  padding: 10px; /* Agregado para mejor espaciado */
+}
+
+.external-links ion-item {
+  margin-bottom: 10px; /* Espaciado entre los enlaces */
+}
 
 .background-white {
   --background: #ffffff;
   background-color: #ffffff; /* Para asegurarte de que el fondo se muestre como blanco */
 }
-
-
-
-
-
-  
-  
