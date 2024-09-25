@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ToastController, NavController, AlertController } from '@ionic/angular';
-//el NavController sirve para redirigirte a la pagina siempre y cuando los datos sean correctos
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -52,7 +52,7 @@ export class HomePage{
         color : "success",
       });
       await toast.present();
-      this.navCtrol.navigateForward('/menu');//aqui va a ir donde se va a dirigir al validar los datos 
+      this.navCtrol.navigateForward('/menu');
     }
   }
 

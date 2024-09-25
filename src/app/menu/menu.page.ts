@@ -9,14 +9,13 @@ import { NavController, AlertController } from '@ionic/angular';
 export class MenuPage implements OnInit {
   usuario = 'Usuario1';
 
-  // Imagen única
-  image: string = 'assets/slide1.png'; // Cambia esto por la imagen que desees mostrar
+  // Imagen 
+  image: string = 'assets/slide1.png'; 
 
   constructor(private navController: NavController, private alertController: AlertController) { }
 
   ngOnInit() {}
 
-  // Método para confirmar el cierre de sesión
   async confirmLogout() {
     const alert = await this.alertController.create({
       header: 'Confirmación',
@@ -29,7 +28,7 @@ export class MenuPage implements OnInit {
         {
           text: 'Aceptar',
           handler: () => {
-            this.navController.navigateRoot(['/home']); // Redirigir a Home
+            this.navController.navigateRoot(['/home']); 
           }
         }
       ]

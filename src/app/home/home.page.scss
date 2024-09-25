@@ -3,9 +3,7 @@ ion-card {
   --color: black;
   margin: 40px;
   ion-card-header{
-    h1{
-      text-align: center;
-    }
+    h1{text-align: center;}
   }
   ion-button{
     display: grid;
@@ -18,7 +16,7 @@ ion-card {
 
 .background-white {
   --background: #ffffff;
-  background-color: #ffffff; /* Para asegurarte de que el fondo se muestre como blanco */
+  background-color: #ffffff; 
 }
 
 

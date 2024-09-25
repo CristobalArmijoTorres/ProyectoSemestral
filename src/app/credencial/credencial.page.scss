@@ -1,31 +1,31 @@
 .credencial-container {
   text-align: center;
   margin-top: 20px;
-  background-color: #f4f80c; /* Fondo oscuro para resaltar el contenido */
-  border-radius: 12px; /* Bordes redondeados */
-  padding: 20px; /* Espaciado interno */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+  background-color: #f4f80c; 
+  border-radius: 12px; 
+  padding: 20px; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
 }
 
 h2 {
-  font-size: 1.8rem; /* Aumentar tamaño del título */
+  font-size: 1.8rem; 
   margin-bottom: 10px;
   font-weight: bold;
-  color: black; /* Texto en blanco */
+  color: black; 
 }
 
 .rut {
-  font-size: 1.5rem; /* Aumentar tamaño del RUT */
-  color: black; /* Texto en blanco */
+  font-size: 1.5rem; 
+  color: black; 
   margin-bottom: 20px;
 }
 
-.school, .career {
-  font-size: 1.2rem; /* Tamaño de fuente uniforme */
-  color: black; /* Texto en blanco */
-  margin-bottom: 10px; /* Espacio entre elementos */
+.escuela, .carrera {
+  font-size: 1.2rem; 
+  color: black; 
+  margin-bottom: 10px; 
 }
 
 ion-content {
-  --background: white; /* Mantener fondo blanco */
+  --background: white; 
 }

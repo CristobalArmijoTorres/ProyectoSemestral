@@ -51,7 +51,7 @@ export class RestablecerContrasenaPage implements OnInit {
       });
       await toast.present();
     } else {
-      // Aquí se muestra la alerta indicando que la clave fue cambiada
+      // Alerta indicando que la clave fue cambiada
       const alert = await this.alertController.create({
         header: 'Éxito',
         message: 'La clave fue cambiada correctamente.',

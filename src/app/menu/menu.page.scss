@@ -6,8 +6,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px; /* Altura de la imagen */
-  margin: 10px 0; /* Espaciado */
+  height: 300px;
+  margin: 10px 0; 
 }
 
 .carousel-image {
@@ -17,14 +17,14 @@
 
 .external-links {
   margin-top: 20px;
-  padding: 10px; /* Agregado para mejor espaciado */
+  padding: 10px; 
 }
 
 .external-links ion-item {
-  margin-bottom: 10px; /* Espaciado entre los enlaces */
+  margin-bottom: 10px; 
 }
 
 .background-white {
   --background: #ffffff;
-  background-color: #ffffff; /* Para asegurarte de que el fondo se muestre como blanco */
+  background-color: #ffffff; 
 }

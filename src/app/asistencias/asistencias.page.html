@@ -260,19 +260,18 @@
 </ion-item>
 
 <ion-list *ngIf="permitir6">
-  <h1 class="ion-text-center">Mi Asistencia</h1>
-  <ion-item *ngFor="let asistencia of asistenciaPDP | slice:0:2">
-    <ion-label>
-      <h2>{{ asistencia.asignatura }}</h2>
-      <p>Fecha: {{ asistencia.fecha }}</p>
-      <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
-    </ion-label>
-  </ion-item>    
-  <ion-button class="verMas" fill="outline" shape="round" color="warning" (click)="verModal6()">
-    ver más
-  </ion-button>
-</ion-list>
-
+    <h1 class="ion-text-center">Mi Asistencia</h1>
+    <ion-item *ngFor="let asistencia of asistenciaPDP | slice:0:2">
+      <ion-label>
+        <h2>{{ asistencia.asignatura }}</h2>
+        <p>Fecha: {{ asistencia.fecha }}</p>
+        <p>Estado: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
+      </ion-label>
+    </ion-item>    
+    <ion-button class="verMas" fill="outline" shape="round" color="warning" (click)="verModal6()">
+      ver más
+    </ion-button>
+  </ion-list>
 <ion-modal [isOpen]="modal6">
   <ng-template>
     <ion-header>
@@ -296,4 +295,9 @@
     </ion-content>
   </ng-template>
 </ion-modal>
+
+
+
+
+
 

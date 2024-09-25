@@ -8,10 +8,8 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="background-white">
-  <!-- Cambiamos de ion-list a ion-grid -->
   <ion-grid>
     <ion-row>
-      <!-- Iteramos sobre las asignaturas -->
       <ion-col size="6" *ngFor="let asignatura of asignaturas" class="asignatura-col">
         <div class="asignatura-box" (click)="verModal(asignatura)" style="cursor: pointer;">
           <ion-label class="asignatura-nombre">{{ asignatura.nombre }}</ion-label>
