@@ -19,7 +19,7 @@ export class HomePage{
   async funcionAlerta()
   {
     const alert = await this.alertController.create({
-      header: "Olvidaste tu contraseña",
+      header: "¿Olvidaste tu contraseña?",
       subHeader: "Tranquilo, se enviara un mensaje a tu correo para recuperarla",
       message: "El mensaje se envio correctamente, ahora podras recuperar tu contraseña",
       buttons: ['Ok']
