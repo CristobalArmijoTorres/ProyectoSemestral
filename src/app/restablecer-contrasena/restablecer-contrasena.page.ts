@@ -15,6 +15,8 @@ export class RestablecerContrasenaPage implements OnInit {
   clave2 = '';
   claveIngresada1 = '';
   claveIngresada2 = '';
+  claveActual = '';
+  claveA = '';
 
   constructor(private toastController: ToastController, private alertController: AlertController) { }
 
