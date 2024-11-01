@@ -41,10 +41,12 @@ export class HomePage{
         color : "danger",
       });
       await toast.present();
-
+      
     }
     else
     {
+      //LOCALSTORAGE IR A INSPECCIONAR Y SELECCIONAR APPLICATION
+      localStorage.setItem(this.usuarioIngresado, this.claveIngresada);
       const toast = await this.toastController.create({
         message:'Ingresando......' ,
         duration: 1000,
