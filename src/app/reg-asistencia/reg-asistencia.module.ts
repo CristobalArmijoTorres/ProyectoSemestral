@@ -8,8 +8,10 @@ import { RegAsistenciaPageRoutingModule } from './reg-asistencia-routing.module'
 
 import { RegAsistenciaPage } from './reg-asistencia.page';
 
+import { QRCodeModule } from 'angularx-qrcode';
+
 @NgModule({
-  imports: [
+  imports: [QRCodeModule,
     CommonModule,
     FormsModule,
     IonicModule,

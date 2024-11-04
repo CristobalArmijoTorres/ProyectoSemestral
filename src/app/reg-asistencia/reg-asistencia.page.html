@@ -15,6 +15,9 @@
     <ion-icon slot="end" name="qr-code-outline" color="light"></ion-icon>
   </ion-button>
   
+
+  
+
   <ion-modal [isOpen]="mostrar">
     <ng-template>
       <ion-header>
@@ -31,8 +34,8 @@
           <ion-card-header>
             <ion-card-title>Código QR</ion-card-title>
           </ion-card-header>
-          <ion-card-content>
-            <img src="assets/CodigoQR.png" alt="QR para registrar asistencia">
+          <ion-card-content style="text-align: center; margin-top: 20px;">
+            <qrcode [qrdata]="qrData" [width]="400"></qrcode>
           </ion-card-content>
         </ion-card>
       </ion-content>
