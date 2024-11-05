@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ToastController, NavController, AlertController } from '@ionic/angular';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-home',
@@ -9,18 +10,13 @@ import { ToastController, NavController, AlertController } from '@ionic/angular'
 export class HomePage {
   usuarioIngresado = ''; 
   claveIngresada = '';
-  usuario = 'Usuario1';
-  clave = 'MiClav3';
-  usuarioProfe = 'Profesor1';
-  claveProfe = 'Profe123';
 
   constructor(
     private toastController: ToastController, 
     private navCtrol: NavController, 
-    private alertController: AlertController
+    private alertController: AlertController,
+    private userService: UserService
   ) {}
-
-  ngOnInit() {}
 
   async funcionAlerta() {
     const alert = await this.alertController.create({
@@ -33,40 +29,43 @@ export class HomePage {
   }
 
   async ingresar() {
-    this.usuarioIngresado = this.usuarioIngresado;
-    this.claveIngresada = this.claveIngresada;
+    this.userService.login(this.usuarioIngresado, this.claveIngresada).subscribe(
+      async (response) => {
+        if (response.success) {
+          localStorage.setItem('user', JSON.stringify(response.user));
+          
+          const toast = await this.toastController.create({
+            message: 'Ingresando...',
+            duration: 1000,
+            position: "middle", 
+            color: "success",
+          });
+          await toast.present();
 
-    // Validación para usuario normal
-    if (this.usuarioIngresado === this.usuario && this.claveIngresada === this.clave) {
-      localStorage.setItem(this.usuarioIngresado, this.claveIngresada);
-      const toast = await this.toastController.create({
-        message: 'Ingresando......',
-        duration: 1000,
-        position: "middle", 
-        color: "success",
-      });
-      await toast.present();
-      this.navCtrol.navigateForward('/menu');
-      
-    // Validación para usuario profesor
-    } else if (this.usuarioIngresado === this.usuarioProfe && this.claveIngresada === this.claveProfe) {
-      localStorage.setItem(this.usuarioIngresado, this.claveIngresada);
-      const toast = await this.toastController.create({
-        message: 'Ingresando.....',
-        duration: 1000,
-        position: "middle", 
-        color: "success",
-      });
-      await toast.present();
-      this.navCtrol.navigateForward('/menu-profe');  
-    } else {
-      const toast = await this.toastController.create({
-        message: 'El usuario o la contraseña ingresada no es correcta, Inténtalo nuevamente',
-        duration: 3000,
-        position: "middle", 
-        color: "danger",
-      });
-      await toast.present();
-    }
+          if (response.user.role === 'profesor') {
+            this.navCtrol.navigateForward('/menu-profe');
+          } else {
+            this.navCtrol.navigateForward('/menu');
+          }
+        } else {
+          const toast = await this.toastController.create({
+            message: 'El usuario o la contraseña ingresada no es correcta, inténtalo nuevamente',
+            duration: 3000,
+            position: "middle", 
+            color: "danger",
+          });
+          await toast.present();
+        }
+      },
+      async () => {
+        const toast = await this.toastController.create({
+          message: 'Hubo un error al conectar con el servidor, inténtalo nuevamente',
+          duration: 3000,
+          position: "middle", 
+          color: "danger",
+        });
+        await toast.present();
+      }
+    );
   }
 }

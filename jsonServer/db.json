@@ -1,10 +1,22 @@
 {
-  "users": [
-    { "id": 1, "user": "Usuario1", "clave": "MiClav3", " role": "alumno" },
-    { "id": 2, "user": "Profesor1", "clave": "Profe123", " role": "profesor" }
-  ],
-  "products": [
-    { "id": 1, "name": "Laptop", "price": 1200 },
-    { "id": 2, "name": "Smartphone", "price": 800 }
+  "usuarios": [
+    {
+      "id": 1,
+      "username": "Profesor1",
+      "password": "Profe123",
+      "role": "profesor"
+    },
+    {
+      "id": 3,
+      "username": "Cesar",
+      "password": "Cesar123",
+      "role": "estudiante"
+    },
+    {
+      "id": 2,
+      "username": "Usuario1",
+      "password": "MiClav3",
+      "role": "estudiante"
+    }
   ]
 }
