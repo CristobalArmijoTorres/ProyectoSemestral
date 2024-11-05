@@ -1,7 +1,7 @@
 {
   "users": [
-    { "id": 1, "name": "Juan", "email": "juan@example.com" },
-    { "id": 2, "name": "Maria", "email": "maria@example.com" }
+    { "id": 1, "user": "Usuario1", "clave": "MiClav3", " role": "alumno" },
+    { "id": 2, "user": "Profesor1", "clave": "Profe123", " role": "profesor" }
   ],
   "products": [
     { "id": 1, "name": "Laptop", "price": 1200 },
