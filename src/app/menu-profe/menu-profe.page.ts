@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController, AlertController } from '@ionic/angular'; 
 
 @Component({
   selector: 'app-menu-profe',
@@ -6,10 +7,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-profe.page.scss'],
 })
 export class MenuProfePage implements OnInit {
+  usuario = 'Usuario1';
 
-  constructor() { }
+  // Imagen 
+  image: string = 'assets/slide1.png'; 
 
-  ngOnInit() {
+  constructor(private navController: NavController, private alertController: AlertController) { }
+
+  ngOnInit() {}
+
+  async confirmLogout() {
+    const alert = await this.alertController.create({
+      header: 'Confirmación',
+      message: '¿Está seguro que desea salir?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel'
+        },
+        {
+          text: 'Aceptar',
+          handler: () => {
+            this.navController.navigateRoot(['/home']); 
+          }
+        }
+      ]
+    });
+    await alert.present();
   }
-
 }
