@@ -58,7 +58,7 @@ export class HomePage {
         color: "success",
       });
       await toast.present();
-      this.navCtrol.navigateForward('#');  
+      this.navCtrol.navigateForward('/menu-profe');  
     } else {
       const toast = await this.toastController.create({
         message: 'El usuario o la contraseña ingresada no es correcta, Inténtalo nuevamente',
