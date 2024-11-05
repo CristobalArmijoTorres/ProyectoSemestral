@@ -7,7 +7,7 @@ import { NavController, AlertController } from '@ionic/angular';
   styleUrls: ['./menu-profe.page.scss'],
 })
 export class MenuProfePage implements OnInit {
-  usuario = 'Usuario1';
+  usuario = 'Profesor1';
 
   // Imagen 
   image: string = 'assets/slide1.png'; 
