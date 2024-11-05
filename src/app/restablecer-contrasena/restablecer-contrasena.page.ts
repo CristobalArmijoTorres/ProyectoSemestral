@@ -8,9 +8,6 @@ import { ToastController, AlertController } from '@ionic/angular';
 })
 export class RestablecerContrasenaPage implements OnInit {
   mostrar = false;
-  emailIngresado = ''; 
-  email1 = '';
-  email = 'Usuario1@gmail.com';
   clave1 = '';
   clave2 = '';
   claveIngresada1 = '';
@@ -23,7 +20,6 @@ export class RestablecerContrasenaPage implements OnInit {
   ngOnInit() {}
 
   async ingresar() {
-    this.emailIngresado = this.email1;
     this.clave1 = this.claveIngresada1;
     this.clave2 = this.claveIngresada2;
 
@@ -31,14 +27,6 @@ export class RestablecerContrasenaPage implements OnInit {
     if (!this.clave1 || !this.clave2) {
       const toast = await this.toastController.create({
         message: 'Por favor, ingrese ambas claves',
-        duration: 3000,
-        position: "middle",
-        color: "danger",
-      });
-      await toast.present();
-    } else if (this.emailIngresado !== this.email) {
-      const toast = await this.toastController.create({
-        message: 'El email no es correcto, Inténtalo nuevamente',
         duration: 3000,
         position: "middle",
         color: "danger",
