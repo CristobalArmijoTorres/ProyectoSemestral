@@ -1,19 +1,19 @@
 {
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "username": "Profesor1",
       "password": "Profe123",
       "role": "profesor"
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "Cesar",
-      "password": "Cesar123",
+      "password": "Cesar1234",
       "role": "estudiante"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "Usuario1",
       "password": "MiClav3",
       "role": "estudiante"

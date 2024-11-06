@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastController, AlertController } from '@ionic/angular';
+import { ToastController, AlertController, NavController } from '@ionic/angular';
+import { ModificarContrasenaService } from '../restablecer-contrasena/modificar-contrasena.service';
 
 @Component({
   selector: 'app-restablecer-contrasena',
@@ -7,47 +8,70 @@ import { ToastController, AlertController } from '@ionic/angular';
   styleUrls: ['./restablecer-contrasena.page.scss'],
 })
 export class RestablecerContrasenaPage implements OnInit {
-  mostrar = false;
-  clave1 = '';
-  clave2 = '';
+  claveActual = '';
   claveIngresada1 = '';
   claveIngresada2 = '';
-  claveActual = '';
-  claveA = '';
 
-  constructor(private toastController: ToastController, private alertController: AlertController) { }
+  constructor(
+    private toastController: ToastController,
+    private alertController: AlertController,
+    private modificarContrasenaService: ModificarContrasenaService,
+    private navCtrl: NavController
+  ) {}
 
   ngOnInit() {}
 
   async ingresar() {
-    this.clave1 = this.claveIngresada1;
-    this.clave2 = this.claveIngresada2;
+    const usuario = JSON.parse(localStorage.getItem('user') || '{}');
 
-    // Verificaciones de los campos
-    if (!this.clave1 || !this.clave2) {
+    // Verificar que la clave actual sea correcta
+    if (this.claveActual !== usuario.password) {
       const toast = await this.toastController.create({
-        message: 'Por favor, ingrese ambas claves',
+        message: 'La clave actual es incorrecta.',
         duration: 3000,
-        position: "middle",
-        color: "danger",
+        position: 'middle',
+        color: 'danger',
       });
       await toast.present();
-    } else if (this.clave1 !== this.clave2) {
-      const toast = await this.toastController.create({
-        message: 'Las claves no coinciden, Inténtalo nuevamente',
-        duration: 3000,
-        position: "middle",
-        color: "danger",
-      });
-      await toast.present();
-    } else {
-      // Alerta indicando que la clave fue cambiada
-      const alert = await this.alertController.create({
-        header: 'Éxito',
-        message: 'La clave fue cambiada correctamente.',
-        buttons: ['Aceptar'],
-      });
-      await alert.present();
+      return;
     }
+
+    // Verificar que la nueva clave y la confirmación coincidan
+    if (this.claveIngresada1 !== this.claveIngresada2) {
+      const toast = await this.toastController.create({
+        message: 'Las nuevas claves no coinciden.',
+        duration: 3000,
+        position: 'middle',
+        color: 'danger',
+      });
+      await toast.present();
+      return;
+    }
+
+    // Cambiar la contraseña en la base de datos
+    this.modificarContrasenaService.updatePassword(usuario.id, this.claveIngresada1).subscribe(
+      async () => {
+        const toast = await this.toastController.create({
+          message: 'Contraseña cambiada exitosamente.',
+          duration: 2000,
+          position: 'middle',
+          color: 'success',
+        });
+        await toast.present();
+
+        // Elimina el usuario del localStorage y redirige al inicio de sesión
+        localStorage.removeItem('user');
+        this.navCtrl.navigateRoot('/home');
+      },
+      async () => {
+        const toast = await this.toastController.create({
+          message: 'Hubo un error al cambiar la contraseña, inténtalo nuevamente.',
+          duration: 3000,
+          position: 'middle',
+          color: 'danger',
+        });
+        await toast.present();
+      }
+    );
   }
 }
