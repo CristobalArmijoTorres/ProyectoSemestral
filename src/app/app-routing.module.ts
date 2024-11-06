@@ -41,6 +41,10 @@ const routes: Routes = [
   },  {
     path: 'asignatura-profe',
     loadChildren: () => import('./asignatura-profe/asignatura-profe.module').then( m => m.AsignaturaProfePageModule)
+  },
+  {
+    path: 'leer-qr',
+    loadChildren: () => import('./leer-qr/leer-qr.module').then( m => m.LeerQrPageModule)
   }
 
 
