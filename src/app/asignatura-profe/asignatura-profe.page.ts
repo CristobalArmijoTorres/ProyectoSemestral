@@ -16,7 +16,7 @@ export class AsignaturaProfePage implements OnInit {
   }
 
   cargarAsignaturas() {
-    // Obtener el usuario logueado desde localStorage
+    // Obtener el profesor logueado desde localStorage
     const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
 
     if (storedUser && storedUser.id) {
@@ -30,5 +30,10 @@ export class AsignaturaProfePage implements OnInit {
         }
       );
     }
+  }
+
+  verModal(asignatura: any) {
+    // Alternar el estado del modal para la asignatura
+    asignatura.mostrarModal = !asignatura.mostrarModal;
   }
 }
