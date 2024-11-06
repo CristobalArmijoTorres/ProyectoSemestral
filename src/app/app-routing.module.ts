@@ -14,7 +14,8 @@ const routes: Routes = [
   {
     path: 'restablecer-contrasena',
     loadChildren: () => import('./restablecer-contrasena/restablecer-contrasena.module').then( m => m.RestablecerContrasenaPageModule)
-  },  {
+  },
+  {
     path: 'menu',
     loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
   },
@@ -37,11 +38,7 @@ const routes: Routes = [
   {
     path: 'menu-profe',
     loadChildren: () => import('./menu-profe/menu-profe.module').then( m => m.MenuProfePageModule)
-  },
-  {
-    path: 'generarqr',
-    loadChildren: () => import('./generarqr/generarqr.module').then( m => m.GenerarqrPageModule)
-  },
+  }
 
 
 ];
