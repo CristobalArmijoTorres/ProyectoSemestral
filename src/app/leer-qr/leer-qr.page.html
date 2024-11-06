@@ -1,13 +1,27 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>leer-qr</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Escanear QR</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="menu"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">leer-qr</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <!-- Componente de escaneo de QR -->
+  <ngx-scanner-qrcode
+    #scanner
+    (result)="onScanSuccess($event)"
+  ></ngx-scanner-qrcode>
+
+  <!-- Mostrar contenido escaneado -->
+  <ion-item *ngIf="qrContent">
+    <ion-label>Contenido del QR:</ion-label>
+    <ion-input [(ngModel)]="qrContent" readonly></ion-input>
+  </ion-item>
+
+  <!-- Botón para registrar asistencia -->
+  <ion-button expand="full" color="success" (click)="registrarAsistencia()" [disabled]="!qrContent">
+    Registrar Asistencia
+  </ion-button>
 </ion-content>
