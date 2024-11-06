@@ -38,6 +38,10 @@ const routes: Routes = [
     path: 'menu-profe',
     loadChildren: () => import('./menu-profe/menu-profe.module').then( m => m.MenuProfePageModule)
   },
+  {
+    path: 'generarqr',
+    loadChildren: () => import('./generarqr/generarqr.module').then( m => m.GenerarqrPageModule)
+  },
 
 
 ];
