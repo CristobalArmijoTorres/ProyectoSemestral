@@ -36,10 +36,10 @@ export class AsignaturasPage implements OnInit {
   verModal(asignatura: any) {
     // Toggle del modal de la asignatura
     asignatura.mostrarModal = !asignatura.mostrarModal;
-
+  
     if (asignatura.mostrarModal) {
       // Llamar al servicio para obtener la asistencia de la asignatura seleccionada
-      this.asigAlumnoService.getAsistenciaByAsignaturaId(asignatura.codigo).subscribe(
+      this.asigAlumnoService.getAsistenciaByAsignaturaId(asignatura.idAsig).subscribe(
         (asistencia: any[]) => {
           this.asistencia = asistencia; // Asignar la asistencia al arreglo local
         },

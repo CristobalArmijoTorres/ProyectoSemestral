@@ -24,4 +24,5 @@ export class AsigAlumnoService {
       map(asistencias => asistencias.filter(asistencia => asistencia.asignaturaId === asignaturaId))
     );
   }
+  
 }

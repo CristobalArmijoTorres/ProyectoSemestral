@@ -27,6 +27,7 @@
   ],
   "asignaturas": [
     {
+      "idAsig": "1",
       "nombre": "Arquitectura",
       "codigo": "ASY4131",
       "profesorId": "1",
@@ -35,6 +36,16 @@
       "mostrarModal": false
     },
     {
+      "idAsig": "5",
+      "nombre": "Arquitectura",
+      "codigo": "ASY4131",
+      "profesorId": "1",
+      "estudianteId": "2",
+      "contenido": "Arquitectura, es una asignatura de especialidad...",
+      "mostrarModal": false
+    },
+    {
+      "idAsig": "2",
       "nombre": "Calidad De Software",
       "codigo": "CSY4111",
       "profesorId": "4",
@@ -43,6 +54,7 @@
       "mostrarModal": false
     },
     {
+      "idAsig": "3",
       "nombre": "Estadística Descriptiva",
       "codigo": "MAT4140",
       "profesorId": "1",
@@ -51,6 +63,7 @@
       "mostrarModal": false
     },
     {
+      "idAsig": "4",
       "nombre": "Ética Para El Trabajo",
       "codigo": "EAY4450",
       "profesorId": "4",
@@ -59,6 +72,7 @@
       "mostrarModal": false
     },
     {
+      "idAsig": "5",
       "nombre": "Inglés Intermedio",
       "codigo": "INI5111",
       "profesorId": "1",
@@ -67,6 +81,7 @@
       "mostrarModal": false
     },
     {
+      "idAsig": "6",
       "nombre": "Proceso De Portafolio",
       "codigo": "APY4461",
       "profesorId": "4",
@@ -74,5 +89,93 @@
       "contenido": "El 'Proceso de Portafolio' es un proceso académico...",
       "mostrarModal": false
     }
-  ]
+  ],
+  "asistencias": [
+        {
+          "asignaturaId": "1",
+          "estudianteId": "2",
+          "fecha": "01-10-2024",
+          "presente": true
+        },
+        {
+          "asignaturaId": "1",
+          "estudianteId": "3",
+          "fecha": "01-10-2024",
+          "presente": true
+        },
+        {
+          "asignaturaId": "2",
+          "estudianteId": "2",
+          "fecha": "01-10-2024",
+          "presente": true
+        },
+        {
+          "asignaturaId": "2",
+          "estudianteId": "2",
+          "fecha": "01-10-2024",
+          "presente": true
+        },
+        {
+          "asignaturaId": "3",
+          "estudianteId": "3",
+          "fecha": "01-10-2024",
+          "presente": true
+        },
+        {
+          "asignaturaId": "3",
+          "estudianteId": "2",
+          "fecha": "01-10-2024",
+          "presente": true
+        },
+        {
+          "asignaturaId": "3",
+          "estudianteId": "3",
+          "fecha": "01-10-2024",
+          "presente": true
+        },
+        {
+          "asignaturaId": "4",
+          "estudianteId": "2",
+          "fecha": "01-10-2024",
+          "presente": true
+
+        },
+        {
+          "asignaturaId": "4",
+          "estudianteId": "3",
+          "fecha": "01-10-2024",
+          "presente": true
+
+        },
+        {
+          "asignaturaId": "5",
+          "estudianteId": "2",
+          "fecha": "01-10-2024",
+          "presente": true
+
+        },
+        {
+          "asignaturaId": "5",
+          "estudianteId": "3",
+          "fecha": "01-10-2024",
+          "presente": true
+
+        },
+        {
+          "asignaturaId": "6",
+          "estudianteId": "2",
+          "fecha": "01-10-2024",
+          "presente": true
+
+        },
+        {
+          "asignaturaId": "6",
+          "estudianteId": "3",
+          "fecha": "01-10-2024",
+          "presente": true
+        }
+        
+
+      ]
+    
 }

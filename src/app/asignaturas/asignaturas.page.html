@@ -48,10 +48,10 @@
                 </ion-grid>
                 <h3>Historial de Asistencia</h3>
                 <ion-list>
-                  <ion-item *ngFor="let registro of asistencia">
+                  <ion-item *ngFor="let registro of asistencia | slice:0:2">
                     <ion-label>
                       <p>Fecha: {{ registro.fecha }}</p>
-                      <p>Estado: {{ registro.estado }}</p>
+                      <p>Estado: {{ registro.presente ? 'Presente' : 'Ausente' }}</p>
                     </ion-label>
                   </ion-item>
                 </ion-list>
