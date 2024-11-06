@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular'; 
-import { BienvenidaProfeService } from '../menu-profe/bienvenida-profe.service'; // Ruta y nombre corregidos
 
 @Component({
   selector: 'app-menu-profe',
@@ -8,33 +7,14 @@ import { BienvenidaProfeService } from '../menu-profe/bienvenida-profe.service';
   styleUrls: ['./menu-profe.page.scss'],
 })
 export class MenuProfePage implements OnInit {
-  usuario: string = ''; // Nombre del profesor
-  image: string = 'assets/slide1.png'; // Imagen de bienvenida
+  usuario = 'Profesor1';
 
-  constructor(
-    private navController: NavController,
-    private alertController: AlertController,
-    private bienvenidaProfeService: BienvenidaProfeService // Inyectamos el servicio
-  ) {}
+  // Imagen 
+  image: string = 'assets/slide1.png'; 
 
-  ngOnInit() {
-    this.cargarUsuario();
-  }
+  constructor(private navController: NavController, private alertController: AlertController) { }
 
-  cargarUsuario() {
-    const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
-
-    if (storedUser && storedUser.id) {
-      this.bienvenidaProfeService.getUserById(storedUser.id).subscribe(
-        (userData) => {
-          this.usuario = userData.username; // Asigna el nombre al campo 'usuario'
-        },
-        (error) => {
-          console.error('Error al obtener los datos del usuario', error);
-        }
-      );
-    }
-  }
+  ngOnInit() {}
 
   async confirmLogout() {
     const alert = await this.alertController.create({
@@ -48,8 +28,7 @@ export class MenuProfePage implements OnInit {
         {
           text: 'Aceptar',
           handler: () => {
-            localStorage.removeItem('user'); // Elimina el usuario de localStorage
-            this.navController.navigateRoot(['/home']); // Redirige al inicio de sesión
+            this.navController.navigateRoot(['/home']); 
           }
         }
       ]
