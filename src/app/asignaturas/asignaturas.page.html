@@ -15,7 +15,7 @@
           <ion-label class="asignatura-nombre">{{ asignatura.nombre }}</ion-label>
         </div>
 
-        <!-- Modal para los detalles de la asignatura -->
+        <!-- Modal para los detalles de la asignatura y asistencia -->
         <ion-modal [isOpen]="asignatura.mostrarModal">
           <ng-template>
             <ion-header>
@@ -46,6 +46,15 @@
                     </ion-col>
                   </ion-row>
                 </ion-grid>
+                <h3>Historial de Asistencia</h3>
+                <ion-list>
+                  <ion-item *ngFor="let registro of asistencia">
+                    <ion-label>
+                      <p>Fecha: {{ registro.fecha }}</p>
+                      <p>Estado: {{ registro.estado }}</p>
+                    </ion-label>
+                  </ion-item>
+                </ion-list>
               </div>
             </ion-content>
           </ng-template>
