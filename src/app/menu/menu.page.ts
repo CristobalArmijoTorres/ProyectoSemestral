@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, AlertController } from '@ionic/angular'; 
+import { NavController, AlertController } from '@ionic/angular';
+import { BienvenidaService } from '../menu/bienvenida.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,14 +8,35 @@ import { NavController, AlertController } from '@ionic/angular';
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
-  usuario = 'Usuario1';
+  usuario: string = ''; // Nombre del usuario cargado desde el servicio
+  image: string = 'assets/slide1.png'; // Imagen de bienvenida
 
-  // Imagen 
-  image: string = 'assets/slide1.png'; 
+  constructor(
+    private navController: NavController,
+    private alertController: AlertController,
+    private bienvenidaService: BienvenidaService // Inyectamos el servicio de bienvenida
+  ) {}
 
-  constructor(private navController: NavController, private alertController: AlertController) { }
+  ngOnInit() {
+    this.cargarUsuario();
+  }
 
-  ngOnInit() {}
+  cargarUsuario() {
+    // Obtener el usuario desde localStorage
+    const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
+
+    if (storedUser && storedUser.id) {
+      // Llamar al servicio para obtener los datos del usuario
+      this.bienvenidaService.getUserById(storedUser.id).subscribe(
+        (userData: any) => {
+          this.usuario = userData.username; // Asigna el nombre al campo 'usuario'
+        },
+        (error: any) => {
+          console.error('Error al obtener los datos del usuario', error);
+        }
+      );
+    }
+  }
 
   async confirmLogout() {
     const alert = await this.alertController.create({
@@ -28,7 +50,8 @@ export class MenuPage implements OnInit {
         {
           text: 'Aceptar',
           handler: () => {
-            this.navController.navigateRoot(['/home']); 
+            localStorage.removeItem('user'); // Eliminar el usuario de localStorage al cerrar sesión
+            this.navController.navigateRoot(['/home']); // Redirigir a la página de inicio
           }
         }
       ]
