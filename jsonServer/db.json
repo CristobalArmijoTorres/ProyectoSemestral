@@ -17,6 +17,12 @@
       "username": "Usuario1",
       "password": "MiClav3",
       "role": "estudiante"
+    },
+    {
+      "id": "4",
+      "username": "Profesor2",
+      "password": "Profe123",
+      "role": "profesor"
     }
   ],
   "asignaturas": [

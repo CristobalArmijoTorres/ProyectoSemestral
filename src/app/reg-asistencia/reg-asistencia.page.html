@@ -9,15 +9,20 @@
 
 <ion-content class="ion-padding white-background">
   <h1 class="black-text">Registrar Asistencia</h1>
-  <h6 class="black-text">Al seleccionar el botón de generar QR podrás registrar tu asistencia</h6>
-  <ion-button shape="round" size="large" color="success" (click)="verModal()">
-    Generar QR 
-    <ion-icon slot="end" name="qr-code-outline" color="light"></ion-icon>
-  </ion-button>
-  
+  <h6 class="black-text">Selecciona una asignatura y genera un QR para registrar la asistencia</h6>
 
-  
+  <!-- Lista de Asignaturas -->
+  <ion-list>
+    <ion-item *ngFor="let asignatura of asignaturas">
+      <ion-label>{{ asignatura.nombre }}</ion-label>
+      <ion-button shape="round" size="small" color="success" (click)="generarQR(asignatura)">
+        Generar QR 
+        <ion-icon slot="end" name="qr-code-outline" color="light"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
 
+  <!-- Modal para mostrar el QR -->
   <ion-modal [isOpen]="mostrar">
     <ng-template>
       <ion-header>
