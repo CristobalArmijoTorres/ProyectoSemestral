@@ -30,6 +30,7 @@
       "nombre": "Arquitectura",
       "codigo": "ASY4131",
       "profesorId": "1",
+      "estudianteId": "2",
       "contenido": "Arquitectura, es una asignatura de especialidad...",
       "mostrarModal": false
     },
@@ -37,6 +38,7 @@
       "nombre": "Calidad De Software",
       "codigo": "CSY4111",
       "profesorId": "4",
+      "estudianteId": "2",
       "contenido": "Calidad de software, es una asignatura de especialidad...",
       "mostrarModal": false
     },
@@ -44,6 +46,7 @@
       "nombre": "Estadística Descriptiva",
       "codigo": "MAT4140",
       "profesorId": "1",
+      "estudianteId": "2",
       "contenido": "La estadística descriptiva es la técnica matemática...",
       "mostrarModal": false
     },
@@ -51,6 +54,7 @@
       "nombre": "Ética Para El Trabajo",
       "codigo": "EAY4450",
       "profesorId": "4",
+      "estudianteId": "3",
       "contenido": "Bienvenido al curso 'Ética para el trabajo'...",
       "mostrarModal": false
     },
@@ -58,6 +62,7 @@
       "nombre": "Inglés Intermedio",
       "codigo": "INI5111",
       "profesorId": "1",
+      "estudianteId": "3",
       "contenido": "Welcome to your English course! We invite you...",
       "mostrarModal": false
     },
@@ -65,6 +70,7 @@
       "nombre": "Proceso De Portafolio",
       "codigo": "APY4461",
       "profesorId": "4",
+      "estudianteId": "3",
       "contenido": "El 'Proceso de Portafolio' es un proceso académico...",
       "mostrarModal": false
     }
