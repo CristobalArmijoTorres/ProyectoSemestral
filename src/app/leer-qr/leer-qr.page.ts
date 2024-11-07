@@ -1,45 +1,57 @@
-import { Component, ViewChild } from '@angular/core';
-import { NgxScannerQrcodeComponent } from 'ngx-scanner-qrcode';
-import { QrService } from '../leer-qr/qr.service';
-import { ToastController } from '@ionic/angular';
+import { Component, AfterViewInit, ViewChild } from '@angular/core';
+import {
+  ScannerQRCodeConfig,
+  ScannerQRCodeResult,
+  NgxScannerQrcodeService,
+  NgxScannerQrcodeComponent,
+  ScannerQRCodeSelectedFiles,
+} from 'ngx-scanner-qrcode';
 
 @Component({
   selector: 'app-leer-qr',
   templateUrl: './leer-qr.page.html',
   styleUrls: ['./leer-qr.page.scss'],
 })
-export class LeerQrPage {
-  @ViewChild('scanner') scanner!: NgxScannerQrcodeComponent;
-  qrContent: string = ''; // Contenido escaneado del QR
+export class LeerQrPage implements AfterViewInit {
+  @ViewChild('action') action!: NgxScannerQrcodeComponent;
 
-  constructor(private qrService: QrService, private toastController: ToastController) {}
+  public config: ScannerQRCodeConfig = {
+    constraints: {
+      video: {
+        width: window.innerWidth
+      },
+    },
+  };
 
-  // Manejar el resultado del escaneo de QR
-  onScanSuccess(event: any) {
-    this.qrContent = event?.[0]?.value || ''; // Extrae el valor escaneado de event
+  public qrCodeResult: ScannerQRCodeSelectedFiles[] = [];
+
+  constructor(private qrcode: NgxScannerQrcodeService) {}
+
+  ngAfterViewInit(): void {
+    this.action.isReady.subscribe((res: any) => {
+      console.log('QR Scanner Ready:', res);
+    });
   }
 
-  // Registrar asistencia usando el contenido del QR
-  registrarAsistencia() {
-    if (this.qrContent) {
-      this.qrService.registrarAsistencia(this.qrContent).subscribe(
-        async () => {
-          const toast = await this.toastController.create({
-            message: 'Asistencia registrada correctamente',
-            duration: 2000,
-            color: 'success',
-          });
-          await toast.present();
-          this.qrContent = ''; // Limpiar el contenido después del registro
-        },
-        async (error) => {
-          const toast = await this.toastController.create({
-            message: 'Error al registrar asistencia',
-            duration: 2000,
-            color: 'danger',
-          });
-          await toast.present();
-        }
+  public onEvent(e: ScannerQRCodeResult[], action?: any): void {
+    console.log(e);
+  }
+
+  public handle(action: any, fn: string): void {
+    const playDeviceFacingBack = (devices: any[]) => {
+      const device = devices.find(f => (/back|rear|environment/gi.test(f.label)));
+      action.playDevice(device ? device.deviceId : devices[0].deviceId);
+    }
+
+    if (fn === 'start') {
+      action[fn](playDeviceFacingBack).subscribe(
+        (r: any) => console.log(fn, r),
+        (error: any) => console.error(error)
+      );
+    } else {
+      action[fn]().subscribe(
+        (r: any) => console.log(fn, r),
+        (error: any) => console.error(error)
       );
     }
   }

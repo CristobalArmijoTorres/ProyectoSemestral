@@ -1,20 +1,20 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { LeerQrPageRoutingModule } from './leer-qr-routing.module';
+import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
+
 import { LeerQrPage } from './leer-qr.page';
-import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode'; // Asegúrate de importar aquí
+import { LeerQrPageRoutingModule } from './leer-qr-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LeerQrPageRoutingModule,
-    NgxScannerQrcodeModule, // Asegúrate de que está aquí
+    NgxScannerQrcodeModule,
+    LeerQrPageRoutingModule
   ],
-  declarations: [LeerQrPage],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA], // Agrega CUSTOM_ELEMENTS_SCHEMA aquí
+  declarations: [LeerQrPage]
 })
 export class LeerQrPageModule {}
