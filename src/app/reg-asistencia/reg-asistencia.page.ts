@@ -33,9 +33,15 @@ export class RegAsistenciaPage implements OnInit {
   }
 
   generarQR(asignatura: any) {
-    this.qrData = `Asignatura: ${asignatura.nombre} - Código: ${asignatura.codigo}`;
+    this.qrData = JSON.stringify({
+        asignaturaId: asignatura.idAsig,
+        nombre: asignatura.nombre,
+        codigo: asignatura.codigo,
+        fecha: new Date().toISOString() // Agrega la fecha para el registro
+    });
     this.verModal(); // Abre el modal con el QR generado
-  }
+}
+
 
   verModal() {
     this.mostrar = !this.mostrar;

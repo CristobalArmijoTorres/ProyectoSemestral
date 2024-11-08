@@ -31,163 +31,111 @@
       "nombre": "Arquitectura",
       "codigo": "ASY4131",
       "profesorId": "1",
-      "estudianteId": "2",
       "contenido": "Arquitectura, es una asignatura de especialidad...",
-      "mostrarModal": false,
-      "id": "05e4"
-    },
-    {
-      "idAsig": "5",
-      "nombre": "Arquitectura",
-      "codigo": "ASY4131",
-      "profesorId": "1",
-      "estudianteId": "2",
-      "contenido": "Arquitectura, es una asignatura de especialidad...",
-      "mostrarModal": false,
-      "id": "6d77"
+      "mostrarModal": false
     },
     {
       "idAsig": "2",
       "nombre": "Calidad De Software",
       "codigo": "CSY4111",
       "profesorId": "4",
-      "estudianteId": "2",
       "contenido": "Calidad de software, es una asignatura de especialidad...",
-      "mostrarModal": false,
-      "id": "a44c"
+      "mostrarModal": false
     },
     {
       "idAsig": "3",
       "nombre": "Estadística Descriptiva",
       "codigo": "MAT4140",
       "profesorId": "1",
-      "estudianteId": "2",
       "contenido": "La estadística descriptiva es la técnica matemática...",
-      "mostrarModal": false,
-      "id": "0a52"
+      "mostrarModal": false
     },
     {
       "idAsig": "4",
       "nombre": "Ética Para El Trabajo",
       "codigo": "EAY4450",
       "profesorId": "4",
-      "estudianteId": "3",
       "contenido": "Bienvenido al curso 'Ética para el trabajo'...",
-      "mostrarModal": false,
-      "id": "f50f"
+      "mostrarModal": false
     },
     {
       "idAsig": "5",
       "nombre": "Inglés Intermedio",
       "codigo": "INI5111",
       "profesorId": "1",
-      "estudianteId": "3",
       "contenido": "Welcome to your English course! We invite you...",
-      "mostrarModal": false,
-      "id": "8883"
+      "mostrarModal": false
     },
     {
       "idAsig": "6",
       "nombre": "Proceso De Portafolio",
       "codigo": "APY4461",
       "profesorId": "4",
-      "estudianteId": "3",
       "contenido": "El 'Proceso de Portafolio' es un proceso académico...",
-      "mostrarModal": false,
-      "id": "cc5a"
+      "mostrarModal": false
     }
   ],
-  "asistencias": [
+  "asistencias": [],
+  "estudiantes": [
     {
-      "asignaturaId": "1",
-      "estudianteId": "2",
-      "fecha": "01-10-2024",
-      "presente": true,
-      "id": "0c1d"
+      "id": "2",
+      "nombre": "Usuario1",
+      "inscripciones": [
+        {
+          "asignaturaId": "1",
+          "cursoId": "1"
+        },
+        {
+          "asignaturaId": "2",
+          "cursoId": "2"
+        },
+        {
+          "asignaturaId": "4",
+          "cursoId": "3"
+        },
+        {
+          "asignaturaId": "5",
+          "cursoId": "1"
+        }
+      ]
     },
     {
-      "asignaturaId": "1",
-      "estudianteId": "3",
-      "fecha": "01-10-2024",
-      "presente": true,
-      "id": "75f5"
+      "id": "3",
+      "nombre": "Cesar",
+      "inscripciones": [
+        {
+          "asignaturaId": "4",
+          "cursoId": "3"
+        },
+        {
+          "asignaturaId": "5",
+          "cursoId": "1"
+        },
+        {
+          "asignaturaId": "6",
+          "cursoId": "2"
+        }
+      ]
+    }
+  ],
+  "cursos": [
+    {
+      "id": "1",
+      "nombre": "Arquitectura 101",
+      "profesorId": "1",
+      "estudiantes": ["2", "3"]
     },
     {
-      "asignaturaId": "2",
-      "estudianteId": "2",
-      "fecha": "01-10-2024",
-      "presente": true,
-      "id": "cdf0"
+      "id": "2",
+      "nombre": "Calidad 101",
+      "profesorId": "4",
+      "estudiantes": ["3"]
     },
     {
-      "asignaturaId": "2",
-      "estudianteId": "2",
-      "fecha": "01-10-2024",
-      "presente": true,
-      "id": "5d2a"
-    },
-    {
-      "asignaturaId": "3",
-      "estudianteId": "3",
-      "fecha": "01-10-2024",
-      "presente": true,
-      "id": "0710"
-    },
-    {
-      "asignaturaId": "3",
-      "estudianteId": "2",
-      "fecha": "01-10-2024",
-      "presente": true,
-      "id": "d3c6"
-    },
-    {
-      "asignaturaId": "3",
-      "estudianteId": "3",
-      "fecha": "01-10-2024",
-      "presente": true,
-      "id": "a86d"
-    },
-    {
-      "asignaturaId": "4",
-      "estudianteId": "2",
-      "fecha": "01-10-2024",
-      "presente": true,
-      "id": "b8b6"
-    },
-    {
-      "asignaturaId": "4",
-      "estudianteId": "3",
-      "fecha": "01-10-2024",
-      "presente": true,
-      "id": "6729"
-    },
-    {
-      "asignaturaId": "5",
-      "estudianteId": "2",
-      "fecha": "01-10-2024",
-      "presente": true,
-      "id": "95cd"
-    },
-    {
-      "asignaturaId": "5",
-      "estudianteId": "3",
-      "fecha": "01-10-2024",
-      "presente": true,
-      "id": "7e7c"
-    },
-    {
-      "asignaturaId": "6",
-      "estudianteId": "2",
-      "fecha": "01-10-2024",
-      "presente": true,
-      "id": "e8ca"
-    },
-    {
-      "asignaturaId": "6",
-      "estudianteId": "3",
-      "fecha": "01-10-2024",
-      "presente": true,
-      "id": "83d7"
+      "id": "3",
+      "nombre": "Ética 101",
+      "profesorId": "4",
+      "estudiantes": ["2", "3"]
     }
   ]
 }
