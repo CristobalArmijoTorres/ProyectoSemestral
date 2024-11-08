@@ -32,7 +32,8 @@
       "codigo": "ASY4131",
       "profesorId": "1",
       "contenido": "Arquitectura, es una asignatura de especialidad...",
-      "mostrarModal": false
+      "mostrarModal": false,
+      "id": "a3f6"
     },
     {
       "idAsig": "2",
@@ -40,7 +41,8 @@
       "codigo": "CSY4111",
       "profesorId": "4",
       "contenido": "Calidad de software, es una asignatura de especialidad...",
-      "mostrarModal": false
+      "mostrarModal": false,
+      "id": "c2dc"
     },
     {
       "idAsig": "3",
@@ -48,7 +50,8 @@
       "codigo": "MAT4140",
       "profesorId": "1",
       "contenido": "La estadística descriptiva es la técnica matemática...",
-      "mostrarModal": false
+      "mostrarModal": false,
+      "id": "7a5c"
     },
     {
       "idAsig": "4",
@@ -56,7 +59,8 @@
       "codigo": "EAY4450",
       "profesorId": "4",
       "contenido": "Bienvenido al curso 'Ética para el trabajo'...",
-      "mostrarModal": false
+      "mostrarModal": false,
+      "id": "05d3"
     },
     {
       "idAsig": "5",
@@ -64,7 +68,8 @@
       "codigo": "INI5111",
       "profesorId": "1",
       "contenido": "Welcome to your English course! We invite you...",
-      "mostrarModal": false
+      "mostrarModal": false,
+      "id": "e3a7"
     },
     {
       "idAsig": "6",
@@ -72,7 +77,8 @@
       "codigo": "APY4461",
       "profesorId": "4",
       "contenido": "El 'Proceso de Portafolio' es un proceso académico...",
-      "mostrarModal": false
+      "mostrarModal": false,
+      "id": "3185"
     }
   ],
   "asistencias": [
@@ -95,6 +101,13 @@
       "asignaturaId": "2",
       "estudianteId": "3",
       "fecha": "2024-11-08T07:46:00.156Z",
+      "estado": "Presente"
+    },
+    {
+      "id": "d96f",
+      "asignaturaId": "3",
+      "estudianteId": "1",
+      "fecha": "2024-11-08T16:17:19.569Z",
       "estado": "Presente"
     }
   ],
