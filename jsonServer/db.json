@@ -75,7 +75,29 @@
       "mostrarModal": false
     }
   ],
-  "asistencias": [],
+  "asistencias": [
+    {
+      "id": "e250",
+      "asignaturaId": "1",
+      "estudianteId": "1",
+      "fecha": "2024-11-08T07:42:13.202Z",
+      "estado": "Presente"
+    },
+    {
+      "id": "aebd",
+      "asignaturaId": "1",
+      "estudianteId": "1",
+      "fecha": "2024-11-08T07:42:29.888Z",
+      "estado": "Presente"
+    },
+    {
+      "id": "8fd5",
+      "asignaturaId": "2",
+      "estudianteId": "3",
+      "fecha": "2024-11-08T07:46:00.156Z",
+      "estado": "Presente"
+    }
+  ],
   "estudiantes": [
     {
       "id": "2",
@@ -123,19 +145,27 @@
       "id": "1",
       "nombre": "Arquitectura 101",
       "profesorId": "1",
-      "estudiantes": ["2", "3"]
+      "estudiantes": [
+        "2",
+        "3"
+      ]
     },
     {
       "id": "2",
       "nombre": "Calidad 101",
       "profesorId": "4",
-      "estudiantes": ["3"]
+      "estudiantes": [
+        "3"
+      ]
     },
     {
       "id": "3",
       "nombre": "Ética 101",
       "profesorId": "4",
-      "estudiantes": ["2", "3"]
+      "estudiantes": [
+        "2",
+        "3"
+      ]
     }
   ]
 }

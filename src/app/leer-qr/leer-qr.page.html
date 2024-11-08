@@ -12,7 +12,16 @@
     <button ion-button (click)="handle(action, 'stop')">Detener Escaneo</button>
   </div>
 
-  <div *ngFor="let item of qrCodeResult">
-    <p>{{ item.data }}</p>
+  <!-- Campo para mostrar el resultado del QR -->
+  <ion-item>
+    <ion-label position="floating">Código QR Escaneado</ion-label>
+    <ion-input [(ngModel)]="qrCodeInput" readonly></ion-input>
+  </ion-item>
+
+  <!-- Botón para registrar la asistencia -->
+  <ion-button expand="full" (click)="registrarAsistencia()" [disabled]="!qrCodeInput">Registrar Asistencia</ion-button>
+
+  <div *ngIf="errorMessage" class="ion-padding" color="danger">
+    <p>{{ errorMessage }}</p>
   </div>
 </ion-content>
