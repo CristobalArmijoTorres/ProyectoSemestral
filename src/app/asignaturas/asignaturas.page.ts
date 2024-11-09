@@ -1,6 +1,7 @@
+// asignaturas.page.ts
 import { Component, OnInit } from '@angular/core';
 import { AsigAlumnoService } from '../asignaturas/asig-alumno.service';
-import { Asignatura } from './models'; // Importa tus modelos
+import { Asignatura } from './models'; // Importa el modelo
 
 @Component({
   selector: 'app-asignaturas',
@@ -8,8 +9,7 @@ import { Asignatura } from './models'; // Importa tus modelos
   styleUrls: ['./asignaturas.page.scss'],
 })
 export class AsignaturasPage implements OnInit {
-  asignaturas: Asignatura[] = []; // Lista de asignaturas inscritas
-  asistencia: any[] = []; // Lista de asistencias de la asignatura seleccionada
+  asignaturas: Asignatura[] = [];
 
   constructor(private asigAlumnoService: AsigAlumnoService) {}
 
@@ -24,10 +24,8 @@ export class AsignaturasPage implements OnInit {
       this.asigAlumnoService.getAsignaturasByStudentId(storedUser.id).subscribe(
         (asignaturas: Asignatura[]) => {
           console.log('Asignaturas cargadas:', asignaturas);
-          this.asignaturas = asignaturas;
-          this.asignaturas.forEach(asignatura => {
-            asignatura.mostrarModal = false; // Inicializa el modal en falso
-          });
+          // Asegurarse de que cada asignatura tenga la propiedad `mostrarModal` inicializada en `false`
+          this.asignaturas = asignaturas.map(asignatura => ({ ...asignatura, mostrarModal: false }));
         },
         (error: any) => {
           console.error('Error al cargar las asignaturas', error);
@@ -38,16 +36,5 @@ export class AsignaturasPage implements OnInit {
 
   verModal(asignatura: Asignatura) {
     asignatura.mostrarModal = !asignatura.mostrarModal;
-
-    if (asignatura.mostrarModal) {
-      this.asigAlumnoService.getAsistenciaByAsignaturaId(asignatura.idAsig).subscribe(
-        (asistencia: any[]) => {
-          this.asistencia = asistencia;
-        },
-        (error: any) => {
-          console.error('Error al cargar la asistencia', error);
-        }
-      );
-    }
   }
 }

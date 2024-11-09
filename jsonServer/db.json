@@ -32,42 +32,54 @@
       "nombre": "Arquitectura",
       "codigo": "ASY4131",
       "profesorId": "1",
-      "contenido": "Arquitectura, es una asignatura de especialidad..."
+      "contenido": "Arquitectura, es una asignatura de especialidad...",
+      "mostrarModal": false,
+      "id": "a3f6"
     },
     {
       "idAsig": "2",
       "nombre": "Calidad De Software",
       "codigo": "CSY4111",
-      "profesorId": "1",
-      "contenido": "Calidad de software, es una asignatura de especialidad..."
+      "profesorId": "4",
+      "contenido": "Calidad de software, es una asignatura de especialidad...",
+      "mostrarModal": false,
+      "id": "c2dc"
     },
     {
       "idAsig": "3",
       "nombre": "Estadística Descriptiva",
       "codigo": "MAT4140",
       "profesorId": "1",
-      "contenido": "La estadística descriptiva es la técnica matemática..."
+      "contenido": "La estadística descriptiva es la técnica matemática...",
+      "mostrarModal": false,
+      "id": "7a5c"
     },
     {
       "idAsig": "4",
       "nombre": "Ética Para El Trabajo",
       "codigo": "EAY4450",
-      "profesorId": "2",
-      "contenido": "Bienvenido al curso 'Ética para el trabajo'..."
+      "profesorId": "4",
+      "contenido": "Bienvenido al curso 'Ética para el trabajo'...",
+      "mostrarModal": false,
+      "id": "05d3"
     },
     {
       "idAsig": "5",
       "nombre": "Inglés Intermedio",
       "codigo": "INI5111",
-      "profesorId": "2",
-      "contenido": "Welcome to your English course! We invite you..."
+      "profesorId": "1",
+      "contenido": "Welcome to your English course! We invite you...",
+      "mostrarModal": false,
+      "id": "e3a7"
     },
     {
       "idAsig": "6",
       "nombre": "Proceso De Portafolio",
       "codigo": "APY4461",
-      "profesorId": "2",
-      "contenido": "El 'Proceso de Portafolio' es un proceso académico..."
+      "profesorId": "4",
+      "contenido": "El 'Proceso de Portafolio' es un proceso académico...",
+      "mostrarModal": false,
+      "id": "3185"
     }
   ],
 
