@@ -7,11 +7,10 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AsigProfeService {
-  private apiUrl = 'http://localhost:3000/asignaturas'; // Ruta a las asignaturas en db.json
+  private apiUrl = 'http://localhost:3000/asignaturas';
 
   constructor(private http: HttpClient) {}
 
-  // Método para obtener asignaturas por el ID del profesor
   getAsignaturasByProfesorId(profesorId: string): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl).pipe(
       map(asignaturas => asignaturas.filter(asignatura => asignatura.profesorId === profesorId))

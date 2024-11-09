@@ -10,43 +10,12 @@
 <ion-content [fullscreen]="true" class="ion-padding white-background">
   <h1 class="black-text">Listado de Asignaturas</h1>
 
-  <ion-grid>
+  <ion-grid class="ion-grid">
     <ion-row>
-      <ion-col size="6" *ngFor="let asignatura of asignaturas" class="asignatura-col">
-        <div class="asignatura-box" (click)="verModal(asignatura)" style="cursor: pointer;">
+      <ion-col size="12" *ngFor="let asignatura of asignaturas" class="estudiante-col">
+        <div class="estudiante-box" (click)="openModal(asignatura)" style="cursor: pointer;">
           <ion-label class="asignatura-nombre">{{ asignatura.nombre }}</ion-label>
         </div>
-
-        <!-- Modal para los detalles de la asignatura -->
-        <ion-modal [isOpen]="asignatura.mostrarModal">
-          <ng-template>
-            <ion-header>
-              <ion-toolbar color="primary">
-                <ion-title>{{ asignatura.nombre }}</ion-title>
-                <ion-buttons slot="end">
-                  <ion-button (click)="verModal(asignatura)">Cerrar</ion-button>
-                </ion-buttons>
-              </ion-toolbar>
-            </ion-header>
-            <ion-content class="background-white">
-              <div class="modal-content">
-                <h2>Detalles de la Asignatura</h2>
-                <ion-grid>
-                  <ion-row>
-                    <ion-col size="12">
-                      <strong>Código de Asignatura:</strong> {{ asignatura.codigo }}
-                    </ion-col>
-                  </ion-row>
-                  <ion-row>
-                    <ion-col size="12">
-                      <strong>Descripción:</strong> {{ asignatura.contenido }}
-                    </ion-col>
-                  </ion-row>
-                </ion-grid>
-              </div>
-            </ion-content>
-          </ng-template>
-        </ion-modal>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -54,4 +23,35 @@
   <div *ngIf="asignaturas.length === 0" class="ion-text-center">
     <p>No tienes asignaturas asignadas.</p>
   </div>
+
+  <!-- Modal -->
+  <ion-modal [isOpen]="isModalOpen" (didDismiss)="closeModal()">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>{{ selectedAsignatura?.nombre }}</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="closeModal()">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="background-white">
+        <div class="modal-content">
+          <h2>Detalles de la Asignatura</h2>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12">
+                <strong>Código de Asignatura:</strong> {{ selectedAsignatura?.codigo }}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <strong>Descripción:</strong> {{ selectedAsignatura?.contenido }}
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>

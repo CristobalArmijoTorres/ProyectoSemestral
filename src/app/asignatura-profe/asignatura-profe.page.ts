@@ -7,7 +7,9 @@ import { AsigProfeService } from '../asignatura-profe/asig-profe.service';
   styleUrls: ['./asignatura-profe.page.scss'],
 })
 export class AsignaturaProfePage implements OnInit {
-  asignaturas: any[] = []; // Lista de asignaturas del profesor
+  asignaturas: any[] = [];
+  isModalOpen = false;
+  selectedAsignatura: any = null;
 
   constructor(private asigProfeService: AsigProfeService) {}
 
@@ -16,14 +18,11 @@ export class AsignaturaProfePage implements OnInit {
   }
 
   cargarAsignaturas() {
-    // Obtener el profesor logueado desde localStorage
     const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
-
     if (storedUser && storedUser.id) {
-      // Llamar al servicio para obtener las asignaturas del profesor
       this.asigProfeService.getAsignaturasByProfesorId(storedUser.id).subscribe(
         (asignaturas: any[]) => {
-          this.asignaturas = asignaturas; // Asignar las asignaturas al arreglo local
+          this.asignaturas = asignaturas;
         },
         (error: any) => {
           console.error('Error al cargar las asignaturas', error);
@@ -32,8 +31,13 @@ export class AsignaturaProfePage implements OnInit {
     }
   }
 
-  verModal(asignatura: any) {
-    // Alternar el estado del modal para la asignatura
-    asignatura.mostrarModal = !asignatura.mostrarModal;
+  openModal(asignatura: any) {
+    this.selectedAsignatura = asignatura;
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+    this.selectedAsignatura = null;
   }
 }
