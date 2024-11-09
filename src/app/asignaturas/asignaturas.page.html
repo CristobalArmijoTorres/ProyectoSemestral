@@ -34,7 +34,16 @@
                       <strong>Nombre: </strong> {{ asignatura.nombre }} 
                     </ion-col>
                   </ion-row>
-                    
+                  <ion-row>
+                    <ion-col size="12">
+                      <strong>Sigla: </strong> {{ asignatura.codigo }} 
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="12">
+                      <strong>Profesor: </strong> {{ obtenerNombreProfesor(asignatura.profesorId) }}
+                    </ion-col>
+                  </ion-row>
                 </ion-grid>
               </div>
             </ion-content>

@@ -25,6 +25,14 @@
       "role": "estudiante"
     }
   ],
+"profesores":[
+{
+  "profesorId" : "1", "nombre":"Profesor1"
+},
+{
+  "profesorId" : "2", "nombre":"Profesor2"
+}
+],
 
   "asignaturas": [
     {

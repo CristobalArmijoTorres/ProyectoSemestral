@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError, mergeMap } from 'rxjs/operators';
-import { Estudiante, Asignatura } from './models'; // Importa tus modelos
+import { Estudiante, Asignatura } from './models';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,6 @@ export class AsigAlumnoService {
   getAsignaturasByStudentId(studentId: string): Observable<Asignatura[]> {
     return this.http.get<any[]>(`${this.apiUrl}/secciones`).pipe(
       mergeMap(secciones => {
-        // Buscar el estudiante en todas las secciones
         for (let seccion of secciones) {
           const estudiante = seccion.estudiantes.find((est: Estudiante) => est.estudianteId === studentId);
           if (estudiante) {
@@ -27,7 +26,6 @@ export class AsigAlumnoService {
             });
           }
         }
-        // Retorna un arreglo vacío si no se encuentra el estudiante
         return new Observable<Asignatura[]>(observer => {
           observer.next([]);
           observer.complete();
@@ -39,4 +37,16 @@ export class AsigAlumnoService {
       })
     );
   }
+
+  // Obtener todos los profesores
+  getAllProfesores(): Observable<{ profesorId: string; nombre: string }[]> {
+    return this.http.get<{ profesorId: string; nombre: string }[]>(`${this.apiUrl}/profesores`).pipe(
+      catchError(error => {
+        console.error('Error al obtener los profesores', error);
+        return throwError(error);
+      })
+    );
+  }
 }
+
+
