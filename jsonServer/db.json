@@ -7,80 +7,70 @@
       "role": "profesor"
     },
     {
-      "id": "3",
-      "username": "Cesar",
-      "password": "Cesar1234",
-      "role": "estudiante"
+      "id": "2",
+      "username": "Profesor2",
+      "password": "Profe123",
+      "role": "profesor"
     },
     {
-      "id": "2",
-      "username": "Usuario1",
-      "password": "MiClav3",
+      "id": "3",
+      "username": "Usuario2",
+      "password": "MiClav32",
       "role": "estudiante"
     },
     {
       "id": "4",
-      "username": "Profesor222",
-      "password": "Profe123",
-      "role": "profesor"
+      "username": "Usuario1",
+      "password": "MiClav3",
+      "role": "estudiante"
     }
   ],
+
   "asignaturas": [
     {
       "idAsig": "1",
       "nombre": "Arquitectura",
       "codigo": "ASY4131",
       "profesorId": "1",
-      "contenido": "Arquitectura, es una asignatura de especialidad...",
-      "mostrarModal": false,
-      "id": "a3f6"
+      "contenido": "Arquitectura, es una asignatura de especialidad..."
     },
     {
       "idAsig": "2",
       "nombre": "Calidad De Software",
       "codigo": "CSY4111",
-      "profesorId": "4",
-      "contenido": "Calidad de software, es una asignatura de especialidad...",
-      "mostrarModal": false,
-      "id": "c2dc"
+      "profesorId": "1",
+      "contenido": "Calidad de software, es una asignatura de especialidad..."
     },
     {
       "idAsig": "3",
       "nombre": "Estadística Descriptiva",
       "codigo": "MAT4140",
       "profesorId": "1",
-      "contenido": "La estadística descriptiva es la técnica matemática...",
-      "mostrarModal": false,
-      "id": "7a5c"
+      "contenido": "La estadística descriptiva es la técnica matemática..."
     },
     {
       "idAsig": "4",
       "nombre": "Ética Para El Trabajo",
       "codigo": "EAY4450",
-      "profesorId": "4",
-      "contenido": "Bienvenido al curso 'Ética para el trabajo'...",
-      "mostrarModal": false,
-      "id": "05d3"
+      "profesorId": "2",
+      "contenido": "Bienvenido al curso 'Ética para el trabajo'..."
     },
     {
       "idAsig": "5",
       "nombre": "Inglés Intermedio",
       "codigo": "INI5111",
-      "profesorId": "1",
-      "contenido": "Welcome to your English course! We invite you...",
-      "mostrarModal": false,
-      "id": "e3a7"
+      "profesorId": "2",
+      "contenido": "Welcome to your English course! We invite you..."
     },
     {
       "idAsig": "6",
       "nombre": "Proceso De Portafolio",
       "codigo": "APY4461",
-      "profesorId": "4",
-      "contenido": "El 'Proceso de Portafolio' es un proceso académico...",
-      "mostrarModal": false,
-      "id": "3185"
+      "profesorId": "2",
+      "contenido": "El 'Proceso de Portafolio' es un proceso académico..."
     }
   ],
+
   "asistencias": [
     {
       "id": "e250",
@@ -111,73 +101,42 @@
       "estado": "Presente"
     }
   ],
-  "estudiantes": [
+
+  "secciones": [
     {
-      "id": "2",
-      "nombre": "Usuario1",
-      "inscripciones": [
+      "id": "A",
+      "nombre": "Seccion A",
+      "estudiantes": [
         {
-          "asignaturaId": "1",
-          "cursoId": "1"
-        },
-        {
-          "asignaturaId": "2",
-          "cursoId": "2"
-        },
-        {
-          "asignaturaId": "4",
-          "cursoId": "3"
-        },
-        {
-          "asignaturaId": "5",
-          "cursoId": "1"
+          "estudianteId": "3",
+          "nombre": "Usuario2",
+          "asignaturas": [
+            { "idAsig": "1", "nombre": "Arquitectura" },
+            { "idAsig": "2", "nombre": "Calidad De Software" },
+            { "idAsig": "3", "nombre": "Estadística Descriptiva" },
+            { "idAsig": "4", "nombre": "Ética Para El Trabajo" },
+            { "idAsig": "5", "nombre": "Inglés Intermedio" },
+            { "idAsig": "6", "nombre": "Proceso De Portafolio" }
+          ]
         }
       ]
     },
     {
-      "id": "3",
-      "nombre": "Cesar",
-      "inscripciones": [
+      "id": "B",
+      "nombre": "Seccion B",
+      "estudiantes": [
         {
-          "asignaturaId": "4",
-          "cursoId": "3"
-        },
-        {
-          "asignaturaId": "5",
-          "cursoId": "1"
-        },
-        {
-          "asignaturaId": "6",
-          "cursoId": "2"
+          "estudianteId": "4",
+          "nombre": "Usuario1",
+          "asignaturas": [
+            { "idAsig": "1", "nombre": "Arquitectura" },
+            { "idAsig": "2", "nombre": "Calidad De Software" },
+            { "idAsig": "3", "nombre": "Estadística Descriptiva" },
+            { "idAsig": "4", "nombre": "Ética Para El Trabajo" },
+            { "idAsig": "5", "nombre": "Inglés Intermedio" },
+            { "idAsig": "6", "nombre": "Proceso De Portafolio"}
+          ]
         }
-      ]
-    }
-  ],
-  "cursos": [
-    {
-      "id": "1",
-      "nombre": "Arquitectura 101",
-      "profesorId": "1",
-      "estudiantes": [
-        "2",
-        "3"
-      ]
-    },
-    {
-      "id": "2",
-      "nombre": "Calidad 101",
-      "profesorId": "4",
-      "estudiantes": [
-        "3"
-      ]
-    },
-    {
-      "id": "3",
-      "nombre": "Ética 101",
-      "profesorId": "4",
-      "estudiantes": [
-        "2",
-        "3"
       ]
     }
   ]
