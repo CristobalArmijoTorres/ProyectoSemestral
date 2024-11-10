@@ -95,28 +95,32 @@
     {
       "id": "e250",
       "asignaturaId": "1",
-      "estudianteId": "1",
+      "estudianteId": "3",
+      "seccionId": "1",
       "fecha": "2024-11-08T07:42:13.202Z",
       "estado": true
     },
     {
       "id": "aebd",
       "asignaturaId": "1",
-      "estudianteId": "1",
+      "estudianteId": "3",
+      "seccionId": "1",
       "fecha": "2024-11-08T07:42:29.888Z",
       "estado": true
     },
     {
       "id": "8fd5",
       "asignaturaId": "2",
-      "estudianteId": "3",
+      "estudianteId": "4",
+      "seccionId": "2",
       "fecha": "2024-11-08T07:46:00.156Z",
       "estado": true
     },
     {
       "id": "d96f",
       "asignaturaId": "3",
-      "estudianteId": "1",
+      "estudianteId": "4",
+      "seccionId": "2",
       "fecha": "2024-11-08T16:17:19.569Z",
       "estado": true
     }
@@ -126,6 +130,7 @@
     {
       "id": "A",
       "nombre": "Seccion A",
+      "seccionId": "1",
       "estudiantes": [
         {
           "estudianteId": "3",
@@ -144,6 +149,7 @@
     {
       "id": "B",
       "nombre": "Seccion B",
+      "seccionId": "2",
       "estudiantes": [
         {
           "estudianteId": "4",
