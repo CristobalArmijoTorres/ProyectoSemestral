@@ -1,31 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class QrService {
-  private apiUrl = 'http://localhost:3000/asistencias'; // URL base para el registro de asistencias
+  private apiUrl = 'http://localhost:3000/asistencia'; // URL de la API o tu base de datos local
 
   constructor(private http: HttpClient) {}
 
-  // Método para registrar asistencia
+  // Método para registrar la asistencia
   registrarAsistencia(asignaturaId: string, estudianteId: string): Observable<any> {
-    const fechaActual = new Date().toISOString(); // Fecha y hora actual en formato ISO
-    const asistencia = {
+    const asistenciaData = {
       asignaturaId: asignaturaId,
-      estudianteId: estudianteId, // Asegúrate de incluir el estudianteId
-      fecha: fechaActual,
-      estado: 'Presente'
+      estudianteId: estudianteId,
+      fecha: new Date().toISOString(), // Fecha de la asistencia
     };
-    
-    return this.http.post(this.apiUrl, asistencia).pipe(
-      catchError(error => {
-        console.error('Error al registrar asistencia', error);
-        return throwError(error); // Lanza el error para que pueda ser manejado en el componente
-      })
-    );
+
+    // Realizamos una petición POST para registrar la asistencia
+    return this.http.post(this.apiUrl, asistenciaData);
   }
 }

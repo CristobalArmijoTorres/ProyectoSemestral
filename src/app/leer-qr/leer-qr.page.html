@@ -11,20 +11,37 @@
   <ngx-scanner-qrcode #action="scanner" [config]="config" (event)="onEvent($event, action)"></ngx-scanner-qrcode>
 
   <div class="ion-padding">
-    <button ion-button (click)="handle(action, 'start')">Iniciar Escaneo</button>
-    <button ion-button (click)="handle(action, 'stop')">Detener Escaneo</button>
+    <button ion-button (click)="iniciarEscaneo()">Iniciar Escaneo</button>
+    <button ion-button (click)="detenerEscaneo()">Detener Escaneo</button>
+    
   </div>
 
-  <!-- Campo para mostrar el resultado del QR -->
   <ion-item>
     <ion-label position="floating">Código QR Escaneado</ion-label>
     <ion-input [(ngModel)]="qrCodeInput" readonly></ion-input>
   </ion-item>
 
-  <!-- Botón para registrar la asistencia -->
-  <ion-button expand="full" (click)="registrarAsistencia()" [disabled]="!qrCodeInput">Registrar Asistencia</ion-button>
+  <ion-item *ngIf="asignatura">
+    <ion-label position="floating">Nombre de la Asignatura</ion-label>
+    <ion-input [(ngModel)]="asignatura.nombre" readonly></ion-input>
+  </ion-item>
+  <ion-item *ngIf="asignatura">
+    <ion-label position="floating">Código</ion-label>
+    <ion-input [(ngModel)]="asignatura.codigo" readonly></ion-input>
+  </ion-item>
+  <ion-item *ngIf="asignatura">
+    <ion-label position="floating">Profesor</ion-label>
+    <ion-input [(ngModel)]="asignatura.profesorId" readonly></ion-input>
+  </ion-item>
 
+  <ion-button expand="full" (click)="registrarAsistencia()" [disabled]="!qrCodeInput">Registrar Asistencia</ion-button>
+  <ion-button expand="full" color="light" (click)="limpiar()">Limpiar</ion-button>
+
+  <!-- Mensajes de error y éxito -->
   <div *ngIf="errorMessage" class="ion-padding" color="danger">
     <p>{{ errorMessage }}</p>
+  </div>
+  <div *ngIf="successMessage" class="ion-padding" color="success">
+    <p>{{ successMessage }}</p>
   </div>
 </ion-content>
