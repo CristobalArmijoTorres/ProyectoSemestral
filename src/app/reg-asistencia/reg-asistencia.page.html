@@ -8,19 +8,42 @@
 </ion-header>
 
 <ion-content class="ion-padding white-background">
-  <h1 class="black-text">Registrar Asistencia</h1>
-  <h6 class="black-text">Selecciona una asignatura y genera un QR para registrar la asistencia</h6>
+  <h1 class="black-text">Registro de Asistencia</h1>
+  <h6 class="black-text">Selecciona una asignatura y sección para generar el QR</h6>
 
-  <!-- Lista de Asignaturas -->
-  <ion-list>
-    <ion-item *ngFor="let asignatura of asignaturas">
-      <ion-label>{{ asignatura.nombre }}</ion-label>
-      <ion-button shape="round" size="small" color="success" (click)="generarQR(asignatura)">
-        Generar QR 
-        <ion-icon slot="end" name="qr-code-outline" color="light"></ion-icon>
-      </ion-button>
-    </ion-item>
-  </ion-list>
+  <!-- Lista de Asignaturas en formato de Tarjetas -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" *ngFor="let asignatura of asignaturas">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ asignatura.nombre }}</ion-card-title>
+            <ion-card-subtitle>Código: {{ asignatura.codigo }}</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>Contenido: {{ asignatura.contenido }}</p>
+            
+            <!-- Selector de Sección -->
+            <ion-item>
+              <ion-label>Seleccionar Sección</ion-label>
+              <ion-select placeholder="Sección" [(ngModel)]="asignatura.seccionSeleccionada">
+                <ion-select-option *ngFor="let seccion of secciones" [value]="seccion.id">
+                  {{ seccion.nombre }}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <!-- Botón para Generar QR -->
+            <ion-button expand="full" color="success" (click)="generarQR(asignatura)" [disabled]="!asignatura.seccionSeleccionada">
+              Generar QR 
+              <ion-icon slot="end" name="qr-code-outline" color="light"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <!-- Modal para mostrar el QR -->
   <ion-modal [isOpen]="mostrar">
@@ -34,10 +57,10 @@
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
-        <p class="black-text">Escanear el siguiente QR para registrar su asistencia</p>
+        <p class="black-text">Escanea el siguiente QR para registrar la asistencia</p>
         <ion-card>
           <ion-card-header>
-            <ion-card-title>Código QR</ion-card-title>
+            <ion-card-title>Asistencia de {{ asignaturaSeleccionada?.nombre }} - {{ seccionSeleccionada?.nombre }}</ion-card-title>
           </ion-card-header>
           <ion-card-content style="text-align: center; margin-top: 20px;">
             <qrcode [qrdata]="qrData" [width]="200"></qrcode>
