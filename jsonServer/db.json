@@ -34,6 +34,15 @@
 }
 ],
 
+"estudiantes":[
+{
+  "estudianteId" : "3", "nombre":"Usuario1", "seccionId": "2"
+},
+{
+  "estudianteId" : "4", "nombre":"Usuario2", "seccionId": "2"
+}
+],
+
   "asignaturas": [
     {
       "idAsig": "1",
@@ -91,14 +100,14 @@
     }
   ],
 
-  "asistencia": [
+  "asistencias": [
     {
       "id": "e250",
       "asignaturaId": "1",
       "estudianteId": "3",
       "seccionId": "1",
       "fecha": "2024-11-08T07:42:13.202Z",
-      "estado": true
+      "estado": "Presente"
     },
     {
       "id": "aebd",
@@ -106,7 +115,7 @@
       "estudianteId": "3",
       "seccionId": "1",
       "fecha": "2024-11-08T07:42:29.888Z",
-      "estado": true
+      "estado": "Presente"
     },
     {
       "id": "8fd5",
@@ -114,7 +123,7 @@
       "estudianteId": "4",
       "seccionId": "2",
       "fecha": "2024-11-08T07:46:00.156Z",
-      "estado": true
+      "estado": "Presente"
     },
     {
       "id": "d96f",
@@ -122,7 +131,7 @@
       "estudianteId": "4",
       "seccionId": "2",
       "fecha": "2024-11-08T16:17:19.569Z",
-      "estado": true
+      "estado": "Presente"
     }
   ],
 
