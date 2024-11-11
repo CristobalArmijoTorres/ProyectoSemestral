@@ -1,9 +1,18 @@
+// reg-asistencia.service.ts
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RegAsistenciaService {
+  private url = 'assets/db.json'; // Ruta al archivo db.json
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
+
+  // Método para obtener asistencias por asignatura
+  obtenerAsistencias(): Observable<any> {
+    return this.http.get<any>(this.url);
+  }
 }

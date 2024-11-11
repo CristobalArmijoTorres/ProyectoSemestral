@@ -25,24 +25,28 @@
       "role": "estudiante"
     }
   ],
-"profesores":[
-{
-  "profesorId" : "1", "nombre":"Profesor1"
-},
-{
-  "profesorId" : "2", "nombre":"Profesor2"
-}
-],
-
-"estudiantes":[
-{
-  "estudianteId" : "3", "nombre":"Usuario1", "seccionId": "2"
-},
-{
-  "estudianteId" : "4", "nombre":"Usuario2", "seccionId": "2"
-}
-],
-
+  "profesores": [
+    {
+      "profesorId": "1",
+      "nombre": "Profesor1"
+    },
+    {
+      "profesorId": "2",
+      "nombre": "Profesor2"
+    }
+  ],
+  "estudiantes": [
+    {
+      "estudianteId": "3",
+      "nombre": "Usuario1",
+      "seccionId": "2"
+    },
+    {
+      "estudianteId": "4",
+      "nombre": "Usuario2",
+      "seccionId": "2"
+    }
+  ],
   "asignaturas": [
     {
       "idAsig": "1",
@@ -99,7 +103,6 @@
       "id": "3185"
     }
   ],
-
   "asistencias": [
     {
       "id": "e250",
@@ -132,9 +135,22 @@
       "seccionId": "2",
       "fecha": "2024-11-08T16:17:19.569Z",
       "estado": "Presente"
+    },
+    {
+      "id": "920f",
+      "asignaturaId": "1",
+      "estudianteId": "1",
+      "fecha": "2024-11-11T00:19:15.222Z",
+      "estado": "Presente"
+    },
+    {
+      "id": "3ec6",
+      "asignaturaId": "1",
+      "estudianteId": "1",
+      "fecha": "2024-11-11T00:19:28.975Z",
+      "estado": "Presente"
     }
   ],
-
   "secciones": [
     {
       "id": "A",
@@ -145,12 +161,42 @@
           "estudianteId": "3",
           "nombre": "Usuario2",
           "asignaturas": [
-            { "idAsig": "1", "nombre": "Arquitectura", "codigo": "ASY4131","profesorId": "1" },
-            { "idAsig": "2", "nombre": "Calidad De Software", "codigo": "ASY4131","profesorId": "1" },
-            { "idAsig": "3", "nombre": "Estadística Descriptiva", "codigo": "ASY4131","profesorId": "1" },
-            { "idAsig": "4", "nombre": "Ética Para El Trabajo", "codigo": "ASY4131","profesorId": "2" },
-            { "idAsig": "5", "nombre": "Inglés Intermedio" , "codigo": "ASY4131","profesorId": "2"},
-            { "idAsig": "6", "nombre": "Proceso De Portafolio" , "codigo": "ASY4131","profesorId": "2"}
+            {
+              "idAsig": "1",
+              "nombre": "Arquitectura",
+              "codigo": "ASY4131",
+              "profesorId": "1"
+            },
+            {
+              "idAsig": "2",
+              "nombre": "Calidad De Software",
+              "codigo": "ASY4131",
+              "profesorId": "1"
+            },
+            {
+              "idAsig": "3",
+              "nombre": "Estadística Descriptiva",
+              "codigo": "ASY4131",
+              "profesorId": "1"
+            },
+            {
+              "idAsig": "4",
+              "nombre": "Ética Para El Trabajo",
+              "codigo": "ASY4131",
+              "profesorId": "2"
+            },
+            {
+              "idAsig": "5",
+              "nombre": "Inglés Intermedio",
+              "codigo": "ASY4131",
+              "profesorId": "2"
+            },
+            {
+              "idAsig": "6",
+              "nombre": "Proceso De Portafolio",
+              "codigo": "ASY4131",
+              "profesorId": "2"
+            }
           ]
         }
       ]
@@ -164,12 +210,42 @@
           "estudianteId": "4",
           "nombre": "Usuario1",
           "asignaturas": [
-            { "idAsig": "1", "nombre": "Arquitectura", "codigo": "ASY4131","profesorId": "1" },
-            { "idAsig": "2", "nombre": "Calidad De Software", "codigo": "ASY4131","profesorId": "1" },
-            { "idAsig": "3", "nombre": "Estadística Descriptiva" , "codigo": "ASY4131","profesorId": "1"},
-            { "idAsig": "4", "nombre": "Ética Para El Trabajo" , "codigo": "ASY4131","profesorId": "2"},
-            { "idAsig": "5", "nombre": "Inglés Intermedio" , "codigo": "ASY4131","profesorId": "2"},
-            { "idAsig": "6", "nombre": "Proceso De Portafolio", "codigo": "ASY4131","profesorId": "2"}
+            {
+              "idAsig": "1",
+              "nombre": "Arquitectura",
+              "codigo": "ASY4131",
+              "profesorId": "1"
+            },
+            {
+              "idAsig": "2",
+              "nombre": "Calidad De Software",
+              "codigo": "ASY4131",
+              "profesorId": "1"
+            },
+            {
+              "idAsig": "3",
+              "nombre": "Estadística Descriptiva",
+              "codigo": "ASY4131",
+              "profesorId": "1"
+            },
+            {
+              "idAsig": "4",
+              "nombre": "Ética Para El Trabajo",
+              "codigo": "ASY4131",
+              "profesorId": "2"
+            },
+            {
+              "idAsig": "5",
+              "nombre": "Inglés Intermedio",
+              "codigo": "ASY4131",
+              "profesorId": "2"
+            },
+            {
+              "idAsig": "6",
+              "nombre": "Proceso De Portafolio",
+              "codigo": "ASY4131",
+              "profesorId": "2"
+            }
           ]
         }
       ]
