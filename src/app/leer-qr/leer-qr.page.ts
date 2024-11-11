@@ -56,8 +56,6 @@ export class LeerQrPage implements AfterViewInit {
       }
     }
   }
-  
-  
 
   public handle(action: any, fn: string): void {
     const playDeviceFacingBack = (devices: any[]) => {
@@ -82,12 +80,23 @@ export class LeerQrPage implements AfterViewInit {
     try {
       const datosQR = JSON.parse(this.qrCodeInput); // Suponiendo que el QR es un JSON
 
-      // Validar que el QR contenga los datos necesarios
-      if (datosQR && datosQR.asignaturaId) {
+      // Verificar si el QR contiene la asignaturaId y seccionId
+      console.log('Datos QR:', datosQR); // Verifica qué contiene el QR
+
+      if (datosQR && datosQR.asignaturaId && datosQR.seccionId) {
         const estudianteId = JSON.parse(localStorage.getItem('user') || '{}').id; // Obtener el ID del estudiante
+        const estudianteSeccionId = JSON.parse(localStorage.getItem('user') || '{}').seccionId; // Obtener la sección del estudiante
+
+        // Validar que la sección del QR coincida con la sección del estudiante
+        if (datosQR.seccionId !== estudianteSeccionId) {
+          this.errorMessage = 'El código QR no corresponde a la sección del estudiante.';
+          console.error('Sección del QR:', datosQR.seccionId);
+          console.error('Sección del estudiante:', estudianteSeccionId);
+          return; // Detener el proceso si las secciones no coinciden
+        }
 
         // Llama al servicio para registrar asistencia
-        this.qrService.registrarAsistencia(datosQR.asignaturaId, estudianteId).subscribe(
+        this.qrService.registrarAsistencia(datosQR.asignaturaId, estudianteId, datosQR.seccionId).subscribe(
           response => {
             console.log('Asistencia registrada:', response);
             // Mostrar mensaje de éxito o realizar alguna acción adicional
