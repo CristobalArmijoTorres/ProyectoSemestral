@@ -113,29 +113,102 @@
       "estado": true
     },
     {
-      "id": "aebd",
+      "id": "e266",
       "asignaturaId": "1",
       "estudianteId": "1",
       "seccionId": "1",
-      "fecha": "2024-11-08T07:42:29.888Z",
+      "fecha": "2024-11-08T07:42:13.202Z",
       "estado": true
     },
     {
-      "id": "8fd5",
+      "id": "e251",
+      "asignaturaId": "2",
+      "estudianteId": "1",
+      "seccionId": "1",
+      "fecha": "2024-11-08T07:42:13.202Z",
+      "estado": true
+    },
+    {
+      "id": "e252",
+      "asignaturaId": "3",
+      "estudianteId": "1",
+      "seccionId": "1",
+      "fecha": "2024-11-08T07:42:13.202Z",
+      "estado": true
+    },
+    {
+      "id": "e253",
+      "asignaturaId": "4",
+      "estudianteId": "1",
+      "seccionId": "1",
+      "fecha": "2024-11-08T07:42:13.202Z",
+      "estado": true
+    },
+    {
+      "id": "e254",
+      "asignaturaId": "5",
+      "estudianteId": "1",
+      "seccionId": "1",
+      "fecha": "2024-11-08T07:42:13.202Z",
+      "estado": true
+    },
+    {
+      "id": "e255",
+      "asignaturaId": "6",
+      "estudianteId": "1",
+      "seccionId": "1",
+      "fecha": "2024-11-08T07:42:13.202Z",
+      "estado": true
+    },
+    {
+      "id": "e256",
+      "asignaturaId": "1",
+      "estudianteId": "2",
+      "seccionId": "2",
+      "fecha": "2024-11-08T07:42:13.202Z",
+      "estado": true
+    },
+    {
+      "id": "e257",
       "asignaturaId": "2",
       "estudianteId": "2",
       "seccionId": "2",
-      "fecha": "2024-11-08T07:46:00.156Z",
+      "fecha": "2024-11-08T07:42:13.202Z",
       "estado": true
     },
     {
-      "id": "d96f",
+      "id": "e258",
       "asignaturaId": "3",
       "estudianteId": "2",
       "seccionId": "2",
-      "fecha": "2024-11-08T16:17:19.569Z",
+      "fecha": "2024-11-08T07:42:13.202Z",
+      "estado": true
+    },
+    {
+      "id": "e259",
+      "asignaturaId": "4",
+      "estudianteId": "2",
+      "seccionId": "2",
+      "fecha": "2024-11-08T07:42:13.202Z",
+      "estado": true
+    },
+    {
+      "id": "e260",
+      "asignaturaId": "5",
+      "estudianteId": "2",
+      "seccionId": "2",
+      "fecha": "2024-11-08T07:42:13.202Z",
+      "estado": true
+    },
+    {
+      "id": "e261",
+      "asignaturaId": "6",
+      "estudianteId": "2",
+      "seccionId": "2",
+      "fecha": "2024-11-08T07:42:13.202Z",
       "estado": true
     }
+
   ],
   "secciones": [
     {
