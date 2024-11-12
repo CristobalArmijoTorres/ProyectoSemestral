@@ -12,11 +12,13 @@ export class QrService {
   constructor(private http: HttpClient) {}
 
   // Método para registrar asistencia
-  registrarAsistencia(asignaturaId: string, estudianteId: string, seccionId: string): Observable<any> {
+  registrarAsistencia(asignaturaId: string, estudianteId: string, seccionId: string, nombre: string): Observable<any> {
     const fechaActual = new Date().toISOString(); // Fecha y hora actual en formato ISO
     const asistencia = {
       asignaturaId: asignaturaId,
-      estudianteId: estudianteId, // Asegúrate de incluir el estudianteId
+      estudianteId: estudianteId,
+      seccionId: seccionId,
+      nombre: nombre, // Asegúrate de incluir el estudianteId
       fecha: fechaActual,
       estado: true
     };

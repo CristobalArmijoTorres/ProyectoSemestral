@@ -96,7 +96,7 @@ export class LeerQrPage implements AfterViewInit {
         }
 
         // Llama al servicio para registrar asistencia
-        this.qrService.registrarAsistencia(datosQR.asignaturaId, estudianteId, datosQR.seccionId).subscribe(
+        this.qrService.registrarAsistencia(datosQR.asignaturaId, estudianteId, datosQR.seccionId, datosQR.nombre).subscribe(
           response => {
             console.log('Asistencia registrada:', response);
             // Mostrar mensaje de éxito o realizar alguna acción adicional
