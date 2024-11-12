@@ -37,12 +37,12 @@
   ],
   "estudiantes": [
     {
-      "estudianteId": "1",
+      "estudianteId": "3",
       "nombre": "Usuario1",
       "seccionId": "2"
     },
     {
-      "estudianteId": "2",
+      "estudianteId": "4",
       "nombre": "Usuario2",
       "seccionId": "2"
     }
@@ -146,6 +146,27 @@
     {
       "id": "3ec6",
       "asignaturaId": "1",
+      "estudianteId": "1",
+      "fecha": "2024-11-11T00:19:28.975Z",
+      "estado": true
+    },
+    {
+      "id": "3ec6",
+      "asignaturaId": "2",
+      "estudianteId": "1",
+      "fecha": "2024-11-11T00:19:28.975Z",
+      "estado": true
+    },
+    {
+      "id": "3ec6",
+      "asignaturaId": "2",
+      "estudianteId": "1",
+      "fecha": "2024-11-11T00:19:28.975Z",
+      "estado": true
+    },
+    {
+      "id": "3ec6",
+      "asignaturaId": "2",
       "estudianteId": "1",
       "fecha": "2024-11-11T00:19:28.975Z",
       "estado": true

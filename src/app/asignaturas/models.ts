@@ -18,3 +18,12 @@ export interface Asignaturas {
   nombre: string;
   asignaturas: Asignatura[];
 }
+
+export interface Asistencia{
+  id: string;
+  asignaturaId: string;
+  estudianteId: string;
+  seccionId?: string;
+  fecha: string;
+  estado: boolean;
+}

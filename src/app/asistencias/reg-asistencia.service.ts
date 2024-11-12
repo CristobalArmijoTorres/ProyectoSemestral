@@ -1,18 +1,60 @@
-// reg-asistencia.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map, mergeMap } from 'rxjs/operators';
+import { Asignatura, Asistencia, Estudiante } from '../asignaturas/models';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class RegAsistenciaService {
-  private url = 'assets/db.json'; // Ruta al archivo db.json
+export class AsigAlumnoService {
+  private apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
-  // Método para obtener asistencias por asignatura
-  obtenerAsistencias(): Observable<any> {
-    return this.http.get<any>(this.url);
+  // Obtener asignaturas inscritas por el estudiante ID
+  getAsignaturasByStudentId(studentId: string): Observable<Asignatura[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/secciones`).pipe(
+      mergeMap(secciones => {
+        for (let seccion of secciones) {
+          const estudiante = seccion.estudiantes.find((est: Estudiante) => est.estudianteId === studentId);
+          if (estudiante) {
+            return new Observable<Asignatura[]>(observer => {
+              observer.next(estudiante.asignaturas);
+              observer.complete();
+            });
+          }
+        }
+        return new Observable<Asignatura[]>(observer => {
+          observer.next([]);
+          observer.complete();
+        });
+      }),
+      catchError(error => {
+        console.error('Error al obtener asignaturas', error);
+        return throwError(error);
+      })
+    );
+  }
+
+  // Obtener todas las asistencias del estudiante ID
+  getAsistenciasByStudentId(studentId: string): Observable<Asistencia[]> {
+    return this.http.get<Asistencia[]>(`${this.apiUrl}/asistencias`).pipe(
+      map(asistencias => asistencias.filter(asistencia => asistencia.estudianteId === studentId)),
+      catchError(error => {
+        console.error('Error al obtener asistencias', error);
+        return throwError(error);
+      })
+    );
+  }
+
+  // Obtener todos los profesores
+  getAllProfesores(): Observable<{ profesorId: string; nombre: string }[]> {
+    return this.http.get<{ profesorId: string; nombre: string }[]>(`${this.apiUrl}/profesores`).pipe(
+      catchError(error => {
+        console.error('Error al obtener los profesores', error);
+        return throwError(error);
+      })
+    );
   }
 }

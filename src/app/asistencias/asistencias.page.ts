@@ -1,6 +1,6 @@
-// asistencias.page.ts
 import { Component, OnInit } from '@angular/core';
-import { RegAsistenciaService } from '../asistencias/reg-asistencia.service';
+import { AsigAlumnoService } from '../asistencias/reg-asistencia.service';
+import { Asistencia } from '../asignaturas/models';
 
 @Component({
   selector: 'app-asistencias',
@@ -8,58 +8,28 @@ import { RegAsistenciaService } from '../asistencias/reg-asistencia.service';
   styleUrls: ['./asistencias.page.scss'],
 })
 export class AsistenciasPage implements OnInit {
-  asistenciaArq: any[] = [];
-  asistenciaCDS: any[] = [];
-  asistenciaED: any[] = [];
-  asistenciaEPET: any[] = [];
-  asistenciaII: any[] = [];
-  asistenciaPDP: any[] = [];
-  
-  // Variables para controlar el estado de los modales
-  permitir1 = false;
-  permitir2 = false;
-  permitir3 = false;
-  permitir4 = false;
-  permitir5 = false;
-  permitir6 = false;
+  asistencias: Asistencia[] = [];
+  studentId: string = '1'; // ID del estudiante (reemplázalo con el ID del estudiante que necesitas)
 
-  modal1 = false;
-  modal2 = false;
-  modal3 = false;
-  modal4 = false;
-  modal5 = false;
-  modal6 = false;
-
-  constructor(private asistenciaService: RegAsistenciaService) {}
+  constructor(private asigAlumnoService: AsigAlumnoService) {}
 
   ngOnInit() {
-    this.cargarAsistencias();
+    this.obtenerAsistencias();
   }
 
-  cargarAsistencias() {
-    this.asistenciaService.obtenerAsistencias().subscribe((data) => {
-      this.asistenciaArq = data.arquitectura || [];
-      this.asistenciaCDS = data.calidadDeSoftware || [];
-      this.asistenciaED = data.estadisticaDescriptiva || [];
-      this.asistenciaEPET = data.eticaParaElTrabajo || [];
-      this.asistenciaII = data.inglesIntermedio || [];
-      this.asistenciaPDP = data.procesoDePortafolio || [];
+  obtenerAsistencias() {
+    this.asigAlumnoService.getAsistenciasByStudentId(this.studentId).subscribe({
+      next: (asistencias) => {
+        this.asistencias = asistencias;
+      },
+      error: (error) => {
+        console.error('Error al obtener asistencias:', error);
+      }
     });
   }
 
-  // Métodos para alternar la visibilidad de las listas de asistencia
-  mostrar1() { this.permitir1 = !this.permitir1; }
-  mostrar2() { this.permitir2 = !this.permitir2; }
-  mostrar3() { this.permitir3 = !this.permitir3; }
-  mostrar4() { this.permitir4 = !this.permitir4; }
-  mostrar5() { this.permitir5 = !this.permitir5; }
-  mostrar6() { this.permitir6 = !this.permitir6; }
-
-  // Métodos para alternar la visibilidad de los modales
-  verModal1() { this.modal1 = !this.modal1; }
-  verModal2() { this.modal2 = !this.modal2; }
-  verModal3() { this.modal3 = !this.modal3; }
-  verModal4() { this.modal4 = !this.modal4; }
-  verModal5() { this.modal5 = !this.modal5; }
-  verModal6() { this.modal6 = !this.modal6; }
+  verDetalle(asistencia: Asistencia) {
+    // Aquí podrías implementar una funcionalidad para ver detalles de cada asistencia
+    console.log('Detalles de asistencia:', asistencia);
+  }
 }
