@@ -57,4 +57,27 @@ export class AsigAlumnoService {
       })
     );
   }
+  // Obtener asistencias agrupadas por asignatura
+getAsistenciasByStudentIdGroupedByAsignatura(studentId: string): Observable<{ asignaturaId: string; asistencias: Asistencia[] }[]> {
+  return this.getAsistenciasByStudentId(studentId).pipe(
+    map(asistencias => {
+      // Agrupar asistencias por asignaturaId
+      const grouped = asistencias.reduce((acc, asistencia) => {
+        const key = asistencia.asignaturaId;
+        if (!acc[key]) {
+          acc[key] = [];
+        }
+        acc[key].push(asistencia);
+        return acc;
+      }, {} as { [key: string]: Asistencia[] });
+
+      // Convertir el objeto en un array de objetos para cada asignatura
+      return Object.keys(grouped).map(asignaturaId => ({
+        asignaturaId,
+        asistencias: grouped[asignaturaId]
+      }));
+    })
+  );
+}
+
 }

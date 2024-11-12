@@ -8,35 +8,35 @@ import { Asistencia } from '../asignaturas/models';
   styleUrls: ['./asistencias.page.scss'],
 })
 export class AsistenciasPage implements OnInit {
-  asistencias: Asistencia[] = [];
-  selectedAsistencia: Asistencia | null = null;
+  asistenciasAgrupadas: { asignaturaId: string; asistencias: Asistencia[] }[] = [];
+  selectedAsistencias: Asistencia[] | null = null;
   showModal = false;
-  studentId: string = '1'; // ID del estudiante (reemplázalo con el ID del estudiante que necesitas)
+  studentId: string = '1'; // ID del estudiante
 
   constructor(private asigAlumnoService: AsigAlumnoService) {}
 
   ngOnInit() {
-    this.obtenerAsistencias();
+    this.obtenerAsistenciasAgrupadas();
   }
 
-  obtenerAsistencias() {
-    this.asigAlumnoService.getAsistenciasByStudentId(this.studentId).subscribe({
-      next: (asistencias) => {
-        this.asistencias = asistencias;
+  obtenerAsistenciasAgrupadas() {
+    this.asigAlumnoService.getAsistenciasByStudentIdGroupedByAsignatura(this.studentId).subscribe({
+      next: (asistenciasAgrupadas) => {
+        this.asistenciasAgrupadas = asistenciasAgrupadas;
       },
       error: (error) => {
-        console.error('Error al obtener asistencias:', error);
+        console.error('Error al obtener asistencias agrupadas:', error);
       }
     });
   }
 
-  openModal(asistencia: Asistencia) {
-    this.selectedAsistencia = asistencia;
+  openModal(asistencias: Asistencia[]) {
+    this.selectedAsistencias = asistencias;
     this.showModal = true;
   }
 
   closeModal() {
-    this.selectedAsistencia = null;
+    this.selectedAsistencias = null;
     this.showModal = false;
   }
 }

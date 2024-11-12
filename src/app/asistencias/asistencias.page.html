@@ -9,13 +9,13 @@
 
 <ion-content>
   <ion-accordion-group>
-    <ion-accordion *ngFor="let asistencia of asistencias">
+    <ion-accordion *ngFor="let asistenciaAgrupada of asistenciasAgrupadas">
       <ion-item slot="header">
-        <ion-label>{{ asistencia.asignaturaId }}</ion-label>
+        <ion-label>{{ asistenciaAgrupada.asignaturaId }}</ion-label>
       </ion-item>
       <div class="asistencia-content" slot="content">
         <h2>Mi Asistencia</h2>
-        <ion-button color="warning" expand="block" (click)="openModal(asistencia)">Ver Más</ion-button>
+        <ion-button color="warning" expand="block" (click)="openModal(asistenciaAgrupada.asistencias)">Ver Más</ion-button>
       </div>
     </ion-accordion>
   </ion-accordion-group>
@@ -32,18 +32,12 @@
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <ion-list>
-          <ion-item>
-            <ion-label>Asignatura:</ion-label>
-            <p>{{ selectedAsistencia?.asignaturaId }}</p>
-          </ion-item>
-          <ion-item>
-            <ion-label>Fecha:</ion-label>
-            <p>{{ selectedAsistencia?.fecha }}</p>
-          </ion-item>
-          <ion-item>
-            <ion-label>Estado:</ion-label>
-            <p>{{ selectedAsistencia?.estado ? 'Presente' : 'Ausente' }}</p>
+        <ion-list *ngIf="selectedAsistencias">
+          <ion-item *ngFor="let asistencia of selectedAsistencias">
+            <ion-label>
+              Fecha: {{ asistencia.fecha }}<br>
+              Estado: {{ asistencia.estado ? 'Presente' : 'Ausente' }}
+            </ion-label>
           </ion-item>
         </ion-list>
       </ion-content>
