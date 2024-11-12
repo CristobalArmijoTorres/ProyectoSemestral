@@ -9,6 +9,8 @@ import { Asistencia } from '../asignaturas/models';
 })
 export class AsistenciasPage implements OnInit {
   asistencias: Asistencia[] = [];
+  selectedAsistencia: Asistencia | null = null;
+  showModal = false;
   studentId: string = '1'; // ID del estudiante (reemplázalo con el ID del estudiante que necesitas)
 
   constructor(private asigAlumnoService: AsigAlumnoService) {}
@@ -28,8 +30,13 @@ export class AsistenciasPage implements OnInit {
     });
   }
 
-  verDetalle(asistencia: Asistencia) {
-    // Aquí podrías implementar una funcionalidad para ver detalles de cada asistencia
-    console.log('Detalles de asistencia:', asistencia);
+  openModal(asistencia: Asistencia) {
+    this.selectedAsistencia = asistencia;
+    this.showModal = true;
+  }
+
+  closeModal() {
+    this.selectedAsistencia = null;
+    this.showModal = false;
   }
 }
