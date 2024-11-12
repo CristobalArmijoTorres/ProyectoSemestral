@@ -18,7 +18,7 @@ export class QrService {
       asignaturaId: asignaturaId,
       estudianteId: estudianteId, // Asegúrate de incluir el estudianteId
       fecha: fechaActual,
-      estado: 'Presente'
+      estado: true
     };
 
     // Validar que el estudiante pertenece a la sección
