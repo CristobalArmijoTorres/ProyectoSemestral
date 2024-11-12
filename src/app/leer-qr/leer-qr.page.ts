@@ -80,17 +80,23 @@ export class LeerQrPage implements AfterViewInit {
 
   public registrarAsistencia() {
     try {
-      const datosQR = JSON.parse(this.qrCodeInput); // Suponiendo que el QR es un JSON
-
-      // Validar que el QR contenga los datos necesarios
-      if (datosQR && datosQR.asignaturaId) {
-        const estudianteId = JSON.parse(localStorage.getItem('user') || '{}').id; // Obtener el ID del estudiante
-
-        // Llama al servicio para registrar asistencia
-        this.qrService.registrarAsistencia(datosQR.asignaturaId, datosQR.estudianteId, datosQR.seccionId, datosQR.nombre).subscribe(
+      const datosQR = JSON.parse(this.qrCodeInput); // Convierte el QR a un objeto JSON
+  
+      // Validar que el QR contenga los campos necesarios
+      if (datosQR && datosQR.asignaturaId && datosQR.seccionId) {
+        const estudiante = JSON.parse(localStorage.getItem('user') || '{}');
+        const estudianteId = estudiante?.id; // Obtén el ID del estudiante
+  
+        if (!estudianteId) {
+          this.errorMessage = 'No se pudo obtener el ID del estudiante. Revisa los datos del usuario.';
+          return;
+        }
+  
+        // Llama al servicio para registrar asistencia con los datos correctos
+        this.qrService.registrarAsistencia(datosQR.asignaturaId, estudianteId, datosQR.seccionId).subscribe(
           response => {
             console.log('Asistencia registrada:', response);
-            // Mostrar mensaje de éxito o realizar alguna acción adicional
+            // Acción adicional después de registrar con éxito
           },
           error => {
             console.error('Error al registrar asistencia', error);
@@ -98,11 +104,13 @@ export class LeerQrPage implements AfterViewInit {
           }
         );
       } else {
-        this.errorMessage = 'Código QR no válido. Asegúrate de que el QR contenga la información necesaria.';
+        this.errorMessage = 'Código QR no válido. Asegúrate de que el QR contenga la información requerida.';
       }
     } catch (e) {
       console.error('Error al parsear el QR:', e);
-      this.errorMessage = 'El código QR no tiene el formato correcto.';
+      this.errorMessage = 'El formato del código QR es incorrecto.';
     }
   }
+  
+  
 }

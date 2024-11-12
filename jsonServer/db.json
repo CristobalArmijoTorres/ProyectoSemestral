@@ -14,37 +14,27 @@
     },
     {
       "id": "3",
-      "username": "Usuario2",
-      "password": "MiClav32",
+      "username": "Usuario1",
+      "password": "MiClav3",
       "role": "estudiante"
     },
     {
       "id": "4",
-      "username": "Usuario1",
-      "password": "MiClav3",
+      "username": "Usuario2",
+      "password": "MiClav32",
       "role": "estudiante"
     }
   ],
   "profesores": [
     {
       "profesorId": "1",
-      "nombre": "Profesor1"
+      "nombre": "Profesor1",
+      "id": "b042"
     },
     {
       "profesorId": "2",
-      "nombre": "Profesor2"
-    }
-  ],
-  "estudiantes": [
-    {
-      "estudianteId": "1",
-      "nombre": "Usuario1",
-      "seccionId": "2"
-    },
-    {
-      "estudianteId": "2",
-      "nombre": "Usuario2",
-      "seccionId": "2"
+      "nombre": "Profesor2",
+      "id": "1644"
     }
   ],
   "asignaturas": [
@@ -105,110 +95,13 @@
   ],
   "asistencias": [
     {
-      "id": "e250",
-      "asignaturaId": "1",
-      "estudianteId": "1",
-      "seccionId": "1",
-      "fecha": "2024-11-08T07:42:13.202Z",
-      "estado": true
-    },
-    {
-      "id": "e266",
-      "asignaturaId": "1",
-      "estudianteId": "1",
-      "seccionId": "1",
-      "fecha": "2024-11-08T07:42:13.202Z",
-      "estado": true
-    },
-    {
-      "id": "e251",
-      "asignaturaId": "2",
-      "estudianteId": "1",
-      "seccionId": "1",
-      "fecha": "2024-11-08T07:42:13.202Z",
-      "estado": true
-    },
-    {
-      "id": "e252",
-      "asignaturaId": "3",
-      "estudianteId": "1",
-      "seccionId": "1",
-      "fecha": "2024-11-08T07:42:13.202Z",
-      "estado": true
-    },
-    {
-      "id": "e253",
+      "id": "v2tv",
       "asignaturaId": "4",
-      "estudianteId": "1",
-      "seccionId": "1",
-      "fecha": "2024-11-08T07:42:13.202Z",
-      "estado": true
-    },
-    {
-      "id": "e254",
-      "asignaturaId": "5",
-      "estudianteId": "1",
-      "seccionId": "1",
-      "fecha": "2024-11-08T07:42:13.202Z",
-      "estado": true
-    },
-    {
-      "id": "e255",
-      "asignaturaId": "6",
-      "estudianteId": "1",
-      "seccionId": "1",
-      "fecha": "2024-11-08T07:42:13.202Z",
-      "estado": true
-    },
-    {
-      "id": "e256",
-      "asignaturaId": "1",
-      "estudianteId": "2",
-      "seccionId": "2",
-      "fecha": "2024-11-08T07:42:13.202Z",
-      "estado": true
-    },
-    {
-      "id": "e257",
-      "asignaturaId": "2",
-      "estudianteId": "2",
-      "seccionId": "2",
-      "fecha": "2024-11-08T07:42:13.202Z",
-      "estado": true
-    },
-    {
-      "id": "e258",
-      "asignaturaId": "3",
-      "estudianteId": "2",
-      "seccionId": "2",
-      "fecha": "2024-11-08T07:42:13.202Z",
-      "estado": true
-    },
-    {
-      "id": "e259",
-      "asignaturaId": "4",
-      "estudianteId": "2",
-      "seccionId": "2",
-      "fecha": "2024-11-08T07:42:13.202Z",
-      "estado": true
-    },
-    {
-      "id": "e260",
-      "asignaturaId": "5",
-      "estudianteId": "2",
-      "seccionId": "2",
-      "fecha": "2024-11-08T07:42:13.202Z",
-      "estado": true
-    },
-    {
-      "id": "e261",
-      "asignaturaId": "6",
-      "estudianteId": "2",
-      "seccionId": "2",
-      "fecha": "2024-11-08T07:42:13.202Z",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "2024-11-12T23:47:54.339Z",
       "estado": true
     }
-
   ],
   "secciones": [
     {
@@ -273,7 +166,6 @@
               "contenido": "El 'Proceso de Portafolio' es un proceso académico...",
               "mostrarModal": false,
               "id": "3185"
-
             }
           ]
         }
@@ -341,7 +233,6 @@
               "contenido": "El 'Proceso de Portafolio' es un proceso académico...",
               "mostrarModal": false,
               "id": "3185"
-
             }
           ]
         }

@@ -12,18 +12,17 @@ export class QrService {
   constructor(private http: HttpClient) {}
 
   // Método para registrar asistencia
-registrarAsistencia(asignaturaId: string, estudianteId: string, seccionId: string, nombre: string): Observable<any> {
+  registrarAsistencia(asignaturaId: string, estudianteId: string, seccionId: string): Observable<any> {
     const fechaActual = new Date().toISOString(); // Fecha y hora actual en formato ISO
     const asistencia = {
+      id: Math.random().toString(36).substring(2, 6), // Genera un ID aleatorio si es necesario
       asignaturaId: asignaturaId,
       estudianteId: estudianteId,
       seccionId: seccionId,
-      nombre: nombre, // Asegúrate de incluir el estudianteId
       fecha: fechaActual,
       estado: true
     };
 
-    
     return this.http.post(this.apiUrl, asistencia).pipe(
       catchError(error => {
         console.error('Error al registrar asistencia', error);

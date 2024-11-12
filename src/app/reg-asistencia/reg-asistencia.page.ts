@@ -21,6 +21,7 @@ export class RegAsistenciaPage implements OnInit {
     this.cargarSecciones();
   }
 
+  // Método para cargar las asignaturas del docente
   cargarAsignaturas() {
     const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
     if (storedUser && storedUser.id) {
@@ -35,8 +36,8 @@ export class RegAsistenciaPage implements OnInit {
     }
   }
 
+  // Método para cargar las secciones
   cargarSecciones() {
-    // Asume que `getSecciones` en el servicio obtiene las secciones de la API.
     this.registrarService.getSecciones().subscribe(
       (secciones: any[]) => {
         this.secciones = secciones;
@@ -47,23 +48,29 @@ export class RegAsistenciaPage implements OnInit {
     );
   }
 
+  // Método para generar el QR con los datos necesarios
   generarQR(asignatura: any) {
     const seccionId = asignatura.seccionSeleccionada;
     const seccion = this.secciones.find(sec => sec.id === seccionId);
     
     this.asignaturaSeleccionada = asignatura;
     this.seccionSeleccionada = seccion;
-    
+
+    // Obtener el estudianteId desde el localStorage
+    const estudianteId = JSON.parse(localStorage.getItem('user') || '{}').id;
+
+    // Construcción del JSON para el QR
     this.qrData = JSON.stringify({
       asignaturaId: asignatura.idAsig,
-      nombre: asignatura.nombre,
-      codigo: asignatura.codigo,
-      seccion: seccionId,
+      seccionId: seccionId,
+      estudianteId: estudianteId,
       fecha: new Date().toISOString()
     });
+
     this.verModal(); // Abre el modal con el QR generado
   }
 
+  // Método para mostrar/ocultar el modal
   verModal() {
     this.mostrar = !this.mostrar;
   }
