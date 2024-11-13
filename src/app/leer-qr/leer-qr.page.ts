@@ -92,6 +92,20 @@ export class LeerQrPage implements AfterViewInit {
           return;
         }
   
+        // Aquí es donde verificamos si el estudiante pertenece a la sección
+        const seccion = this.getSeccion(datosQR.seccionId);
+        if (!seccion) {
+          this.errorMessage = 'Sección no válida.';
+          return;
+        }
+  
+        const estudianteEnSeccion = seccion.estudiantes.find((e: any) => e.estudianteId === estudianteId);
+  
+        if (!estudianteEnSeccion) {
+          this.errorMessage = 'No puedes registrar asistencia. No perteneces a esta sección.';
+          return;
+        }
+  
         // Llama al servicio para registrar asistencia con los datos correctos
         this.qrService.registrarAsistencia(datosQR.asignaturaId, estudianteId, datosQR.seccionId).subscribe(
           response => {
@@ -111,6 +125,28 @@ export class LeerQrPage implements AfterViewInit {
       this.errorMessage = 'El formato del código QR es incorrecto.';
     }
   }
+  
+  // Método auxiliar para obtener la sección por ID
+  private getSeccion(seccionId: string) {
+    // Aquí deberías obtener las secciones desde tu base de datos o un servicio
+    const secciones = [
+      {
+        id: "A",
+        estudiantes: [
+          { estudianteId: "3", nombre: "Usuario2" }
+        ]
+      },
+      {
+        id: "B",
+        estudiantes: [
+          { estudianteId: "4", nombre: "Usuario1" }
+        ]
+      }
+    ];
+  
+    return secciones.find(seccion => seccion.id === seccionId);
+  }
+  
   
   
 }
