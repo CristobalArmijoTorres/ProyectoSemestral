@@ -12,7 +12,6 @@ export class AsigAlumnoService {
 
   constructor(private http: HttpClient) {}
 
-  // Obtener asignaturas inscritas por el estudiante ID
   getAsignaturasByStudentId(studentId: string): Observable<Asignatura[]> {
     return this.http.get<any[]>(`${this.apiUrl}/secciones`).pipe(
       mergeMap(secciones => {
@@ -37,7 +36,7 @@ export class AsigAlumnoService {
     );
   }
 
-  // Obtener todas las asistencias del estudiante ID
+ 
   getAsistenciasByStudentId(studentId: string): Observable<Asistencia[]> {
     return this.http.get<Asistencia[]>(`${this.apiUrl}/asistencias`).pipe(
       map(asistencias => asistencias.filter(asistencia => asistencia.estudianteId === studentId)),
@@ -48,7 +47,7 @@ export class AsigAlumnoService {
     );
   }
 
-  // Obtener todos los profesores
+
   getAllProfesores(): Observable<{ profesorId: string; nombre: string }[]> {
     return this.http.get<{ profesorId: string; nombre: string }[]>(`${this.apiUrl}/profesores`).pipe(
       catchError(error => {
@@ -57,11 +56,11 @@ export class AsigAlumnoService {
       })
     );
   }
-  // Obtener asistencias agrupadas por asignatura
+
 getAsistenciasByStudentIdGroupedByAsignatura(studentId: string): Observable<{ asignaturaId: string; asistencias: Asistencia[] }[]> {
   return this.getAsistenciasByStudentId(studentId).pipe(
     map(asistencias => {
-      // Agrupar asistencias por asignaturaId
+   
       const grouped = asistencias.reduce((acc, asistencia) => {
         const key = asistencia.asignaturaId;
         if (!acc[key]) {
@@ -71,7 +70,7 @@ getAsistenciasByStudentIdGroupedByAsignatura(studentId: string): Observable<{ as
         return acc;
       }, {} as { [key: string]: Asistencia[] });
 
-      // Convertir el objeto en un array de objetos para cada asignatura
+    
       return Object.keys(grouped).map(asignaturaId => ({
         asignaturaId,
         asistencias: grouped[asignaturaId]

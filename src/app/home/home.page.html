@@ -11,20 +11,20 @@
     </ion-card-header>
     <ion-card-content>
       
-      <!-- Usuario -->  
+      
       <label>Usuario: </label>
       <ion-input type="text" placeholder="Ingrese su Usuario" [(ngModel)]="usuarioIngresado"></ion-input>
 
-      <!-- Contraseña -->
+      
       <label>Clave: </label>
       <ion-input type="password" placeholder="Ingrese la clave" [(ngModel)]="claveIngresada"></ion-input>
 
-      <!-- Botón Olvidé mi contraseña -->
+      
       <ion-button fill="clear" (click)="funcionAlerta()">
         Olvidé mi contraseña
       </ion-button>
 
-      <!-- Botón Aceptar -->
+     
       <ion-button shape="round" fill="outline" (click)="ingresar()">Aceptar</ion-button>
     </ion-card-content>
   </ion-card>

@@ -1,9 +1,9 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'; // Importa CUSTOM_ELEMENTS_SCHEMA
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'; 
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode'; // Importa NgxScannerQrcodeModule aquí
+import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode'; 
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,10 +15,10 @@ import { AppRoutingModule } from './app-routing.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    NgxScannerQrcodeModule, // Asegúrate de que está en la lista de imports
+    NgxScannerQrcodeModule, 
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA], // Agrega CUSTOM_ELEMENTS_SCHEMA aquí
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], 
 })
 export class AppModule {}

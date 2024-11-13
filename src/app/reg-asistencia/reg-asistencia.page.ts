@@ -7,12 +7,12 @@ import { RegistrarService } from '../reg-asistencia/registrar.service';
   styleUrls: ['./reg-asistencia.page.scss'],
 })
 export class RegAsistenciaPage implements OnInit {
-  asignaturas: any[] = []; // Lista de asignaturas del docente
-  secciones: any[] = []; // Lista de secciones
-  qrData: string = ''; // Contenido dinámico del QR
-  mostrar = false; // Controla la visibilidad del modal
-  asignaturaSeleccionada: any = null; // Asignatura seleccionada para el QR
-  seccionSeleccionada: any = null; // Sección seleccionada para el QR
+  asignaturas: any[] = []; 
+  secciones: any[] = []; 
+  qrData: string = ''; 
+  mostrar = false; 
+  asignaturaSeleccionada: any = null; 
+  seccionSeleccionada: any = null;
 
   constructor(private registrarService: RegistrarService) {}
 
@@ -21,7 +21,7 @@ export class RegAsistenciaPage implements OnInit {
     this.cargarSecciones();
   }
 
-  // Método para cargar las asignaturas del docente
+  
   cargarAsignaturas() {
     const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
     if (storedUser && storedUser.id) {
@@ -36,7 +36,7 @@ export class RegAsistenciaPage implements OnInit {
     }
   }
 
-  // Método para cargar las secciones
+  
   cargarSecciones() {
     this.registrarService.getSecciones().subscribe(
       (secciones: any[]) => {
@@ -48,7 +48,7 @@ export class RegAsistenciaPage implements OnInit {
     );
   }
 
-  // Método para generar el QR con los datos necesarios
+  
   generarQR(asignatura: any) {
     const seccionId = asignatura.seccionSeleccionada;
     const seccion = this.secciones.find(sec => sec.id === seccionId);
@@ -56,10 +56,10 @@ export class RegAsistenciaPage implements OnInit {
     this.asignaturaSeleccionada = asignatura;
     this.seccionSeleccionada = seccion;
 
-    // Obtener el estudianteId desde el localStorage
+ 
     const estudianteId = JSON.parse(localStorage.getItem('user') || '{}').id;
 
-    // Construcción del JSON para el QR
+    
     this.qrData = JSON.stringify({
       asignaturaId: asignatura.idAsig,
       seccionId: seccionId,
@@ -67,10 +67,9 @@ export class RegAsistenciaPage implements OnInit {
       fecha: new Date().toISOString()
     });
 
-    this.verModal(); // Abre el modal con el QR generado
+    this.verModal(); 
   }
 
-  // Método para mostrar/ocultar el modal
   verModal() {
     this.mostrar = !this.mostrar;
   }

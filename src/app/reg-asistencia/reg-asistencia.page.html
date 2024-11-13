@@ -11,7 +11,7 @@
   <h1 class="black-text">Registro de Asistencia</h1>
   <h6 class="black-text">Selecciona una asignatura y sección para generar el QR</h6>
 
-  <!-- Lista de Asignaturas en formato de Tarjetas -->
+  
   <ion-grid>
     <ion-row>
       <ion-col size="12" *ngFor="let asignatura of asignaturas">
@@ -24,7 +24,7 @@
           <ion-card-content>
             <p>Contenido: {{ asignatura.contenido }}</p>
             
-            <!-- Selector de Sección -->
+            
             <ion-item>
               <ion-label>Seleccionar Sección</ion-label>
               <ion-select placeholder="Sección" [(ngModel)]="asignatura.seccionSeleccionada">
@@ -34,7 +34,7 @@
               </ion-select>
             </ion-item>
 
-            <!-- Botón para Generar QR -->
+            
             <ion-button expand="full" color="success" (click)="generarQR(asignatura)" [disabled]="!asignatura.seccionSeleccionada">
               Generar QR 
               <ion-icon slot="end" name="qr-code-outline" color="light"></ion-icon>
@@ -45,7 +45,7 @@
     </ion-row>
   </ion-grid>
 
-  <!-- Modal para mostrar el QR -->
+
   <ion-modal [isOpen]="mostrar">
     <ng-template>
       <ion-header>

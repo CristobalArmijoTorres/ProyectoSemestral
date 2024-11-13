@@ -8,13 +8,13 @@ import { BienvenidaProfeService } from '../menu-profe/bienvenida-profe.service';
   styleUrls: ['./menu-profe.page.scss'],
 })
 export class MenuProfePage implements OnInit {
-  usuario: string = ''; // Nombre del usuario cargado desde el servicio
-  image: string = 'assets/slide1.png'; // Imagen de bienvenida
+  usuario: string = ''; 
+  image: string = 'assets/slide1.png'; 
 
   constructor(
     private navController: NavController,
     private alertController: AlertController,
-    private bienvenidaProfeService: BienvenidaProfeService // Inyectamos el servicio de bienvenida para el profesor
+    private bienvenidaProfeService: BienvenidaProfeService 
   ) {}
 
   ngOnInit() {
@@ -22,14 +22,14 @@ export class MenuProfePage implements OnInit {
   }
 
   cargarUsuario() {
-    // Obtener el usuario desde localStorage
+    
     const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
 
     if (storedUser && storedUser.id) {
-      // Llamar al servicio para obtener los datos del usuario
+      
       this.bienvenidaProfeService.getUserById(storedUser.id).subscribe(
         (userData: any) => {
-          this.usuario = userData.username; // Asigna el nombre al campo 'usuario'
+          this.usuario = userData.username;
         },
         (error: any) => {
           console.error('Error al obtener los datos del usuario', error);
@@ -50,8 +50,8 @@ export class MenuProfePage implements OnInit {
         {
           text: 'Aceptar',
           handler: () => {
-            localStorage.removeItem('user'); // Eliminar el usuario de localStorage al cerrar sesión
-            this.navController.navigateRoot(['/home']); // Redirigir a la página de inicio
+            localStorage.removeItem('user');
+            this.navController.navigateRoot(['/home']); 
           }
         }
       ]

@@ -1,4 +1,4 @@
-// asignaturas.page.ts
+
 import { Component, OnInit } from '@angular/core';
 import { AsigAlumnoService } from '../asignaturas/asig-alumno.service';
 import { Asignatura } from './models';
@@ -10,7 +10,7 @@ import { Asignatura } from './models';
 })
 export class AsignaturasPage implements OnInit {
   asignaturas: Asignatura[] = [];
-  profesores: { [profesorId: string]: string } = {}; // Objeto para relacionar profesorId con nombre
+  profesores: { [profesorId: string]: string } = {}; 
 
   constructor(private asigAlumnoService: AsigAlumnoService) {}
 
@@ -38,7 +38,7 @@ export class AsignaturasPage implements OnInit {
   cargarProfesores() {
     this.asigAlumnoService.getAllProfesores().subscribe(
       (profesores) => {
-        // Crear el objeto de referencia de profesores
+        
         profesores.forEach(profesor => {
           this.profesores[profesor.profesorId] = profesor.nombre;
         });

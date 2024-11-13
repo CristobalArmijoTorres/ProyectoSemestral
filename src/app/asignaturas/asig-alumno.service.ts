@@ -1,4 +1,4 @@
-// asig-alumno.service.ts
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
@@ -13,7 +13,7 @@ export class AsigAlumnoService {
 
   constructor(private http: HttpClient) {}
 
-  // Obtener asignaturas inscritas por el estudiante ID
+ 
   getAsignaturasByStudentId(studentId: string): Observable<Asignatura[]> {
     return this.http.get<any[]>(`${this.apiUrl}/secciones`).pipe(
       mergeMap(secciones => {
@@ -38,7 +38,7 @@ export class AsigAlumnoService {
     );
   }
 
-  // Obtener todos los profesores
+
   getAllProfesores(): Observable<{ profesorId: string; nombre: string }[]> {
     return this.http.get<{ profesorId: string; nombre: string }[]>(`${this.apiUrl}/profesores`).pipe(
       catchError(error => {

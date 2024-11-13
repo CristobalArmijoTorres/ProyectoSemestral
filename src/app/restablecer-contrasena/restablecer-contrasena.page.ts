@@ -24,7 +24,7 @@ export class RestablecerContrasenaPage implements OnInit {
   async ingresar() {
     const usuario = JSON.parse(localStorage.getItem('user') || '{}');
 
-    // Verificar que la clave actual sea correcta
+    
     if (this.claveActual !== usuario.password) {
       const toast = await this.toastController.create({
         message: 'La clave actual es incorrecta.',
@@ -36,7 +36,7 @@ export class RestablecerContrasenaPage implements OnInit {
       return;
     }
 
-    // Verificar que la nueva clave y la confirmación coincidan
+    
     if (this.claveIngresada1 !== this.claveIngresada2) {
       const toast = await this.toastController.create({
         message: 'Las nuevas claves no coinciden.',
@@ -48,7 +48,7 @@ export class RestablecerContrasenaPage implements OnInit {
       return;
     }
 
-    // Cambiar la contraseña en la base de datos
+    
     this.modificarContrasenaService.updatePassword(usuario.id, this.claveIngresada1).subscribe(
       async () => {
         const toast = await this.toastController.create({
@@ -59,7 +59,7 @@ export class RestablecerContrasenaPage implements OnInit {
         });
         await toast.present();
 
-        // Elimina el usuario del localStorage y redirige al inicio de sesión
+        
         localStorage.removeItem('user');
         this.navCtrl.navigateRoot('/home');
       },

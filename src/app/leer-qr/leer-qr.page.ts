@@ -5,7 +5,7 @@ import {
   NgxScannerQrcodeService,
   NgxScannerQrcodeComponent,
 } from 'ngx-scanner-qrcode';
-import { QrService } from './qr.service'; // Asegúrate de importar el servicio
+import { QrService } from './qr.service'; 
 
 @Component({
   selector: 'app-leer-qr',
@@ -23,8 +23,8 @@ export class LeerQrPage implements AfterViewInit {
     },
   };
 
-  public qrCodeInput: string = ''; // Almacena el resultado del QR
-  public errorMessage: string = ''; // Mensaje de error
+  public qrCodeInput: string = ''; 
+  public errorMessage: string = ''; 
 
   constructor(private qrcode: NgxScannerQrcodeService, private qrService: QrService) {}
 
@@ -36,19 +36,19 @@ export class LeerQrPage implements AfterViewInit {
 
   public onEvent(e: ScannerQRCodeResult[], action?: any): void {
     if (e.length > 0) {
-      const qrData = e[0].data; // Asignar el contenido del QR a la variable
+      const qrData = e[0].data; 
 
-      // Log para verificar el tipo y contenido del QR
+      
       console.log('QR Data:', qrData);
       console.log('Tipo de QR Data:', typeof qrData);
 
-      // Verifica si qrData es un Int8Array y conviértelo a string
+      
       if (qrData instanceof Int8Array) {
-        // Convertir el Int8Array a un string
-        this.qrCodeInput = new TextDecoder().decode(qrData); // Decodificar el contenido
+        
+        this.qrCodeInput = new TextDecoder().decode(qrData); 
         console.log('QR Code scanned:', this.qrCodeInput);
       } else if (typeof qrData === 'string') {
-        this.qrCodeInput = qrData; // Asignar el contenido del QR a la variable
+        this.qrCodeInput = qrData; 
         console.log('QR Code scanned:', this.qrCodeInput);
       } else {
         console.error('El contenido del QR no es un string válido.');
@@ -78,10 +78,10 @@ export class LeerQrPage implements AfterViewInit {
 
   public registrarAsistencia() {
     try {
-      const datosQR = JSON.parse(this.qrCodeInput); // Convierte el QR a un objeto JSON
-      console.log('Datos del QR:', datosQR); // Verificar el contenido
+      const datosQR = JSON.parse(this.qrCodeInput); 
+      console.log('Datos del QR:', datosQR); 
 
-      // Verificar que el QR contenga la asignaturaId y seccionId
+      
       if (datosQR && datosQR.asignaturaId && datosQR.seccionId) {
         const estudiante = JSON.parse(localStorage.getItem('user') || '{}');
         const estudianteId = estudiante?.id;
@@ -91,7 +91,7 @@ export class LeerQrPage implements AfterViewInit {
           return;
         }
 
-        // Aquí es donde verificamos si el estudiante pertenece a la sección
+       
         const seccion = this.getSeccion(datosQR.seccionId);
         if (!seccion) {
           this.errorMessage = 'Sección no válida.';
@@ -105,11 +105,11 @@ export class LeerQrPage implements AfterViewInit {
           return;
         }
 
-        // Llama al servicio para registrar asistencia con los datos correctos
+       
         this.qrService.registrarAsistencia(datosQR.asignaturaId, estudianteId, datosQR.seccionId).subscribe(
           response => {
             console.log('Asistencia registrada:', response);
-            // Acción adicional después de registrar con éxito
+          
           },
           error => {
             console.error('Error al registrar asistencia', error);
@@ -125,9 +125,9 @@ export class LeerQrPage implements AfterViewInit {
     }
   }
 
-  // Método auxiliar para obtener la sección por ID
+  
   private getSeccion(seccionId: string) {
-    // Aquí deberías obtener las secciones desde tu base de datos o un servicio
+    
     const secciones = [
       {
         id: 'A',

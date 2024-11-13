@@ -1,4 +1,4 @@
-// models.ts
+
 export interface Asignatura {
   idAsig: string;
   nombre: string;

@@ -12,7 +12,7 @@ export class AsistenciasPage implements OnInit {
   asistenciasAgrupadas: { asignaturaId: string; asistencias: Asistencia[] }[] = [];
   selectedAsistencias: Asistencia[] | null = null;
   showModal = false;
-  studentId: string = '3'; // ID del estudiante hay que ver como traer el id del estudiante que inicio sesion
+  studentId: string = '3'; 
 
 
   constructor(private asigAlumnoService: AsigAlumnoService) {}

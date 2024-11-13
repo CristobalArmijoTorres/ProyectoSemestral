@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BienvenidaProfeService {
-  private apiUrl = 'http://localhost:3000/usuarios'; // URL base para usuarios en db.json
+  private apiUrl = 'http://localhost:3000/usuarios'; 
 
   constructor(private http: HttpClient) {}
 
-  // Método para obtener los datos del profesor por ID
+  
   getUserById(userId: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${userId}`);
   }
