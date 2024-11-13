@@ -18,7 +18,7 @@ export class LeerQrPage implements AfterViewInit {
   public config: ScannerQRCodeConfig = {
     constraints: {
       video: {
-        width: window.innerWidth
+        width: window.innerWidth,
       },
     },
   };
@@ -37,11 +37,11 @@ export class LeerQrPage implements AfterViewInit {
   public onEvent(e: ScannerQRCodeResult[], action?: any): void {
     if (e.length > 0) {
       const qrData = e[0].data; // Asignar el contenido del QR a la variable
-  
+
       // Log para verificar el tipo y contenido del QR
       console.log('QR Data:', qrData);
       console.log('Tipo de QR Data:', typeof qrData);
-  
+
       // Verifica si qrData es un Int8Array y conviértelo a string
       if (qrData instanceof Int8Array) {
         // Convertir el Int8Array a un string
@@ -56,14 +56,12 @@ export class LeerQrPage implements AfterViewInit {
       }
     }
   }
-  
-  
 
   public handle(action: any, fn: string): void {
     const playDeviceFacingBack = (devices: any[]) => {
       const device = devices.find(f => (/back|rear|environment/gi.test(f.label)));
       action.playDevice(device ? device.deviceId : devices[0].deviceId);
-    }
+    };
 
     if (fn === 'start') {
       action[fn](playDeviceFacingBack).subscribe(
@@ -81,31 +79,32 @@ export class LeerQrPage implements AfterViewInit {
   public registrarAsistencia() {
     try {
       const datosQR = JSON.parse(this.qrCodeInput); // Convierte el QR a un objeto JSON
-  
-      // Validar que el QR contenga los campos necesarios
+      console.log('Datos del QR:', datosQR); // Verificar el contenido
+
+      // Verificar que el QR contenga la asignaturaId y seccionId
       if (datosQR && datosQR.asignaturaId && datosQR.seccionId) {
         const estudiante = JSON.parse(localStorage.getItem('user') || '{}');
-        const estudianteId = estudiante?.id; // Obtén el ID del estudiante
-  
+        const estudianteId = estudiante?.id;
+
         if (!estudianteId) {
           this.errorMessage = 'No se pudo obtener el ID del estudiante. Revisa los datos del usuario.';
           return;
         }
-  
+
         // Aquí es donde verificamos si el estudiante pertenece a la sección
         const seccion = this.getSeccion(datosQR.seccionId);
         if (!seccion) {
           this.errorMessage = 'Sección no válida.';
           return;
         }
-  
+
         const estudianteEnSeccion = seccion.estudiantes.find((e: any) => e.estudianteId === estudianteId);
-  
+
         if (!estudianteEnSeccion) {
           this.errorMessage = 'No puedes registrar asistencia. No perteneces a esta sección.';
           return;
         }
-  
+
         // Llama al servicio para registrar asistencia con los datos correctos
         this.qrService.registrarAsistencia(datosQR.asignaturaId, estudianteId, datosQR.seccionId).subscribe(
           response => {
@@ -125,28 +124,25 @@ export class LeerQrPage implements AfterViewInit {
       this.errorMessage = 'El formato del código QR es incorrecto.';
     }
   }
-  
+
   // Método auxiliar para obtener la sección por ID
   private getSeccion(seccionId: string) {
     // Aquí deberías obtener las secciones desde tu base de datos o un servicio
     const secciones = [
       {
-        id: "A",
+        id: 'A',
         estudiantes: [
-          { estudianteId: "3", nombre: "Usuario2" }
+          { estudianteId: '3', nombre: 'Usuario2' }
         ]
       },
       {
-        id: "B",
+        id: 'B',
         estudiantes: [
-          { estudianteId: "4", nombre: "Usuario1" }
+          { estudianteId: '4', nombre: 'Usuario1' }
         ]
       }
     ];
-  
+
     return secciones.find(seccion => seccion.id === seccionId);
   }
-  
-  
-  
 }
