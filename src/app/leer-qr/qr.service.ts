@@ -13,7 +13,7 @@ export class QrService {
 
   
   registrarAsistencia(asignaturaId: string, estudianteId: string, seccionId: string): Observable<any> {
-    const fechaActual = new Date().toISOString(); 
+    const fechaActual = new Date().toLocaleDateString(); 
     const asistencia = {
       id: Math.random().toString(36).substring(2, 6), 
       asignaturaId: asignaturaId,
