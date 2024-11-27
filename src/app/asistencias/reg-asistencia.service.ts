@@ -7,7 +7,7 @@ import { Asignatura, Asistencia, Estudiante } from '../asignaturas/models';
 @Injectable({
   providedIn: 'root'
 })
-export class AsigAlumnoService {
+export class RegAsistenciaService {
   private apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}

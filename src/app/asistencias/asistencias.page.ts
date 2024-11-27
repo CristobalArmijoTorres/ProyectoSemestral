@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AsigAlumnoService } from '../asistencias/reg-asistencia.service';
+import { RegAsistenciaService } from '../asistencias/reg-asistencia.service';
 import { Asistencia } from '../asignaturas/models';
 
 
@@ -15,14 +15,14 @@ export class AsistenciasPage implements OnInit {
   studentId: string = '3'; 
 
 
-  constructor(private asigAlumnoService: AsigAlumnoService) {}
+  constructor(private RegAsistenciaService: RegAsistenciaService) {}
 
   ngOnInit() {
     this.obtenerAsistenciasAgrupadas();
   }
 
   obtenerAsistenciasAgrupadas() {
-    this.asigAlumnoService.getAsistenciasByStudentIdGroupedByAsignatura(this.studentId).subscribe({
+    this.RegAsistenciaService.getAsistenciasByStudentIdGroupedByAsignatura(this.studentId).subscribe({
       next: (asistenciasAgrupadas) => {
         this.asistenciasAgrupadas = asistenciasAgrupadas;
       },
