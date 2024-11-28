@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AsignaturaProfePage } from './asignatura-profe.page';
-import { HttpClientTestingModule } from '@angular/common/http/testing';  // Importa HttpClientTestingModule
-import { AsigProfeService } from './asig-profe.service';  // Asegúrate de importar el servicio que usa HttpClient
+import { HttpClientTestingModule } from '@angular/common/http/testing';  
+import { AsigProfeService } from './asig-profe.service';  
 
 describe('AsignaturaProfePage', () => {
   let component: AsignaturaProfePage;
@@ -9,8 +9,8 @@ describe('AsignaturaProfePage', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],  // Añadir HttpClientTestingModule aquí
-      providers: [AsigProfeService]  // Proveer el servicio que podría estar usando HttpClient
+      imports: [HttpClientTestingModule], 
+      providers: [AsigProfeService]  
     });
 
     fixture = TestBed.createComponent(AsignaturaProfePage);
