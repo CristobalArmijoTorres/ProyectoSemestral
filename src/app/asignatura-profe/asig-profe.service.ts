@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AsigProfeService {
-  private apiUrl = 'http://localhost:3000/asignaturas';
+  private apiUrl = 'http://192.168.84.55:3000/asignaturas';
 
   constructor(private http: HttpClient) {}
 

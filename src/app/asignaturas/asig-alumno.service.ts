@@ -9,7 +9,7 @@ import { Estudiante, Asignatura } from './models';
   providedIn: 'root'
 })
 export class AsigAlumnoService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'http://192.168.84.55:3000';
 
   constructor(private http: HttpClient) {}
 

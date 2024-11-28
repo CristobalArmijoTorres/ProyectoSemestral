@@ -29,19 +29,22 @@ export class HomePage {
   }
 
   async ingresar() {
+    console.log('Usuario ingresado:', this.usuarioIngresado);
+    console.log('Clave ingresada:', this.claveIngresada);
+  
     this.userService.login(this.usuarioIngresado, this.claveIngresada).subscribe(
       async (response) => {
         if (response.success) {
+          console.log('Usuario encontrado:', response.user);
           localStorage.setItem('user', JSON.stringify(response.user));
-          
           const toast = await this.toastController.create({
             message: 'Ingresando...',
             duration: 1000,
-            position: "middle", 
+            position: "middle",
             color: "success",
           });
           await toast.present();
-
+  
           if (response.user.role === 'profesor') {
             this.navCtrol.navigateForward('/menu-profe');
           } else {
@@ -51,21 +54,23 @@ export class HomePage {
           const toast = await this.toastController.create({
             message: 'El usuario o la contraseña ingresada no es correcta, inténtalo nuevamente',
             duration: 3000,
-            position: "middle", 
+            position: "middle",
             color: "danger",
           });
           await toast.present();
         }
       },
-      async () => {
+      async (error) => {
+        console.error('Error al conectar con el servidor:', error);
         const toast = await this.toastController.create({
           message: 'Hubo un error al conectar con el servidor, inténtalo nuevamente',
           duration: 3000,
-          position: "middle", 
+          position: "middle",
           color: "danger",
         });
         await toast.present();
       }
     );
   }
+  
 }

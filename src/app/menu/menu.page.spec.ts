@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MenuPage } from './menu.page';
-import { HttpClientTestingModule } from '@angular/common/http/testing';  // Asegúrate de importar HttpClientTestingModule
-import { BienvenidaService } from './bienvenida.service';  // Asegúrate de importar el servicio si es necesario
+import { HttpClientTestingModule } from '@angular/common/http/testing';  
+import { BienvenidaService } from './bienvenida.service';  
 
 describe('MenuPage', () => {
   let component: MenuPage;
@@ -9,8 +9,8 @@ describe('MenuPage', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],  // Añadir HttpClientTestingModule aquí
-      providers: [BienvenidaService]  // Asegúrate de que el servicio esté en los providers si el componente lo usa
+      imports: [HttpClientTestingModule],  
+      providers: [BienvenidaService]  
     });
 
     fixture = TestBed.createComponent(MenuPage);

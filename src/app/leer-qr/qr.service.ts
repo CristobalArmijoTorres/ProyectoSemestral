@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class QrService {
-  private apiUrl = 'http://localhost:3000/asistencias'; 
+  private apiUrl = 'http://192.168.84.55:3000/asistencias'; 
 
   constructor(private http: HttpClient) {}
 

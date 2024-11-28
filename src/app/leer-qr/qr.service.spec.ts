@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';  // Importa HttpClientTestingModule
+import { HttpClientTestingModule } from '@angular/common/http/testing';  
 import { QrService } from './qr.service';
 
 describe('QrService', () => {
@@ -7,8 +7,8 @@ describe('QrService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],  // Asegúrate de incluir HttpClientTestingModule aquí
-      providers: [QrService]  // Provee el servicio que se va a probar
+      imports: [HttpClientTestingModule],  
+      providers: [QrService]  
     });
     service = TestBed.inject(QrService);
   });
