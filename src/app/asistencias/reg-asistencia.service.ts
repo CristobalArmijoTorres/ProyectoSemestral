@@ -56,10 +56,6 @@ export class AsigAlumnoService {
       })
     );
   }
- 
-  getUserById(userId: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${userId}`);
-  }
 
 getAsistenciasByStudentIdGroupedByAsignatura(studentId: string): Observable<{ asignaturaId: string; asistencias: Asistencia[] }[]> {
   return this.getAsistenciasByStudentId(studentId).pipe(

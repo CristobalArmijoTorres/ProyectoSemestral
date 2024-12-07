@@ -9,7 +9,7 @@
     {
       "id": "2",
       "username": "Profesor2",
-      "password": "abc",
+      "password": "Profe123",
       "role": "profesor"
     },
     {
@@ -95,27 +95,11 @@
   ],
   "asistencias": [
     {
-      "id": "badb",
+      "id": "2rbu",
       "asignaturaId": "1",
       "estudianteId": "3",
       "seccionId": "A",
-      "fecha": "13-11-2024",
-      "estado": true
-    },
-    {
-      "id": "lp80",
-      "asignaturaId": "5",
-      "estudianteId": "3",
-      "seccionId": "A",
-      "fecha": "13-11-2024",
-      "estado": true
-    },
-    {
-      "id": "t5hp",
-      "asignaturaId": "5",
-      "estudianteId": "3",
-      "seccionId": "A",
-      "fecha": "13-11-2024",
+      "fecha": "2024-11-13T01:31:52.478Z",
       "estado": true
     }
   ],

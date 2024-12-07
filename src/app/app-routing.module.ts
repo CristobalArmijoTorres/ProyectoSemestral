@@ -38,8 +38,7 @@ const routes: Routes = [
   {
     path: 'menu-profe',
     loadChildren: () => import('./menu-profe/menu-profe.module').then( m => m.MenuProfePageModule)
-  },
-  {
+  },  {
     path: 'asignatura-profe',
     loadChildren: () => import('./asignatura-profe/asignatura-profe.module').then( m => m.AsignaturaProfePageModule)
   },
