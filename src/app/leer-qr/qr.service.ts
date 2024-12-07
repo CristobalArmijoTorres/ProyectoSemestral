@@ -12,12 +12,13 @@ export class QrService {
   constructor(private http: HttpClient) {}
 
   
-  registrarAsistencia(asignaturaId: string, estudianteId: string, seccionId: string): Observable<any> {
+  registrarAsistencia(asignaturaId: string, estudianteId: string, nombreAsig: string, seccionId: string): Observable<any> {
     const fechaActual = new Date().toLocaleDateString(); 
     const asistencia = {
       id: Math.random().toString(36).substring(2, 6), 
       asignaturaId: asignaturaId,
       estudianteId: estudianteId,
+      nombreAsig: nombreAsig,
       seccionId: seccionId,
       fecha: fechaActual,
       estado: true

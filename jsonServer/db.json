@@ -147,7 +147,7 @@
           "asignaturas": [
             {
               "idAsig": "1",
-              "nombre": "Arquitectura",
+              "nombreAsig": "Arquitectura",
               "codigo": "ASY4131",
               "profesorId": "1",
               "contenido": "Arquitectura, es una asignatura de especialidad...",
@@ -156,7 +156,7 @@
             },
             {
               "idAsig": "2",
-              "nombre": "Calidad De Software",
+              "nombreAsig": "Calidad De Software",
               "codigo": "CSY4111",
               "profesorId": "1",
               "contenido": "Calidad de software, es una asignatura de especialidad...",
@@ -165,7 +165,7 @@
             },
             {
               "idAsig": "3",
-              "nombre": "Estadística Descriptiva",
+              "nombreAsig": "Estadística Descriptiva",
               "codigo": "MAT4140",
               "profesorId": "1",
               "contenido": "La estadística descriptiva es la técnica matemática...",
@@ -174,7 +174,7 @@
             },
             {
               "idAsig": "4",
-              "nombre": "Ética Para El Trabajo",
+              "nombreAsig": "Ética Para El Trabajo",
               "codigo": "EAY4450",
               "profesorId": "2",
               "contenido": "Bienvenido al curso 'Ética para el trabajo'...",
@@ -183,7 +183,7 @@
             },
             {
               "idAsig": "5",
-              "nombre": "Inglés Intermedio",
+              "nombreAsig": "Inglés Intermedio",
               "codigo": "INI5111",
               "profesorId": "2",
               "contenido": "Welcome to your English course! We invite you...",
@@ -192,7 +192,7 @@
             },
             {
               "idAsig": "6",
-              "nombre": "Proceso De Portafolio",
+              "nombreAsig": "Proceso De Portafolio",
               "codigo": "APY4461",
               "profesorId": "2",
               "contenido": "El 'Proceso de Portafolio' es un proceso académico...",
@@ -214,7 +214,7 @@
           "asignaturas": [
             {
               "idAsig": "1",
-              "nombre": "Arquitectura",
+              "nombreAsig": "Arquitectura",
               "codigo": "ASY4131",
               "profesorId": "1",
               "contenido": "Arquitectura, es una asignatura de especialidad...",
@@ -223,7 +223,7 @@
             },
             {
               "idAsig": "2",
-              "nombre": "Calidad De Software",
+              "nombreAsig": "Calidad De Software",
               "codigo": "CSY4111",
               "profesorId": "1",
               "contenido": "Calidad de software, es una asignatura de especialidad...",
@@ -232,7 +232,7 @@
             },
             {
               "idAsig": "3",
-              "nombre": "Estadística Descriptiva",
+              "nombreAsig": "Estadística Descriptiva",
               "codigo": "MAT4140",
               "profesorId": "1",
               "contenido": "La estadística descriptiva es la técnica matemática...",
@@ -241,7 +241,7 @@
             },
             {
               "idAsig": "4",
-              "nombre": "Ética Para El Trabajo",
+              "nombreAsig": "Ética Para El Trabajo",
               "codigo": "EAY4450",
               "profesorId": "2",
               "contenido": "Bienvenido al curso 'Ética para el trabajo'...",
@@ -250,7 +250,7 @@
             },
             {
               "idAsig": "5",
-              "nombre": "Inglés Intermedio",
+              "nombreAsig": "Inglés Intermedio",
               "codigo": "INI5111",
               "profesorId": "2",
               "contenido": "Welcome to your English course! We invite you...",
@@ -259,7 +259,7 @@
             },
             {
               "idAsig": "6",
-              "nombre": "Proceso De Portafolio",
+              "nombreAsig": "Proceso De Portafolio",
               "codigo": "APY4461",
               "profesorId": "2",
               "contenido": "El 'Proceso de Portafolio' es un proceso académico...",
