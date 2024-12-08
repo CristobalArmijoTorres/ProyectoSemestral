@@ -22,6 +22,7 @@ export interface Asignaturas {
 export interface Asistencia{
   id: string;
   asignaturaId: string;
+  nombreAsignatura: string;
   estudianteId: string;
   seccionId?: string;
   fecha: string;

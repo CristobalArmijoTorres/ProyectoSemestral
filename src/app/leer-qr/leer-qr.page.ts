@@ -90,7 +90,6 @@ export class LeerQrPage implements AfterViewInit {
           this.errorMessage = 'No se pudo obtener el ID del estudiante. Revisa los datos del usuario.';
           return;
         }
-
        
         const seccion = this.getSeccion(datosQR.seccionId);
         if (!seccion) {
@@ -106,7 +105,7 @@ export class LeerQrPage implements AfterViewInit {
         }
 
        
-        this.qrService.registrarAsistencia(datosQR.asignaturaId, estudianteId, datosQR.seccionId).subscribe(
+        this.qrService.registrarAsistencia(datosQR.asignaturaId, datosQR.nombreAsignatura, datosQR.estudianteId, datosQR.seccionId).subscribe(
           response => {
             console.log('Asistencia registrada:', response);
           
@@ -124,7 +123,7 @@ export class LeerQrPage implements AfterViewInit {
       this.errorMessage = 'El formato del código QR es incorrecto.';
     }
   }
-
+  
   
   private getSeccion(seccionId: string) {
     
@@ -146,3 +145,4 @@ export class LeerQrPage implements AfterViewInit {
     return secciones.find(seccion => seccion.id === seccionId);
   }
 }
+

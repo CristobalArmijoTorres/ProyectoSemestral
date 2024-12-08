@@ -62,6 +62,7 @@ export class RegAsistenciaPage implements OnInit {
     
     this.qrData = JSON.stringify({
       asignaturaId: asignatura.idAsig,
+      nombreAsignatura: asignatura.nombreAsig,
       seccionId: seccionId,
       estudianteId: estudianteId,
       fecha: new Date().toISOString()
