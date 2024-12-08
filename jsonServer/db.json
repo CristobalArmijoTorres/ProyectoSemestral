@@ -104,7 +104,7 @@
       "estado": true
     },
     {
-      "id": "p29d",
+      "id": "dexl",
       "asignaturaId": "1",
       "nombreAsig": "Arquitectura",
       "estudianteId": "3",
@@ -113,11 +113,83 @@
       "estado": true
     },
     {
-      "id": "ga0g",
+      "id": "1iyq",
       "asignaturaId": "1",
       "nombreAsig": "Arquitectura",
       "estudianteId": "3",
       "seccionId": "A",
+      "fecha": "08-12-2024",
+      "estado": true
+    },
+    {
+      "id": "76e4",
+      "asignaturaId": "2",
+      "nombreAsig": "Calidad De Software",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "08-12-2024",
+      "estado": true
+    },
+    {
+      "id": "km5d",
+      "asignaturaId": "2",
+      "nombreAsig": "Calidad De Software",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "08-12-2024",
+      "estado": true
+    },
+    {
+      "id": "6k4b",
+      "asignaturaId": "3",
+      "nombreAsig": "Estadística Descriptiva",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "08-12-2024",
+      "estado": true
+    },
+    {
+      "id": "nlm7",
+      "asignaturaId": "3",
+      "nombreAsig": "Estadística Descriptiva",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "08-12-2024",
+      "estado": true
+    },
+    {
+      "id": "fgyd",
+      "asignaturaId": "3",
+      "nombreAsig": "Estadística Descriptiva",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "08-12-2024",
+      "estado": true
+    },
+    {
+      "id": "3oqq",
+      "asignaturaId": "1",
+      "nombreAsig": "Arquitectura",
+      "estudianteId": "4",
+      "seccionId": "B",
+      "fecha": "08-12-2024",
+      "estado": true
+    },
+    {
+      "id": "5e1u",
+      "asignaturaId": "2",
+      "nombreAsig": "Calidad De Software",
+      "estudianteId": "4",
+      "seccionId": "B",
+      "fecha": "08-12-2024",
+      "estado": true
+    },
+    {
+      "id": "dzom",
+      "asignaturaId": "3",
+      "nombreAsig": "Estadística Descriptiva",
+      "estudianteId": "4",
+      "seccionId": "B",
       "fecha": "08-12-2024",
       "estado": true
     }

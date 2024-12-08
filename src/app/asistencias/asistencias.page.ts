@@ -12,14 +12,37 @@ export class AsistenciasPage implements OnInit {
   asistenciasAgrupadas: { asignaturaId: string; asistencias: Asistencia[] }[] = [];
   selectedAsistencias: Asistencia[] | null = null;
   showModal = false;
-  studentId: string = '3'; 
+  studentId: string = ''; 
 
 
   constructor(private asigAlumnoService: AsigAlumnoService) {}
 
   ngOnInit() {
     this.obtenerAsistenciasAgrupadas();
+    this.cargarUsuario();
   }
+
+  
+  cargarUsuario() {
+    const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
+  
+    if (storedUser && storedUser.id) {
+      this.asigAlumnoService.getUserById(storedUser.id).subscribe(
+        (userData: any) => {
+          console.log('Datos del usuario:', userData);  
+          this.studentId = userData.id;
+          this.obtenerAsistenciasAgrupadas();  
+        },
+        (error: any) => {
+          console.error('Error al obtener los datos del usuario', error);  
+        }
+      );
+    }
+  }
+  
+
+  
+
 
   obtenerAsistenciasAgrupadas() {
     this.asigAlumnoService.getAsistenciasByStudentIdGroupedByAsignatura(this.studentId).subscribe({
