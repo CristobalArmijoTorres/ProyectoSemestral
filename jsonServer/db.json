@@ -95,27 +95,30 @@
   ],
   "asistencias": [
     {
-      "id": "badb",
+      "id": "35y8",
       "asignaturaId": "1",
+      "nombreAsig": "Arquitectura",
       "estudianteId": "3",
       "seccionId": "A",
-      "fecha": "13-11-2024",
+      "fecha": "08-12-2024",
       "estado": true
     },
     {
-      "id": "lp80",
-      "asignaturaId": "5",
+      "id": "p29d",
+      "asignaturaId": "1",
+      "nombreAsig": "Arquitectura",
       "estudianteId": "3",
       "seccionId": "A",
-      "fecha": "13-11-2024",
+      "fecha": "08-12-2024",
       "estado": true
     },
     {
-      "id": "t5hp",
-      "asignaturaId": "5",
+      "id": "ga0g",
+      "asignaturaId": "1",
+      "nombreAsig": "Arquitectura",
       "estudianteId": "3",
       "seccionId": "A",
-      "fecha": "13-11-2024",
+      "fecha": "08-12-2024",
       "estado": true
     }
   ],
