@@ -12,7 +12,11 @@ export class QrService {
   constructor(private http: HttpClient) {}
 
   
+<<<<<<< HEAD
   registrarAsistencia(asignaturaId: string, nombreAsignatura: string,estudianteId: string, seccionId: string): Observable<any> {
+=======
+  registrarAsistencia(asignaturaId: string, estudianteId: string, seccionId: string): Observable<any> {
+>>>>>>> parent of c01fb5c (por las dudas, para no perder nada)
     const fechaActual = new Date().toISOString(); 
     const asistencia = {
       id: Math.random().toString(36).substring(2, 6), 
