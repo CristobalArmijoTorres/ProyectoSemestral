@@ -145,4 +145,9 @@ export class LeerQrPage implements AfterViewInit {
 
     return secciones.find(seccion => seccion.id === seccionId);
   }
+
+  public limpiar() {
+    this.qrCodeInput = '';
+    this.errorMessage = '';
+  }
 }
