@@ -8,17 +8,17 @@ import { catchError } from 'rxjs/operators';
 })
 export class QrService {
   private apiUrl = 'http://localhost:3000/asistencias'; 
-
+  private currentId = 1;
   constructor(private http: HttpClient) {}
 
   
-  registrarAsistencia(asignaturaId: string, estudianteId: string, nombreAsig: string, seccionId: string): Observable<any> {
+  registrarAsistencia(asignaturaId: string, nombreAsig: string,estudianteId: string, seccionId: string): Observable<any> {
     const fechaActual = new Date().toLocaleDateString(); 
     const asistencia = {
-      id: Math.random().toString(36).substring(2, 6), 
+      id:  this.currentId++, 
       asignaturaId: asignaturaId,
-      estudianteId: estudianteId,
       nombreAsig: nombreAsig,
+      estudianteId: estudianteId,
       seccionId: seccionId,
       fecha: fechaActual,
       estado: true

@@ -9,6 +9,8 @@ import { Asignatura, Asistencia, Estudiante } from '../asignaturas/models';
 })
 export class RegAsistenciaService {
   private apiUrl = 'http://localhost:3000';
+  private apiUrlu = 'http://localhost:3000/usuarios'; 
+
 
   constructor(private http: HttpClient) {}
 
@@ -58,8 +60,11 @@ export class RegAsistenciaService {
   }
  
   getUserById(userId: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${userId}`);
+    const url = `${this.apiUrlu}/${userId}`;
+    console.log('URL de la API:', url);  
+    return this.http.get<any>(url);
   }
+  
 
 getAsistenciasByStudentIdGroupedByAsignatura(studentId: string): Observable<{ asignaturaId: string; asistencias: Asistencia[] }[]> {
   return this.getAsistenciasByStudentId(studentId).pipe(

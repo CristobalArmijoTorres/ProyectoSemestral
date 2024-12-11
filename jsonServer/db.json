@@ -95,27 +95,57 @@
   ],
   "asistencias": [
     {
-      "id": "badb",
+      "id": "98gs",
       "asignaturaId": "1",
+      "nombreAsig": "Arquitectura",
       "estudianteId": "3",
       "seccionId": "A",
-      "fecha": "13-11-2024",
+      "fecha": "08-12-2024",
       "estado": true
     },
     {
-      "id": "lp80",
-      "asignaturaId": "5",
+      "id": "sdbi",
+      "asignaturaId": "2",
+      "nombreAsig": "Calidad De Software",
       "estudianteId": "3",
       "seccionId": "A",
-      "fecha": "13-11-2024",
+      "fecha": "08-12-2024",
       "estado": true
     },
     {
-      "id": "t5hp",
-      "asignaturaId": "5",
+      "id": "hgif",
+      "asignaturaId": "3",
+      "nombreAsig": "Estadística Descriptiva",
       "estudianteId": "3",
       "seccionId": "A",
-      "fecha": "13-11-2024",
+      "fecha": "08-12-2024",
+      "estado": true
+    },
+    {
+      "id": "xqzm",
+      "asignaturaId": "4",
+      "nombreAsig": "Ética Para El Trabajo",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "08-12-2024",
+      "estado": true
+    },
+    {
+      "id": "1gch",
+      "asignaturaId": "5",
+      "nombreAsig": "Inglés Intermedio",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "08-12-2024",
+      "estado": true
+    },
+    {
+      "id": "lk90",
+      "asignaturaId": "6",
+      "nombreAsig": "Proceso De Portafolio",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "08-12-2024",
       "estado": true
     }
   ],

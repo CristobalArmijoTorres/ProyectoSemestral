@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RegAsistenciaService } from '../asistencias/reg-asistencia.service';
-import { Asistencia } from '../asignaturas/models';
+import { AsigAlumnoService } from '../asistencias/reg-asistencia.service';
+import { Asistencia,Asignatura } from '../asignaturas/models';
 
 
 @Component({
@@ -9,22 +9,57 @@ import { Asistencia } from '../asignaturas/models';
   styleUrls: ['./asistencias.page.scss'],
 })
 export class AsistenciasPage implements OnInit {
-  asistenciasAgrupadas: { asignaturaId: string; asistencias: Asistencia[] }[] = [];
+  asistenciasAgrupadas: { asignaturaId: string; nombreAsig: string; asistencias: Asistencia[] }[] = [];
   selectedAsistencias: Asistencia[] | null = null;
   showModal = false;
-  studentId: string = '3'; 
+  studentId: string = ''; 
+  asignaturas: Asignatura[] = [];
 
-
-  constructor(private RegAsistenciaService: RegAsistenciaService) {}
+  constructor(private asigAlumnoService: AsigAlumnoService) {}
 
   ngOnInit() {
-    this.obtenerAsistenciasAgrupadas();
+    this.cargarUsuario();
+  }
+
+  cargarUsuario() {
+    const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
+  
+    if (storedUser && storedUser.id) {
+      this.asigAlumnoService.getUserById(storedUser.id).subscribe(
+        (userData: any) => {
+          this.studentId = userData.id;
+          this.obtenerAsignaturas();  
+        },
+        (error: any) => {
+          console.error('Error al obtener los datos del usuario', error);  
+        }
+      );
+    }
+  }
+
+  obtenerAsignaturas() {
+    this.asigAlumnoService.getAsignaturasByStudentId(this.studentId).subscribe({
+      next: (asignaturas) => {
+        this.asignaturas = asignaturas;
+        this.obtenerAsistenciasAgrupadas();
+      },
+      error: (error) => {
+        console.error('Error al obtener asignaturas:', error);
+      }
+    });
   }
 
   obtenerAsistenciasAgrupadas() {
-    this.RegAsistenciaService.getAsistenciasByStudentIdGroupedByAsignatura(this.studentId).subscribe({
+    this.asigAlumnoService.getAsistenciasByStudentIdGroupedByAsignatura(this.studentId).subscribe({
       next: (asistenciasAgrupadas) => {
-        this.asistenciasAgrupadas = asistenciasAgrupadas;
+        this.asistenciasAgrupadas = asistenciasAgrupadas.map(group => {
+          const asignatura = this.asignaturas.find(asig => asig.idAsig === group.asignaturaId);
+          return {
+            asignaturaId: group.asignaturaId,
+            nombreAsig: asignatura ? asignatura.nombre : 'Asignatura no encontrada',
+            asistencias: group.asistencias
+          };
+        });
       },
       error: (error) => {
         console.error('Error al obtener asistencias agrupadas:', error);

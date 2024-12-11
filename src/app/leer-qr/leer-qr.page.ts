@@ -106,7 +106,7 @@ export class LeerQrPage implements AfterViewInit {
         }
 
        
-        this.qrService.registrarAsistencia(datosQR.asignaturaId, estudianteId, datosQR.seccionId, datosQR.nombreAsig).subscribe(
+        this.qrService.registrarAsistencia(datosQR.asignaturaId, datosQR.nombreAsig,estudianteId, datosQR.seccionId).subscribe(
           response => {
             console.log('Asistencia registrada:', response);
           
@@ -144,5 +144,10 @@ export class LeerQrPage implements AfterViewInit {
     ];
 
     return secciones.find(seccion => seccion.id === seccionId);
+  }
+
+  public limpiar() {
+    this.qrCodeInput = '';
+    this.errorMessage = '';
   }
 }
