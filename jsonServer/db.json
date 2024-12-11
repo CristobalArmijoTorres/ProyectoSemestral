@@ -122,30 +122,19 @@
       "estado": true
     },
     {
-      "id": "xqzm",
+      "id": "kj12",
       "asignaturaId": "4",
-      "nombreAsig": "Ética Para El Trabajo",
       "estudianteId": "3",
       "seccionId": "A",
-      "fecha": "08-12-2024",
+      "fecha": "28/11/2024",
       "estado": true
     },
     {
-      "id": "1gch",
-      "asignaturaId": "5",
-      "nombreAsig": "Inglés Intermedio",
+      "id": "nb3h",
+      "asignaturaId": "4",
       "estudianteId": "3",
       "seccionId": "A",
-      "fecha": "08-12-2024",
-      "estado": true
-    },
-    {
-      "id": "lk90",
-      "asignaturaId": "6",
-      "nombreAsig": "Proceso De Portafolio",
-      "estudianteId": "3",
-      "seccionId": "A",
-      "fecha": "08-12-2024",
+      "fecha": "28/11/2024",
       "estado": true
     }
   ],
