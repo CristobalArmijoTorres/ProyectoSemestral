@@ -7,8 +7,8 @@ describe('BienvenidaService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],  // Asegúrate de incluir HttpClientTestingModule aquí
-      providers: [BienvenidaService]  // Provee el servicio que se va a probar
+      imports: [HttpClientTestingModule],  
+      providers: [BienvenidaService]  
     });
     service = TestBed.inject(BienvenidaService);
   });

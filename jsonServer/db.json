@@ -120,6 +120,22 @@
       "seccionId": "A",
       "fecha": "08-12-2024",
       "estado": true
+    },
+    {
+      "id": "kj12",
+      "asignaturaId": "4",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "28/11/2024",
+      "estado": true
+    },
+    {
+      "id": "nb3h",
+      "asignaturaId": "4",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "28/11/2024",
+      "estado": true
     }
   ],
   "secciones": [
