@@ -8,7 +8,7 @@ import { Asignatura, Asistencia, Estudiante } from '../asignaturas/models';
   providedIn: 'root'
 })
 export class RegAsistenciaService {
-  private apiUrl = 'http://192.168.84.55:3000';
+  private apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
