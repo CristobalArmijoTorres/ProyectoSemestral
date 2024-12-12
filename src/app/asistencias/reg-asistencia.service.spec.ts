@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AsistenciasPage } from './asistencias.page';
-import { RegAsistenciaService } from '../asistencias/reg-asistencia.service';
+import { AsigAlumnoService } from '../asistencias/reg-asistencia.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of, throwError } from 'rxjs';
 import { IonicModule } from '@ionic/angular';
@@ -8,17 +8,17 @@ import { IonicModule } from '@ionic/angular';
 describe('AsistenciasPage', () => {
   let component: AsistenciasPage;
   let fixture: ComponentFixture<AsistenciasPage>;
-  let regAsistenciaService: RegAsistenciaService;
+  let regAsistenciaService: AsigAlumnoService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [IonicModule.forRoot(), HttpClientTestingModule],
-      providers: [RegAsistenciaService],
+      providers: [AsigAlumnoService],
     });
 
     fixture = TestBed.createComponent(AsistenciasPage);
     component = fixture.componentInstance;
-    regAsistenciaService = TestBed.inject(RegAsistenciaService);
+    regAsistenciaService = TestBed.inject(AsigAlumnoService);
 
     fixture.detectChanges();
   });

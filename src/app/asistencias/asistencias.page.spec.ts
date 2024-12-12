@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AsistenciasPage } from './asistencias.page';
 import { HttpClientTestingModule } from '@angular/common/http/testing';  
-import { RegAsistenciaService } from './reg-asistencia.service';  
+import { AsigAlumnoService } from './reg-asistencia.service';  
 
 describe('AsistenciasPage', () => {
   let component: AsistenciasPage;
@@ -10,7 +10,7 @@ describe('AsistenciasPage', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],  
-      providers: [RegAsistenciaService]  
+      providers: [AsigAlumnoService]  
     });
 
     fixture = TestBed.createComponent(AsistenciasPage);
