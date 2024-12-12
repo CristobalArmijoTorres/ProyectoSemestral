@@ -1,27 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistrarService } from '../reg-asistencia/registrar.service';
 
+
 @Component({
   selector: 'app-reg-asistencia',
   templateUrl: './reg-asistencia.page.html',
   styleUrls: ['./reg-asistencia.page.scss'],
 })
 export class RegAsistenciaPage implements OnInit {
-  asignaturas: any[] = []; 
-  secciones: any[] = []; 
-  qrData: string = ''; 
-  mostrar = false; 
-  asignaturaSeleccionada: any = null; 
+  asignaturas: any[] = [];
+  secciones: any[] = [];
+  qrData: string = '';
+  mostrar = false;
+  asignaturaSeleccionada: any = null;
   seccionSeleccionada: any = null;
 
+
   constructor(private registrarService: RegistrarService) {}
+
 
   ngOnInit() {
     this.cargarAsignaturas();
     this.cargarSecciones();
   }
 
-  
+
+ 
   cargarAsignaturas() {
     const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
     if (storedUser && storedUser.id) {
@@ -36,7 +40,8 @@ export class RegAsistenciaPage implements OnInit {
     }
   }
 
-  
+
+ 
   cargarSecciones() {
     this.registrarService.getSecciones().subscribe(
       (secciones: any[]) => {
@@ -48,29 +53,38 @@ export class RegAsistenciaPage implements OnInit {
     );
   }
 
-  
+
+ 
   generarQR(asignatura: any) {
     const seccionId = asignatura.seccionSeleccionada;
     const seccion = this.secciones.find(sec => sec.id === seccionId);
-    
+   
     this.asignaturaSeleccionada = asignatura;
     this.seccionSeleccionada = seccion;
+
 
  
     const estudianteId = JSON.parse(localStorage.getItem('user') || '{}').id;
 
-    
+
+   
     this.qrData = JSON.stringify({
       asignaturaId: asignatura.idAsig,
+      nombreAsig: asignatura.nombre,
       seccionId: seccionId,
       estudianteId: estudianteId,
       fecha: new Date().toISOString()
     });
 
-    this.verModal(); 
+
+    this.verModal();
   }
+
 
   verModal() {
     this.mostrar = !this.mostrar;
   }
 }
+
+
+

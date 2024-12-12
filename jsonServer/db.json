@@ -95,43 +95,75 @@
   ],
   "asistencias": [
     {
-      "id": "badb",
-      "asignaturaId": "1",
-      "estudianteId": "3",
-      "seccionId": "A",
-      "fecha": "13-11-2024",
-      "estado": true
-    },
-    {
-      "id": "lp80",
-      "asignaturaId": "5",
-      "estudianteId": "3",
-      "seccionId": "A",
-      "fecha": "13-11-2024",
-      "estado": true
-    },
-    {
-      "id": "t5hp",
-      "asignaturaId": "5",
-      "estudianteId": "3",
-      "seccionId": "A",
-      "fecha": "13-11-2024",
-      "estado": true
-    },
-    {
-      "id": "kj12",
+      "id": 1,
       "asignaturaId": "4",
+      "nombreAsig": "Ética Para El Trabajo",
       "estudianteId": "3",
       "seccionId": "A",
-      "fecha": "28/11/2024",
+      "fecha": "11-12-2024",
       "estado": true
     },
     {
-      "id": "nb3h",
+      "id": 2,
       "asignaturaId": "4",
+      "nombreAsig": "Ética Para El Trabajo",
       "estudianteId": "3",
       "seccionId": "A",
-      "fecha": "28/11/2024",
+      "fecha": "11-12-2024",
+      "estado": true
+    },
+    {
+      "id": 3,
+      "asignaturaId": "4",
+      "nombreAsig": "Ética Para El Trabajo",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "11-12-2024",
+      "estado": true
+    },
+    {
+      "id": 4,
+      "asignaturaId": "4",
+      "nombreAsig": "Ética Para El Trabajo",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "11-12-2024",
+      "estado": true
+    },
+    {
+      "id": 5,
+      "asignaturaId": "4",
+      "nombreAsig": "Ética Para El Trabajo",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "11-12-2024",
+      "estado": true
+    },
+    {
+      "id": 6,
+      "asignaturaId": "5",
+      "nombreAsig": "Inglés Intermedio",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "11-12-2024",
+      "estado": true
+    },
+    {
+      "id": 7,
+      "asignaturaId": "5",
+      "nombreAsig": "Inglés Intermedio",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "11-12-2024",
+      "estado": true
+    },
+    {
+      "id": 8,
+      "asignaturaId": "5",
+      "nombreAsig": "Inglés Intermedio",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "11-12-2024",
       "estado": true
     }
   ],
@@ -272,3 +304,4 @@
     }
   ]
 }
+

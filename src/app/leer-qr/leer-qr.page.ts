@@ -5,7 +5,8 @@ import {
   NgxScannerQrcodeService,
   NgxScannerQrcodeComponent,
 } from 'ngx-scanner-qrcode';
-import { QrService } from './qr.service'; 
+import { QrService } from './qr.service';
+
 
 @Component({
   selector: 'app-leer-qr',
@@ -15,6 +16,7 @@ import { QrService } from './qr.service';
 export class LeerQrPage implements AfterViewInit {
   @ViewChild('action') action!: NgxScannerQrcodeComponent;
 
+
   public config: ScannerQRCodeConfig = {
     constraints: {
       video: {
@@ -23,10 +25,13 @@ export class LeerQrPage implements AfterViewInit {
     },
   };
 
-  public qrCodeInput: string = ''; 
-  public errorMessage: string = ''; 
+
+  public qrCodeInput: string = '';
+  public errorMessage: string = '';
+
 
   constructor(private qrcode: NgxScannerQrcodeService, private qrService: QrService) {}
+
 
   ngAfterViewInit(): void {
     this.action.isReady.subscribe((res: any) => {
@@ -34,21 +39,24 @@ export class LeerQrPage implements AfterViewInit {
     });
   }
 
+
   public onEvent(e: ScannerQRCodeResult[], action?: any): void {
     if (e.length > 0) {
-      const qrData = e[0].data; 
+      const qrData = e[0].data;
 
-      
+
+     
       console.log('QR Data:', qrData);
       console.log('Tipo de QR Data:', typeof qrData);
 
-      
+
+     
       if (qrData instanceof Int8Array) {
-        
-        this.qrCodeInput = new TextDecoder().decode(qrData); 
+       
+        this.qrCodeInput = new TextDecoder().decode(qrData);
         console.log('QR Code scanned:', this.qrCodeInput);
       } else if (typeof qrData === 'string') {
-        this.qrCodeInput = qrData; 
+        this.qrCodeInput = qrData;
         console.log('QR Code scanned:', this.qrCodeInput);
       } else {
         console.error('El contenido del QR no es un string válido.');
@@ -57,11 +65,13 @@ export class LeerQrPage implements AfterViewInit {
     }
   }
 
+
   public handle(action: any, fn: string): void {
     const playDeviceFacingBack = (devices: any[]) => {
       const device = devices.find(f => (/back|rear|environment/gi.test(f.label)));
       action.playDevice(device ? device.deviceId : devices[0].deviceId);
     };
+
 
     if (fn === 'start') {
       action[fn](playDeviceFacingBack).subscribe(
@@ -76,20 +86,24 @@ export class LeerQrPage implements AfterViewInit {
     }
   }
 
+
   public registrarAsistencia() {
     try {
-      const datosQR = JSON.parse(this.qrCodeInput); 
-      console.log('Datos del QR:', datosQR); 
+      const datosQR = JSON.parse(this.qrCodeInput);
+      console.log('Datos del QR:', datosQR);
 
-      
+
+     
       if (datosQR && datosQR.asignaturaId && datosQR.seccionId) {
         const estudiante = JSON.parse(localStorage.getItem('user') || '{}');
         const estudianteId = estudiante?.id;
+
 
         if (!estudianteId) {
           this.errorMessage = 'No se pudo obtener el ID del estudiante. Revisa los datos del usuario.';
           return;
         }
+
 
        
         const seccion = this.getSeccion(datosQR.seccionId);
@@ -98,18 +112,21 @@ export class LeerQrPage implements AfterViewInit {
           return;
         }
 
+
         const estudianteEnSeccion = seccion.estudiantes.find((e: any) => e.estudianteId === estudianteId);
+
 
         if (!estudianteEnSeccion) {
           this.errorMessage = 'No puedes registrar asistencia. No perteneces a esta sección.';
           return;
         }
 
+
        
-        this.qrService.registrarAsistencia(datosQR.asignaturaId, estudianteId, datosQR.seccionId).subscribe(
+        this.qrService.registrarAsistencia(datosQR.asignaturaId, datosQR.nombreAsig,estudianteId, datosQR.seccionId).subscribe(
           response => {
             console.log('Asistencia registrada:', response);
-          
+         
           },
           error => {
             console.error('Error al registrar asistencia', error);
@@ -125,9 +142,10 @@ export class LeerQrPage implements AfterViewInit {
     }
   }
 
-  
+
+ 
   private getSeccion(seccionId: string) {
-    
+   
     const secciones = [
       {
         id: 'A',
@@ -143,6 +161,16 @@ export class LeerQrPage implements AfterViewInit {
       }
     ];
 
+
     return secciones.find(seccion => seccion.id === seccionId);
   }
+
+
+  public limpiar() {
+    this.qrCodeInput = '';
+    this.errorMessage = '';
+  }
 }
+
+
+

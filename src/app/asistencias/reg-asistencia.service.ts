@@ -4,13 +4,19 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import { Asignatura, Asistencia, Estudiante } from '../asignaturas/models';
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class RegAsistenciaService {
-  private apiUrl = 'http://192.168.84.55:3000';
+export class AsigAlumnoService {
+  private apiUrl = 'http://localhost:3000';
+  private apiUrlu = 'http://localhost:3000/usuarios';
+
+
+
 
   constructor(private http: HttpClient) {}
+
 
   getAsignaturasByStudentId(studentId: string): Observable<Asignatura[]> {
     return this.http.get<any[]>(`${this.apiUrl}/secciones`).pipe(
@@ -36,6 +42,7 @@ export class RegAsistenciaService {
     );
   }
 
+
  
   getAsistenciasByStudentId(studentId: string): Observable<Asistencia[]> {
     return this.http.get<Asistencia[]>(`${this.apiUrl}/asistencias`).pipe(
@@ -48,6 +55,8 @@ export class RegAsistenciaService {
   }
 
 
+
+
   getAllProfesores(): Observable<{ profesorId: string; nombre: string }[]> {
     return this.http.get<{ profesorId: string; nombre: string }[]>(`${this.apiUrl}/profesores`).pipe(
       catchError(error => {
@@ -58,8 +67,12 @@ export class RegAsistenciaService {
   }
  
   getUserById(userId: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${userId}`);
+    const url = `${this.apiUrlu}/${userId}`;
+    console.log('URL de la API:', url);  
+    return this.http.get<any>(url);
   }
+ 
+
 
 getAsistenciasByStudentIdGroupedByAsignatura(studentId: string): Observable<{ asignaturaId: string; asistencias: Asistencia[] }[]> {
   return this.getAsistenciasByStudentId(studentId).pipe(
@@ -74,7 +87,8 @@ getAsistenciasByStudentIdGroupedByAsignatura(studentId: string): Observable<{ as
         return acc;
       }, {} as { [key: string]: Asistencia[] });
 
-    
+
+   
       return Object.keys(grouped).map(asignaturaId => ({
         asignaturaId,
         asistencias: grouped[asignaturaId]
@@ -83,4 +97,8 @@ getAsistenciasByStudentIdGroupedByAsignatura(studentId: string): Observable<{ as
   );
 }
 
+
 }
+
+
+

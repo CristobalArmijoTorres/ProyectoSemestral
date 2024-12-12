@@ -7,11 +7,12 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
   <ion-accordion-group>
     <ion-accordion *ngFor="let asistenciaAgrupada of asistenciasAgrupadas">
       <ion-item slot="header">
-        <ion-label>{{ asistenciaAgrupada.asignaturaId }}</ion-label>
+        <ion-label>{{ asistenciaAgrupada.nombreAsig }}</ion-label>
       </ion-item>
       <div class="asistencia-content" slot="content">
         <h2>Mi Asistencia</h2>
@@ -44,3 +45,6 @@
     </ng-template>
   </ion-modal>
 </ion-content>
+
+
+

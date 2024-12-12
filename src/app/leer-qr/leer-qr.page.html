@@ -7,24 +7,33 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true" class="ion-padding">
   <ngx-scanner-qrcode #action="scanner" [config]="config" (event)="onEvent($event, action)"></ngx-scanner-qrcode>
+
 
   <div class="ion-padding">
     <button ion-button (click)="handle(action, 'start')">Iniciar Escaneo</button>
     <button ion-button (click)="handle(action, 'stop')">Detener Escaneo</button>
   </div>
 
- 
+
   <ion-item>
     <ion-label position="floating">Código QR Escaneado</ion-label>
     <ion-input [(ngModel)]="qrCodeInput" readonly></ion-input>
   </ion-item>
 
-  
+
   <ion-button expand="full" (click)="registrarAsistencia()" [disabled]="!qrCodeInput">Registrar Asistencia</ion-button>
+
+
+  <ion-button expand="full" (click)="limpiar()">Limpiar</ion-button>
+
 
   <div *ngIf="errorMessage" class="ion-padding" color="danger">
     <p>{{ errorMessage }}</p>
   </div>
 </ion-content>
+
+
+

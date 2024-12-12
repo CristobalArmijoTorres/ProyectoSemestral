@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BienvenidaService {
-  private apiUrl = 'http://192.168.84.55:3000/usuarios'; 
+  private apiUrl = 'http://localhost:3000/usuarios'; 
 
   constructor(private http: HttpClient) {}
 
