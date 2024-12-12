@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';  // Importa HttpClientTestingModule
+import { HttpClientTestingModule } from '@angular/common/http/testing';  
 import { RegistrarService } from './registrar.service';
 
 describe('RegistrarService', () => {
@@ -7,8 +7,8 @@ describe('RegistrarService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],  // Asegúrate de incluir HttpClientTestingModule aquí
-      providers: [RegistrarService]  // Provee el servicio que se va a probar
+      imports: [HttpClientTestingModule],  
+      providers: [RegistrarService]  
     });
     service = TestBed.inject(RegistrarService);
   });
