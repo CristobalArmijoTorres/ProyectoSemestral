@@ -29,9 +29,11 @@
 
   <ion-button expand="full" (click)="limpiar()">Limpiar</ion-button>
 
-
-  <div *ngIf="errorMessage" class="ion-padding" color="danger">
+  <div *ngIf="errorMessage" class="ion-padding" color="danger" style="color: red;">
     <p>{{ errorMessage }}</p>
+  </div>
+  <div *ngIf="correctoMsg" class="ion-padding" color="succes" style="color: green;">
+    <p>{{ correctoMsg }}</p>
   </div>
 </ion-content>
 

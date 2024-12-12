@@ -28,6 +28,7 @@ export class LeerQrPage implements AfterViewInit {
 
   public qrCodeInput: string = '';
   public errorMessage: string = '';
+  public correctoMsg: string = '';
 
 
   constructor(private qrcode: NgxScannerQrcodeService, private qrService: QrService) {}
@@ -126,7 +127,7 @@ export class LeerQrPage implements AfterViewInit {
         this.qrService.registrarAsistencia(datosQR.asignaturaId, datosQR.nombreAsig,estudianteId, datosQR.seccionId).subscribe(
           response => {
             console.log('Asistencia registrada:', response);
-         
+            this.correctoMsg = 'Su asistencia se ha registrado correctamente.';
           },
           error => {
             console.error('Error al registrar asistencia', error);

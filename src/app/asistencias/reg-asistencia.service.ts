@@ -9,8 +9,8 @@ import { Asignatura, Asistencia, Estudiante } from '../asignaturas/models';
   providedIn: 'root'
 })
 export class AsigAlumnoService {
-  private apiUrl = 'http://localhost:3000';
-  private apiUrlu = 'http://localhost:3000/usuarios';
+  private apiUrl = 'http://192.168.84.55:3000';
+  private apiUrlu = 'http://192.168.84.55:3000/usuarios';
 
 
 

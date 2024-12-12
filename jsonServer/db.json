@@ -95,15 +95,6 @@
   ],
   "asistencias": [
     {
-      "id": 1,
-      "asignaturaId": "4",
-      "nombreAsig": "Ética Para El Trabajo",
-      "estudianteId": "3",
-      "seccionId": "A",
-      "fecha": "11-12-2024",
-      "estado": true
-    },
-    {
       "id": 2,
       "asignaturaId": "4",
       "nombreAsig": "Ética Para El Trabajo",
@@ -122,45 +113,27 @@
       "estado": true
     },
     {
-      "id": 4,
+      "id": 1,
+      "asignaturaId": "5",
+      "nombreAsig": "Inglés Intermedio",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "11/12/2024",
+      "estado": true
+    },
+    {
+      "id": 1,
+      "asignaturaId": "6",
+      "nombreAsig": "Proceso De Portafolio",
+      "estudianteId": "3",
+      "seccionId": "A",
+      "fecha": "11-12-2024",
+      "estado": true
+    },
+    {
+      "id": 1,
       "asignaturaId": "4",
       "nombreAsig": "Ética Para El Trabajo",
-      "estudianteId": "3",
-      "seccionId": "A",
-      "fecha": "11-12-2024",
-      "estado": true
-    },
-    {
-      "id": 5,
-      "asignaturaId": "4",
-      "nombreAsig": "Ética Para El Trabajo",
-      "estudianteId": "3",
-      "seccionId": "A",
-      "fecha": "11-12-2024",
-      "estado": true
-    },
-    {
-      "id": 6,
-      "asignaturaId": "5",
-      "nombreAsig": "Inglés Intermedio",
-      "estudianteId": "3",
-      "seccionId": "A",
-      "fecha": "11-12-2024",
-      "estado": true
-    },
-    {
-      "id": 7,
-      "asignaturaId": "5",
-      "nombreAsig": "Inglés Intermedio",
-      "estudianteId": "3",
-      "seccionId": "A",
-      "fecha": "11-12-2024",
-      "estado": true
-    },
-    {
-      "id": 8,
-      "asignaturaId": "5",
-      "nombreAsig": "Inglés Intermedio",
       "estudianteId": "3",
       "seccionId": "A",
       "fecha": "11-12-2024",
@@ -304,4 +277,3 @@
     }
   ]
 }
-
