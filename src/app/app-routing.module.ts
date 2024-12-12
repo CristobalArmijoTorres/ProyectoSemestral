@@ -32,10 +32,6 @@ const routes: Routes = [
     loadChildren: () => import('./reg-asistencia/reg-asistencia.module').then( m => m.RegAsistenciaPageModule)
   },
   {
-    path: 'credencial',
-    loadChildren: () => import('./credencial/credencial.module').then( m => m.CredencialPageModule)
-  },
-  {
     path: 'menu-profe',
     loadChildren: () => import('./menu-profe/menu-profe.module').then( m => m.MenuProfePageModule)
   },

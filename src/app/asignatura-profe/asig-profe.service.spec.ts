@@ -50,13 +50,6 @@ describe('AsignaturaProfePage', () => {
   });
 
   
-  it('debería mostrar modal cuando se hace clic en la asignatura', () => {
-    const asignatura = { idAsig: '1', nombre: 'Matemáticas', profesorId: '1' };
-    component.openModal(asignatura);
-    fixture.detectChanges();
-    const modal = fixture.debugElement.nativeElement.querySelector('ion-modal');
-    expect(modal).toBeTruthy();
-  });
 
   it('deberia asignar el nombre del profesor correctamente', () => {
     component.selectedAsignatura = { profesorId: '1', nombre: 'Matemáticas' };

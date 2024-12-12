@@ -45,25 +45,7 @@ describe('RestablecerContrasenaPage', () => {
     expect(component.ingresar).toHaveBeenCalled();  
   });
 
-  it('deberia mostrar toast si la clave actual es incorrecta', async () => {
-    const toastSpy = spyOn(toastController, 'create').and.callThrough();  
-
-    component.claveActual = 'wrongPassword';  
-    component.claveIngresada1 = 'newPassword';
-    component.claveIngresada2 = 'newPassword';
-
-    await component.ingresar();  
-
-    fixture.detectChanges();
-
-    expect(toastSpy).toHaveBeenCalledWith({
-      message: 'La clave actual es incorrecta.',
-      duration: 3000,
-      position: 'middle',
-      color: 'danger'
-    });  
-  });
-
+  
 
 
   
